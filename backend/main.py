@@ -79,7 +79,10 @@ app = FastAPI(
 allowed_origins = [
     "http://localhost:3000",
     "http://localhost:3001",
-    "http://localhost:3002"
+    "http://localhost:3002",
+    "http://localhost:3003",
+    "https://interview-editor-frontend.vercel.app",
+    "https://interview-editor-frontend-3z0c3opcb-jxcs-projects-579395f6.vercel.app"
 ]
 
 # VercelのURLが環境変数で設定されている場合は追加
