@@ -1,5 +1,8 @@
-# Python 3.11 (Debian Bookworm) Lightweight
+# Python 3.11の軽量イメージを使用
 FROM python:3.11-slim-bookworm
+
+# ユーザーをrootに明示的に設定（Renderの一部環境での権限エラー回避）
+USER root
 
 # stdout/stderr logs to show up in container logs immediately
 ENV PYTHONUNBUFFERED=1
