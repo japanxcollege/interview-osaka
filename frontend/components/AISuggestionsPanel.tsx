@@ -1,0 +1,143 @@
+'use client';
+
+import React from 'react';
+
+interface AISuggestionsPanelProps {
+  suggestedQuestions: string[];
+  frontSummary?: string;
+  autoSummary?: string;
+  pendingArticleCount?: number;
+  pendingQuestionCount?: number;
+}
+
+/**
+ * AI提案パネル (Phase 1)
+ * - AI生成の質問提案
+ * - 3分ごとの要約 (front_summary)
+ * - 最終要約 (auto_summary)
+ * - 原稿自動生成の処理状況表示（逐次処理）
+ */
+export default function AISuggestionsPanel({
+  suggestedQuestions,
+  frontSummary,
+  autoSummary,
+  pendingArticleCount = 0,
+  pendingQuestionCount = 0,
+}: AISuggestionsPanelProps) {
+  return (
+    <div className="h-full flex flex-col bg-white border-l border-gray-200">
+      {/* ヘッダー */}
+      <div className="p-4 border-b border-gray-200">
+        <h2 className="text-lg font-bold text-gray-800">AI提案</h2>
+        <p className="text-xs text-gray-500 mt-1">
+          Gemini APIによる質問提案・要約・原稿生成
+        </p>
+      </div>
+
+      {/* コンテンツ */}
+      <div className="flex-1 overflow-y-auto p-4 space-y-4">
+        {/* AI原稿生成状況 */}
+        <div>
+          <h3 className="text-sm font-semibold text-gray-700 mb-2 flex items-center">
+            <span className="mr-2">📝</span>
+            原稿自動生成
+          </h3>
+          <div className="p-3 bg-gradient-to-br from-purple-50 to-pink-50 rounded-lg border border-purple-200">
+            <div className="flex items-center justify-between mb-2">
+              <span className="text-xs text-gray-600">蓄積された文字起こし</span>
+              <span className={`text-lg font-bold ${pendingArticleCount >= 10 ? 'text-green-600' : 'text-gray-800'}`}>
+                {pendingArticleCount} / 10件
+              </span>
+            </div>
+            <div className="space-y-2">
+              <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
+                <div
+                  className="bg-purple-500 h-2 rounded-full transition-all duration-500"
+                  style={{ width: `${Math.min((pendingArticleCount / 10) * 100, 100)}%` }}
+                />
+              </div>
+              {pendingArticleCount >= 10 ? (
+                <p className="text-xs text-green-700 font-medium">
+                  ✅ 10件到達 - 自動生成処理中...
+                </p>
+              ) : (
+                <p className="text-xs text-gray-600">
+                  あと {10 - pendingArticleCount} 件で自動生成されます
+                </p>
+              )}
+            </div>
+          </div>
+        </div>
+
+        {/* 質問提案セクション */}
+        <div>
+          <h3 className="text-sm font-semibold text-gray-700 mb-2 flex items-center">
+            <span className="mr-2">💡</span>
+            質問提案
+          </h3>
+          {/* 質問生成状況 */}
+          <div className="mb-3 p-2 bg-blue-50 rounded border border-blue-100">
+            <div className="flex items-center justify-between mb-1">
+              <span className="text-xs text-gray-600">次の提案まで</span>
+              <span className={`text-sm font-bold ${pendingQuestionCount >= 5 ? 'text-green-600' : 'text-gray-800'}`}>
+                {pendingQuestionCount} / 5件
+              </span>
+            </div>
+            <div className="w-full bg-gray-200 rounded-full h-1.5 overflow-hidden">
+              <div
+                className="bg-blue-500 h-1.5 rounded-full transition-all duration-500"
+                style={{ width: `${(pendingQuestionCount / 5) * 100}%` }}
+              />
+            </div>
+          </div>
+          {suggestedQuestions.length === 0 ? (
+            <p className="text-xs text-gray-400 italic">
+              発話が5件蓄積されるとAIが質問を提案します
+            </p>
+          ) : (
+            <ul className="space-y-2">
+              {suggestedQuestions.map((question, idx) => (
+                <li
+                  key={idx}
+                  className="p-3 bg-blue-50 rounded-lg border border-blue-100"
+                >
+                  <p className="text-sm text-gray-800">{question}</p>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+
+        {/* 3分要約セクション */}
+        {frontSummary && (
+          <div>
+            <h3 className="text-sm font-semibold text-gray-700 mb-2 flex items-center">
+              <span className="mr-2">📊</span>
+              3分要約
+            </h3>
+            <div className="p-3 bg-green-50 rounded-lg border border-green-100">
+              <p className="text-sm text-gray-800 whitespace-pre-wrap">
+                {frontSummary}
+              </p>
+            </div>
+          </div>
+        )}
+
+        {/* 最終要約セクション */}
+        {autoSummary && (
+          <div>
+            <h3 className="text-sm font-semibold text-gray-700 mb-2 flex items-center">
+              <span className="mr-2">📝</span>
+              最終要約
+            </h3>
+            <div className="p-3 bg-purple-50 rounded-lg border border-purple-100">
+              <p className="text-sm text-gray-800 whitespace-pre-wrap">
+                {autoSummary}
+              </p>
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
