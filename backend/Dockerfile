@@ -1,35 +1,15 @@
-# Start from Ubuntu to ensure a clean, standard environment
-FROM ubuntu:22.04
+# Use python 3.11 slim - simpler base
+FROM python:3.11-slim
 
-# Prevent interactive prompts during package installation
-ENV DEBIAN_FRONTEND=noninteractive
 ENV PYTHONUNBUFFERED=1
-
 WORKDIR /app
 
-# Install Python 3.11 and dependencies
-# adding software-properties-common for add-apt-repository consistency
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    software-properties-common \
-    && add-apt-repository ppa:deadsnakes/ppa \
-    && apt-get update && apt-get install -y --no-install-recommends \
-    python3.11 \
-    python3.11-venv \
-    python3.11-dev \
-    python3-pip \
-    build-essential \
-    ffmpeg \
-    curl \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
-
-# Setup virtual environment or alias python3 to python
-RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.11 1 \
-    && update-alternatives --set python3 /usr/bin/python3.11 \
-    && update-alternatives --install /usr/bin/python python /usr/bin/python3.11 1
-
-# Install pip for python 3.11
-RUN curl -sS https://bootstrap.pypa.io/get-pip.py | python3.11
+# Download static ffmpeg binary to avoid apt-get permission issues on Render
+# Using a widely trusted static build source (johnvansickle or similar via mwader)
+# Or simpler: COPY ffmpeg from a multistage build image that has it?
+# Let's use mwader/static-ffmpeg image efficiently
+COPY --from=mwader/static-ffmpeg:6.0 /ffmpeg /usr/local/bin/
+COPY --from=mwader/static-ffmpeg:6.0 /ffprobe /usr/local/bin/
 
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
