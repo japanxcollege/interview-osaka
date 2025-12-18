@@ -220,6 +220,16 @@ export default function UploadWizardPage() {
                                 </div>
                             </div>
 
+                            <div>
+                                <label className="block text-sm font-bold text-gray-700 mb-2">コンテキスト・事前情報（文字起こしには含まれません）</label>
+                                <textarea
+                                    value={prompt}
+                                    onChange={e => setPrompt(e.target.value)}
+                                    className="w-full h-24 p-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 outline-none text-sm"
+                                    placeholder="用語: DAO, NFT, Ethereum...&#13;&#10;直前の会話: ...&#13;&#10;これらはAIの認識精度向上のためのヒントとして使われます。"
+                                />
+                            </div>
+
                             <button
                                 onClick={startUpload}
                                 disabled={!selectedFile || !title}
