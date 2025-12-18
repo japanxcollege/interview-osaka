@@ -9,11 +9,11 @@ WORKDIR /app
 # Install system dependencies
 # build-essential: for compiling python packages (uvloop, etc.)
 # ffmpeg: for audio processing
+# apt-get clean and rm -rf lists logic might be causing read-only fs issues on some platforms
+# Trying a simpler approach
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
-    ffmpeg \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+    ffmpeg
 
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
