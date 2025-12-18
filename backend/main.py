@@ -499,7 +499,7 @@ async def websocket_endpoint(websocket: WebSocket, session_id: str):
 
 if __name__ == "__main__":
     import uvicorn
-    port = int(os.getenv("BACKEND_PORT", "8005"))
+    port = int(os.getenv("PORT", os.getenv("BACKEND_PORT", "8005")))
     uvicorn.run(
         "main:app",
         host="0.0.0.0",
