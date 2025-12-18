@@ -93,7 +93,7 @@ if frontend_url:
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=allowed_origins,
+    allow_origins=["*"], # Debug: Allow all to rule out CORS config
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
