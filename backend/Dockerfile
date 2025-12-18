@@ -1,5 +1,5 @@
-# Python 3.11の軽量イメージを使用
-FROM python:3.11-slim
+# Python 3.11の標準イメージを使用 (ビルド依存関係のため)
+FROM python:3.11
 
 # システムの依存関係をインストール (FFmpegを含む)
 RUN apt-get update && apt-get install -y \
