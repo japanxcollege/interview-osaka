@@ -1,28 +1,24 @@
-# Python 3.11の軽量イメージを使用
-FROM python:3.11-slim
+# Python 3.11 (Debian Bookworm) Lightweight
+FROM python:3.11-slim-bookworm
 
-# 出力のバッファリングを無効化 (ログが見やすくなる)
+# stdout/stderr logs to show up in container logs immediately
 ENV PYTHONUNBUFFERED=1
 
-# 作業ディレクトリを設定
 WORKDIR /app
 
-# システムの依存関係をインストール (FFmpeg)
-# キャッシュを削除してイメージサイズを削減
+# Install system dependencies
+# build-essential: for compiling python packages (uvloop, etc.)
+# ffmpeg: for audio processing
 RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
     ffmpeg \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-# 依存関係ファイルをコピーしてインストール
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# アプリケーションコードをコピー
 COPY . .
 
-# ポート設定 (Renderは環境変数PORTを使用)
 ENV PORT=8000
-
-# 起動コマンド (render.yamlのstartCommandが優先されるが、ローカル実行用にも設定)
 CMD uvicorn main:app --host 0.0.0.0 --port $PORT
