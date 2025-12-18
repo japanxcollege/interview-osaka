@@ -97,7 +97,12 @@ app.add_middleware(
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
+    allow_headers=["*"],
 )
+
+# Debug
+from debug_router import router as debug_router
+app.include_router(debug_router)
 
 
 # REST API エンドポイント
