@@ -190,11 +190,10 @@ class WhisperClient:
         mime = (mime_type or "").lower()
 
         if "webm" in mime or "ogg" in mime:
-            logger.debug("Converting audio chunk from %s to wav", mime or "unknown")
-            converted = self._convert_to_wav(audio_bytes, mime)
-            if not converted:
-                raise ValueError("Failed to convert audio chunk to WAV format")
-            return converted, "chunk.wav"
+            # Skip ffmpeg conversion to avoid binary dependency on Render
+            # and to keep upload size small (WebM/Opus < WAV)
+            ext = "webm" if "webm" in mime else "ogg"
+            return audio_bytes, f"chunk.{ext}"
 
         extension = self._mime_to_extension(mime_type)
         return audio_bytes, f"chunk.{extension}"
