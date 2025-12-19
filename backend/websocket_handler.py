@@ -252,34 +252,24 @@ async def process_message(
             })
 
         elif msg_type == 'improve_text':
-            # テキスト改善
+            # テキスト改善 / AIチャット
             try:
                 selected_text = message['data'].get('selected_text', '')
                 instruction = message['data'].get('instruction', '')
                 context = message['data'].get('context', '')
                 start_pos = message['data'].get('start_pos')
                 end_pos = message['data'].get('end_pos')
+                chat_history = message['data'].get('messages', [])
 
-                # バリデーション
-                if not selected_text or not selected_text.strip():
-                    await websocket.send_json({
-                        'type': 'error',
-                        'message': '選択されたテキストが空です'
-                    })
-                    return
-
-                if start_pos is None or end_pos is None:
-                    await websocket.send_json({
-                        'type': 'error',
-                        'message': 'テキスト位置情報が不正です'
-                    })
-                    return
-
-                # AI処理
-                improved = await gemini_client.improve_selected_text(
-                    selected_text=selected_text,
+                # AI処理 (ai_editorを使用するように変更)
+                from ai_editor import ai_editor
+                
+                improved = await ai_editor.edit_text(
                     instruction=instruction,
-                    context=context
+                    selected_text=selected_text,
+                    context=context,
+                    model_provider="gemini", # Default to Gemini for WS for now, or get from msg
+                    chat_history=chat_history
                 )
 
                 if improved:
@@ -288,31 +278,22 @@ async def process_message(
                         'type': 'text_improved',
                         'data': {
                             'improved_text': improved,
-                            'start_pos': start_pos,
-                            'end_pos': end_pos
+                            'start_pos': start_pos if start_pos is not None else 0,
+                            'end_pos': end_pos if end_pos is not None else 0
                         }
                     })
-                    logger.info(f"✅ Text improved: {len(selected_text)} -> {len(improved)} chars")
+                    logger.info(f"✅ AI response generated. Length: {len(improved)}")
                 else:
-                    # Gemini APIが無効またはエラー
-                    error_msg = 'テキストの改善に失敗しました'
-                    if not gemini_client.enabled:
-                        error_msg += ' (Gemini APIが設定されていません)'
+                    error_msg = 'AI生成に失敗しました'
                     await websocket.send_json({
                         'type': 'error',
                         'message': error_msg
                     })
-            except KeyError as e:
-                logger.error(f"Missing required field: {e}")
-                await websocket.send_json({
-                    'type': 'error',
-                    'message': f'リクエストに必要な情報が不足しています: {str(e)}'
-                })
             except Exception as e:
                 logger.error(f"Error in improve_text: {e}")
                 await websocket.send_json({
                     'type': 'error',
-                    'message': f'テキスト改善処理中にエラーが発生しました: {str(e)}'
+                    'message': f'AI処理中にエラーが発生しました: {str(e)}'
                 })
 
         elif msg_type == 'restructure_subsection':
