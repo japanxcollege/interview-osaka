@@ -97,7 +97,6 @@ app.add_middleware(
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
-    allow_headers=["*"],
 )
 
 # Debug Endpoint (Directly in main to avoid import cycles)
