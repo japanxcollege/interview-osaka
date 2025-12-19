@@ -100,9 +100,20 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Debug
-from debug_router import router as debug_router
-app.include_router(debug_router)
+# Debug Endpoint (Directly in main to avoid import cycles)
+@app.get("/api/debug/sessions/{session_id}")
+async def debug_session(session_id: str):
+    session = session_manager.get_session(session_id)
+    if not session:
+        return {"error": "Session not found", "available_sessions": list(session_manager.sessions.keys())}
+    
+    return {
+        "status": session.status,
+        "transcript_count": len(session.transcript),
+        "transcript_preview": [u.text[:50] for u in session.transcript[:5]],
+        "upload_progress": session.upload_progress,
+        "is_transcribing": session_manager.is_transcribing(session_id) if hasattr(session_manager, 'is_transcribing') else "unknown"
+    }
 
 
 # REST API エンドポイント
