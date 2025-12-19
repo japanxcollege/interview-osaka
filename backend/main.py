@@ -179,10 +179,10 @@ async def process_uploaded_file(session_id: str, file_path: Path, prompt: str):
                     "utterance": utterance.dict()
                  })
             logger.info(f"✅ File transcription completed for {session_id}")
+            await session_manager.update_upload_progress(session_id, 100)
         else:
             logger.warning(f"⚠️ No text transcribed for {session_id} (text is None/Empty)")
-            
-        await session_manager.update_upload_progress(session_id, 100)
+            await session_manager.update_upload_progress(session_id, -1) # Error state
             
     except Exception as e:
         logger.error(f"❌ Error processing file {session_id}: {e}", exc_info=True)

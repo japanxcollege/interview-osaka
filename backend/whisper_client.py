@@ -32,7 +32,8 @@ class WhisperClient:
 
     def _init_openai_client(self) -> None:
         if not self.api_key:
-            logger.warning("⚠️ OPENAI_API_KEY not set. Whisper transcription disabled.")
+            logger.warning("⚠️ OPENAI_API_KEY not set. Whisper transcription disabled. Please set OPENAI_API_KEY environment variable.")
+            print("⚠️ OPENAI_API_KEY not set. Whisper transcription disabled.") # Ensure visibility in standard output
             self.enabled = False
             return
 
@@ -42,6 +43,7 @@ class WhisperClient:
             logger.info(f"✅ OpenAI Whisper client initialised (model={self.model})")
         except Exception as exc:
             logger.error(f"Failed to initialise OpenAI Whisper client: {exc}")
+            print(f"❌ Failed to initialise OpenAI Whisper client: {exc}")
             self.enabled = False
             self.client = None
 
