@@ -54,14 +54,37 @@ class WhisperClient:
         
         loop = asyncio.get_event_loop()
         try:
-            with open(file_path, "rb") as f:
-                audio_bytes = f.read()
-                
+            # Check file size (limit is 25MB)
+            file_size = os.path.getsize(file_path)
+            limit_bytes = 25 * 1024 * 1024 # 25MB
+
+            if file_size > limit_bytes:
+                logger.warning(f"⚠️ File size {file_size} bytes exceeds Whisper limit ({limit_bytes}). Compressing...")
+                compressed_audio = await loop.run_in_executor(
+                    None,
+                    self._compress_audio_blocking,
+                    file_path
+                )
+                if compressed_audio:
+                     logger.info(f"✅ Compression successful. New size: {len(compressed_audio)} bytes")
+                     # Use the compressed bytes for transcription
+                     audio_bytes = compressed_audio
+                     filename = "compressed.mp3" # Force MP3 for compressed
+                else:
+                     logger.error("❌ Compression failed, attempting original file (will likely fail)")
+                     with open(file_path, "rb") as f:
+                        audio_bytes = f.read()
+                     filename = os.path.basename(file_path)
+            else:
+                with open(file_path, "rb") as f:
+                    audio_bytes = f.read()
+                filename = os.path.basename(file_path)
+
             response = await loop.run_in_executor(
                 None,
                 self._transcribe_blocking,
                 audio_bytes,
-                os.path.basename(file_path),
+                filename,
                 prompt
             )
 
@@ -79,6 +102,27 @@ class WhisperClient:
             return text
         except Exception as e:
             logger.error(f"File transcription failed: {e}")
+            return None
+
+    def _compress_audio_blocking(self, file_path: str) -> Optional[bytes]:
+        """ffmpegを使って音声を圧縮 (32k mono mp3)"""
+        try:
+            # ffmpeg -i input -ar 16000 -ac 1 -b:a 32k -f mp3 pipe:1
+            process = (
+                ffmpeg
+                .input(file_path)
+                .output('pipe:1', format='mp3', acodec='libmp3lame', ac=1, ar='16000', audio_bitrate='32k')
+                .run_async(pipe_stdout=True, pipe_stderr=True)
+            )
+            stdout, stderr = process.communicate()
+            
+            if process.returncode != 0:
+                logger.error(f"ffmpeg compression failed: {stderr.decode()}")
+                return None
+            
+            return stdout
+        except Exception as e:
+            logger.error(f"ffmpeg compression error: {e}")
             return None
 
     async def transcribe_audio_chunk(
