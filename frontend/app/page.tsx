@@ -58,7 +58,12 @@ export default function HomePage() {
       }
 
       const session = await response.json();
-      router.push(`/editor/${session.session_id}`);
+      const redirectType = (window as any).__redirectType || 'editor';
+      if (redirectType === 'interviewer') {
+        router.push(`/interviewer/${session.session_id}`);
+      } else {
+        router.push(`/editor/${session.session_id}`);
+      }
     } catch (error) {
       console.error('Failed to create session:', error);
       alert('セッションの作成に失敗しました');
@@ -126,7 +131,22 @@ export default function HomePage() {
             </button>
 
             <button
-              onClick={() => setShowCreateModal(true)}
+              onClick={() => {
+                setShowCreateModal(true);
+                (window as any).__redirectType = 'interviewer';
+              }}
+              className="flex-1 bg-gradient-to-br from-indigo-600 to-blue-700 text-white p-4 rounded-lg shadow-lg hover:shadow-indigo-200 transition flex flex-col items-center justify-center gap-2"
+            >
+              <span className="text-2xl">🤖</span>
+              <span className="font-bold">AIインタビュアーを開始</span>
+              <span className="text-xs text-indigo-100">AIが主導してインタビュー</span>
+            </button>
+
+            <button
+              onClick={() => {
+                setShowCreateModal(true);
+                (window as any).__redirectType = 'editor';
+              }}
               className="flex-1 bg-blue-600 text-white p-4 rounded-lg shadow-lg hover:bg-blue-700 transition flex flex-col items-center justify-center gap-2"
             >
               <span className="text-2xl">🎙️</span>

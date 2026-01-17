@@ -394,6 +394,47 @@ async def process_message(
                     'message': f'質問提案のトリガーに失敗しました: {str(e)}'
                 })
 
+        elif msg_type == 'interviewer_generate_response':
+            # AIインタビュアーのレスポンス生成
+            try:
+                from ai_editor import ai_editor
+                
+                context = message['data'].get('context', '')
+                model_provider = message['data'].get('model_provider', 'gemini')
+                chat_history = message['data'].get('messages', [])
+                
+                session = session_manager.get_session(session_id)
+                transcript_text = ""
+                if session:
+                    transcript_text = "\n".join([f"{u.speaker_name}: {u.text}" for u in session.transcript[-10:]]) # 直近10発話
+                
+                response_text = await ai_editor.generate_interviewer_response(
+                    transcript_text=transcript_text,
+                    context=context,
+                    chat_history=chat_history,
+                    model_provider=model_provider
+                )
+                
+                if response_text:
+                    await websocket.send_json({
+                        'type': 'interviewer_response',
+                        'data': {
+                            'text': response_text
+                        }
+                    })
+                    logger.info(f"✅ Interviewer response generated: {response_text[:50]}...")
+                else:
+                    await websocket.send_json({
+                        'type': 'error',
+                        'message': 'インタビュアーのレスポンス生成に失敗しました'
+                    })
+            except Exception as e:
+                logger.error(f"Error in interviewer_generate_response: {e}")
+                await websocket.send_json({
+                    'type': 'error',
+                    'message': f'AIインタビュアー処理中にエラーが発生しました: {str(e)}'
+                })
+
         elif msg_type == 'restructure_section':
             # 大見出しセクション再構成
             try:

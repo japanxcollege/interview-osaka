@@ -13,9 +13,19 @@ export class WebSocketClient {
   private sessionId: string;
   private onMessageCallback: (message: WebSocketMessage) => void;
 
+  private listeners: ((message: any) => void)[] = [];
+
   constructor(sessionId: string, onMessage: (message: WebSocketMessage) => void) {
     this.sessionId = sessionId;
     this.onMessageCallback = onMessage;
+  }
+
+  addListener(callback: (message: any) => void) {
+    this.listeners.push(callback);
+  }
+
+  removeListener(callback: (message: any) => void) {
+    this.listeners = this.listeners.filter(l => l !== callback);
   }
 
   connect() {
@@ -36,6 +46,9 @@ export class WebSocketClient {
         const message: WebSocketMessage = JSON.parse(event.data);
         console.log('📨 WebSocket message:', message);
         this.onMessageCallback(message);
+
+        // Notify additional listeners
+        this.listeners.forEach(listener => listener(message));
       } catch (error) {
         console.error('Failed to parse WebSocket message:', error);
       }

@@ -49,6 +49,9 @@ export interface InterviewSession {
   pending_ai_question_count?: number; // Phase 1: 質問提案用の未処理カウント
   upload_progress?: number;
   upload_error?: string | null;
+  interview_style?: string;
+  user_key_points?: string[];
+  context?: string;
 }
 
 // WebSocketメッセージ型
@@ -65,5 +68,6 @@ export type WebSocketMessage =
   | { type: 'summary_updated'; data: { front_summary?: string; auto_summary?: string } } // Phase 1
   | { type: 'text_improved'; data: { improved_text: string; start_pos: number; end_pos: number } } // AIブラッシュアップ結果
   | { type: 'ai_counters_updated'; data: { pending_article_count?: number; pending_question_count?: number } } // AIカウンター更新
+  | { type: 'interviewer_response'; data: { text: string } }
   | { type: 'info'; message: string }
   | { type: 'error'; message: string };

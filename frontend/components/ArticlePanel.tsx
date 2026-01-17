@@ -1,3 +1,4 @@
+
 /**
  * 原稿パネル（左）
  * Markdown形式の記事を編集・プレビュー
@@ -22,6 +23,17 @@ interface ArticlePanelProps {
   onSwitchDraft?: (draftId: string) => void;
   onGenerateDraft?: (styleId: string) => void;
   availableStyles?: any[]; // {id, name, description}
+
+  // History Logic
+  onUndo?: () => void;
+  onRedo?: () => void;
+  canUndo?: boolean;
+  canRedo?: boolean;
+  onSaveVersion?: () => void;
+
+  // External Action (e.g. from Chat Apply)
+  externalAction?: { type: 'insert', text: string } | null;
+  onActionComplete?: () => void;
 }
 
 export default function ArticlePanel({
@@ -35,7 +47,14 @@ export default function ArticlePanel({
   activeDraftId,
   onSwitchDraft,
   onGenerateDraft,
-  availableStyles = []
+  availableStyles = [],
+  onUndo,
+  onRedo,
+  canUndo,
+  canRedo,
+  onSaveVersion,
+  externalAction,
+  onActionComplete
 }: ArticlePanelProps) {
   const [localText, setLocalText] = useState(text);
   const [isDirty, setIsDirty] = useState(false);
@@ -62,6 +81,27 @@ export default function ArticlePanel({
       setProcessingMessage('');
     }
   }, [text]);
+
+  // Handle External Insertion
+  useEffect(() => {
+    if (externalAction && textareaRef.current) {
+      if (externalAction.type === 'insert') {
+        const textarea = textareaRef.current;
+        const start = textarea.selectionStart || 0;
+        const end = textarea.selectionEnd || 0;
+        const currentVal = textarea.value;
+        const insertText = externalAction.text;
+
+        const newVal = currentVal.substring(0, start) + insertText + currentVal.substring(end);
+
+        setLocalText(newVal);
+        onChange(newVal);
+
+        // Notify parent
+        onActionComplete?.();
+      }
+    }
+  }, [externalAction]);
 
   // メニュー外クリックでメニューを閉じる（textarea外のみ）
   useEffect(() => {
@@ -230,21 +270,6 @@ export default function ArticlePanel({
     return localText.substring(selectedRange.start, selectedRange.end);
   };
 
-  const replaceSelectedText = (newText: string) => {
-    if (!selectedRange) return;
-
-    const before = localText.substring(0, selectedRange.start);
-    const after = localText.substring(selectedRange.end);
-    const updatedText = before + newText + after;
-
-    setLocalText(updatedText);
-    onChange(updatedText);
-    setShowMenu(false);
-    setSelectedRange(null);
-    setIsProcessing(false);
-    setProcessingMessage('');
-  };
-
   const handleAIAction = async (action: string, instruction?: string) => {
     console.log('🎯 handleAIAction called:', { action, instruction, selectedRange, wsClient });
 
@@ -322,6 +347,8 @@ export default function ArticlePanel({
       }
 
       // WebSocket経由でAI処理をリクエスト
+      // NOTE: This will trigger 'text_improved' in parent EditorPage.
+      // EditorPage will then add it to Chat.
       wsClient.send(messageType, {
         selected_text: selectedText,
         instruction: instructionText,
@@ -560,7 +587,37 @@ export default function ArticlePanel({
       {/* ヘッダー */}
       <div className="p-4 border-b border-gray-300 bg-gray-50">
         <div className="flex items-center justify-between mb-2">
-          <h2 className="text-lg font-semibold">📝 原稿</h2>
+          <div className="flex items-center gap-2">
+            <h2 className="text-lg font-semibold text-gray-800">📝 原稿</h2>
+            <div className="flex items-center border-l border-gray-300 pl-3 ml-2 gap-1">
+              <button
+                onClick={onUndo}
+                disabled={!canUndo}
+                className="p-1.5 text-gray-600 hover:text-gray-900 hover:bg-gray-200 disabled:opacity-30 disabled:hover:bg-transparent rounded transition"
+                title="元に戻す (Cmd+Z)"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6" /></svg>
+              </button>
+              <button
+                onClick={onRedo}
+                disabled={!canRedo}
+                className="p-1.5 text-gray-600 hover:text-gray-900 hover:bg-gray-200 disabled:opacity-30 disabled:hover:bg-transparent rounded transition"
+                title="やり直す (Cmd+Shift+Z)"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 10h-10a8 8 0 00-8 8v2M21 10l-6 6m6-6l-6-6" /></svg>
+              </button>
+              {onSaveVersion && (
+                <button
+                  onClick={() => onSaveVersion()}
+                  className="ml-2 px-2 py-1 text-xs bg-white border border-gray-300 text-gray-600 hover:bg-gray-100 rounded transition flex items-center gap-1 shadow-sm"
+                  title="バージョンを保存"
+                >
+                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4" /></svg>
+                  Save
+                </button>
+              )}
+            </div>
+          </div>
 
           {/* モード切替ボタン */}
           <div className="flex gap-1 bg-white border border-gray-300 rounded-md overflow-hidden">

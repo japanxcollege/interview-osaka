@@ -93,7 +93,8 @@ class SessionManager:
             last_article_transcript_index=0,
             last_question_transcript_index=0,
             pending_ai_article_count=0,
-            pending_ai_question_count=0
+            pending_ai_question_count=0,
+            context=""
         )
 
         # メモリに保存
@@ -540,13 +541,18 @@ class SessionManager:
 
             self._save_session(session_id)
 
-    async def update_upload_progress(self, session_id: str, progress: int) -> None:
+    async def update_upload_progress(self, session_id: str, progress: int, error_message: Optional[str] = None) -> None:
         """アップロード/処理進捗を更新"""
         self._ensure_lock(session_id)
         async with self.locks[session_id]:
             session = self.get_session(session_id)
             if session:
                 session.upload_progress = progress
+                if error_message:
+                    session.upload_error = error_message
+                elif progress >= 0:
+                    session.upload_error = None # Clear error on success/progress
+                
                 # Progress updates might happen frequently, maybe throttle saving?
                 # For now, save every time for simplicity and persistence.
                 self._save_session(session_id)
@@ -555,7 +561,8 @@ class SessionManager:
         self, 
         session_id: str, 
         style: Optional[str] = None,
-        key_points: Optional[List[str]] = None
+        key_points: Optional[List[str]] = None,
+        context: Optional[str] = None
     ) -> None:
         """ウィザード入力（スタイル、キーポイント）を更新"""
         self._ensure_lock(session_id)
@@ -568,6 +575,8 @@ class SessionManager:
                 session.interview_style = style
             if key_points is not None:
                 session.user_key_points = key_points
+            if context is not None:
+                session.context = context
             
             self._save_session(session_id)
 

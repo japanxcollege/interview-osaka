@@ -66,7 +66,9 @@ class InterviewSession(BaseModel):
     # Phase 3: インタラクティブウィザード
     interview_style: str = "qa"                    # "qa", "narrative", "summary"
     user_key_points: List[str] = []                # 待機中に入力された重要ポイント
+    context: Optional[str] = ""                    # 待機中に入力された追加コンテキスト/メモ
     upload_progress: int = 0                       # アップロード/処理進捗 (0-100)
+    upload_error: Optional[str] = None             # アップロード/処理エラーメッセージ
 
 
 # リクエスト/レスポンス用モデル

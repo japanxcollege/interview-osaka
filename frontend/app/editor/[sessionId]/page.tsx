@@ -17,6 +17,9 @@ import AssistantPanel from '@/components/AssistantPanel'; // New combined panel
 import AudioRecorder from '@/components/AudioRecorder';
 import { useEditorHistory } from '@/hooks/useEditorHistory'; // New hook
 import { Message } from '@/components/AICommandPanel'; // Type definition
+import Toast from '@/components/Toast';
+import { useToast } from '@/hooks/useToast';
+import { AIStatus } from '@/components/AISuggestionsPanel';
 
 export default function EditorPage() {
   const params = useParams();
@@ -30,6 +33,18 @@ export default function EditorPage() {
   const [recorderError, setRecorderError] = useState<string | null>(null);
   const [isHeaderCollapsed, setIsHeaderCollapsed] = useState(false);
   const [availableStyles, setAvailableStyles] = useState<any[]>([]);
+
+  // AI Status State
+  const [aiStatus, setAiStatus] = useState<{
+    article: AIStatus;
+    question: AIStatus;
+  }>({
+    article: { target: 'article', status: 'idle', message: '' },
+    question: { target: 'question', status: 'idle', message: '' },
+  });
+
+  // Toast Notifications
+  const { toasts, addToast, removeToast } = useToast();
 
   // Chat State
   const [chatMessages, setChatMessages] = useState<Message[]>([]);
@@ -97,44 +112,43 @@ export default function EditorPage() {
       }
     };
 
-    const handleMessage = (message: WebSocketMessage) => {
-      switch (message.type) {
+    const handleMessage = (message: any) => {
+      const wsMessage = message as WebSocketMessage | { type: 'ai_status_update'; data: AIStatus };
+
+      switch (wsMessage.type) {
         case 'initial_data':
-          setSession(message.data);
-          setIsRecording(message.data.status === 'recording');
+          setSession(wsMessage.data);
+          setIsRecording(wsMessage.data.status === 'recording');
           setIsConnected(true);
           // Sync history if needed
-          if (content === '' && message.data.article_draft?.text) {
-            setContent(message.data.article_draft.text);
+          if (content === '' && wsMessage.data.article_draft?.text) {
+            setContent(wsMessage.data.article_draft.text);
           }
           break;
 
         case 'utterance_added':
-          setSession((prev) => prev ? ({ ...prev, transcript: [...prev.transcript, message.data] }) : null);
+          setSession((prev) => prev ? ({ ...prev, transcript: [...prev.transcript, wsMessage.data] }) : null);
           break;
         case 'utterance_edited':
-          setSession((prev) => prev ? ({ ...prev, transcript: prev.transcript.map(u => u.utterance_id === message.data.utterance_id ? { ...u, ...message.data } : u) }) : null);
+          setSession((prev) => prev ? ({ ...prev, transcript: prev.transcript.map(u => u.utterance_id === wsMessage.data.utterance_id ? { ...u, ...wsMessage.data } : u) }) : null);
           break;
         case 'utterance_deleted':
-          setSession((prev) => prev ? ({ ...prev, transcript: prev.transcript.filter(u => u.utterance_id !== message.data.utterance_id) }) : null);
+          setSession((prev) => prev ? ({ ...prev, transcript: prev.transcript.filter(u => u.utterance_id !== wsMessage.data.utterance_id) }) : null);
           break;
 
         case 'note_added':
-          setSession((prev) => prev ? ({ ...prev, notes: [...prev.notes, message.data] }) : null);
+          setSession((prev) => prev ? ({ ...prev, notes: [...prev.notes, wsMessage.data] }) : null);
           break;
         case 'note_deleted':
-          setSession((prev) => prev ? ({ ...prev, notes: prev.notes.filter(n => n.note_id !== message.data.note_id) }) : null);
+          setSession((prev) => prev ? ({ ...prev, notes: prev.notes.filter(n => n.note_id !== wsMessage.data.note_id) }) : null);
           break;
 
         case 'article_updated':
-          // This comes from other clients or direct updates.
-          // We should update our history?
-          // If WE made the change, 'content' is already updated.
-          // Ideally we check if text is different.
-          // For now, if we receive external update, we might want to sync.
-          // But 'content' is the source of truth for Editor.
-          // Let's assume for now single user.
-          setSession((prev) => prev ? ({ ...prev, article_draft: { ...prev.article_draft, text: message.data.text } }) : null);
+          setSession((prev) => prev ? ({ ...prev, article_draft: { ...prev.article_draft, text: wsMessage.data.text } }) : null);
+          // Show notification for auto-generated sections (if we are in recording/editing)
+          if (wsMessage.data.text.length > (session?.article_draft?.text?.length || 0)) {
+            addToast('AIによって新しい原稿セクションが追加されました', 'success');
+          }
           break;
 
         case 'text_improved':
@@ -146,38 +160,49 @@ export default function EditorPage() {
           const newAiMessage: Message = {
             id: crypto.randomUUID(),
             role: 'ai',
-            content: message.data.improved_text,
+            content: wsMessage.data.improved_text,
             timestamp: new Date()
           };
           setChatMessages(prev => [...prev, newAiMessage]);
+          addToast('AIによる改善が完了しました', 'success');
           break;
 
         case 'status_updated':
           setSession((prev) => {
             if (!prev) return null;
-            if (message.data.status === 'recording') hasStoppedRef.current = false;
-            if (message.data.status === 'editing') hasStoppedRef.current = true;
-            return { ...prev, status: message.data.status };
+            if (wsMessage.data.status === 'recording') hasStoppedRef.current = false;
+            if (wsMessage.data.status === 'editing') hasStoppedRef.current = true;
+            return { ...prev, status: wsMessage.data.status };
           });
-          setIsRecording(message.data.status === 'recording');
+          setIsRecording(wsMessage.data.status === 'recording');
           break;
 
         case 'question_suggested':
-          setSession(prev => prev ? ({ ...prev, suggested_questions: [...(prev.suggested_questions || []), message.data.question] }) : null);
+          setSession(prev => prev ? ({ ...prev, suggested_questions: [...(prev.suggested_questions || []), wsMessage.data.question] }) : null);
+          addToast('AIが新しい質問を提案しました', 'info');
           break;
 
         case 'summary_updated':
-          setSession(prev => prev ? ({ ...prev, front_summary: message.data.front_summary, auto_summary: message.data.auto_summary }) : null);
+          setSession(prev => prev ? ({ ...prev, front_summary: wsMessage.data.front_summary, auto_summary: wsMessage.data.auto_summary }) : null);
+          addToast('AIによる要約が更新されました', 'info');
           break;
 
         case 'ai_counters_updated':
-          setSession(prev => prev ? ({ ...prev, pending_ai_article_count: message.data.pending_article_count, pending_ai_question_count: message.data.pending_question_count }) : null);
+          setSession(prev => prev ? ({ ...prev, pending_ai_article_count: wsMessage.data.pending_article_count, pending_ai_question_count: wsMessage.data.pending_question_count }) : null);
+          break;
+
+        case 'ai_status_update':
+          const statusUpdate = wsMessage.data as AIStatus;
+          setAiStatus(prev => ({
+            ...prev,
+            [statusUpdate.target]: statusUpdate
+          }));
           break;
 
         case 'error':
-          console.error('WS Error:', message.message);
+          console.error('WS Error:', wsMessage.message);
           setIsAIProcessing(false);
-          alert(`エラー: ${message.message}`);
+          addToast(`エラー: ${wsMessage.message}`, 'error', 5000);
           break;
       }
     };
@@ -193,26 +218,26 @@ export default function EditorPage() {
       wsClient.current?.disconnect();
       wsClient.current = null;
     };
-  }, [sessionId]); // removed content dependency to avoid re-init loops
+  }, [sessionId, addToast]); // added addToast to dependencies
 
   // Handlers
   const handleArticleChange = (newText: string) => {
     // Called when user types in ArticlePanel
     setContent(newText);
-    // Sync to backend?
-    // We should probably debounce sync to backend, OR ArticlePanel already debounces `onChange`?
-    // ArticlePanel.tsx line 100 has debounce.
+    // Sync to backend
     wsClient.current?.send('edit_article', { text: newText });
   };
 
   const handleApplyAI = (text: string) => {
     // User clicked "Apply" in Chat
     setPendingAIContent(text);
+    addToast('原稿にAI生成内容を挿入しました', 'success');
   };
 
   const handleRunAICommand = async (instruction: string, model: 'gemini' | 'claude') => {
     if (!wsClient.current) return null;
     setIsAIProcessing(true);
+    addToast('AI処理リクエストを送信しました...', 'info', 2000);
     // Send as 'improve_text' but with no selection, implying general instruction
     wsClient.current.send('improve_text', {
       instruction,
@@ -231,21 +256,25 @@ export default function EditorPage() {
   const handleDeleteUtterance = (id: string) => wsClient.current?.send('delete_utterance', { utterance_id: id });
 
   const toggleRecording = async () => {
-    /* Reuse existing logic */
-    // For brevity re-implementing basic toggle
     const endpoint = isRecording ? 'stop-recording' : 'start-recording';
     try {
       const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8005';
       await fetch(`${apiUrl}/api/sessions/${sessionId}/${endpoint}`, { method: 'POST' });
-    } catch (e) { console.error(e); }
+    } catch (e) {
+      console.error(e);
+      addToast('録音ステータスの変更に失敗しました', 'error');
+    }
   };
 
   if (!session) return <div className="p-10">Loading...</div>;
 
   return (
-    <div className="flex flex-col h-screen">
+    <div className="flex flex-col h-screen overflow-hidden">
+      {/* Toast Notifications */}
+      <Toast toasts={toasts} removeToast={removeToast} />
+
       {/* Header */}
-      <header className="bg-white border-b border-gray-300 px-6 py-4 flex justify-between items-center">
+      <header className="bg-white border-b border-gray-300 px-6 py-4 flex justify-between items-center shrink-0">
         <div>
           <h1 className="text-xl font-bold">{session.title}</h1>
           <p className="text-sm text-gray-500">
@@ -259,15 +288,18 @@ export default function EditorPage() {
             isRecording={isRecording}
             speakerId="speaker_web"
             speakerName="Interviewer"
-            onError={setRecorderError}
+            onError={(err) => {
+              setRecorderError(err);
+              if (err) addToast(err, 'error', 5000);
+            }}
           />
           <button
             onClick={toggleRecording}
-            className={`px-4 py-2 rounded text-white ${isRecording ? 'bg-red-500' : 'bg-green-500'}`}
+            className={`px-4 py-2 rounded text-white transition shadow hover:shadow-md ${isRecording ? 'bg-red-500 hover:bg-red-600' : 'bg-green-500 hover:bg-green-600'}`}
           >
-            {isRecording ? 'Stop' : 'Start'}
+            {isRecording ? 'Stop Recording' : 'Start Recording'}
           </button>
-          <button onClick={() => router.push('/')} className="px-4 py-2 bg-gray-200 rounded">Back</button>
+          <button onClick={() => router.push('/')} className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300 transition">Back</button>
         </div>
       </header>
 
@@ -284,7 +316,10 @@ export default function EditorPage() {
             onRedo={redo}
             canUndo={canUndo}
             canRedo={canRedo}
-            onSaveVersion={() => saveSnapshot(`Version ${new Date().toLocaleTimeString()}`)}
+            onSaveVersion={() => {
+              saveSnapshot(`Version ${new Date().toLocaleTimeString()}`);
+              addToast('バージョン保存しました', 'success');
+            }}
             externalAction={pendingAIContent ? { type: 'insert', text: pendingAIContent } : null}
             onActionComplete={() => setPendingAIContent(null)}
             // Pass styles etc
@@ -305,17 +340,8 @@ export default function EditorPage() {
         </div>
 
         {/* Right: Assistant (Chat + Notes + Suggestions) (35%) */}
-        <div className="w-[35%] flex flex-col">
-          {/* We can put NotesPanel at top or bottom, or inside AssistantPanel tabs?
-                Original design had 4 columns. 30/30/20/20.
-                Let's keep 4 columns if space permits, or merge Notes/AI.
-                User asked for "Right Panel... Chat".
-                Let's try 3-column layout: Article | Transcript | Assistant (with Notes tab?)
-                Actually NotesPanel is useful.
-                Let's stick to 4 columns?
-                30% Article, 30% Transcript, 20% Notes, 20% Assistant.
-            */}
-          <div className="flex h-full">
+        <div className="w-[35%] flex flex-col overflow-hidden">
+          <div className="flex h-full overflow-hidden">
             <div className="w-1/2 h-full border-r border-gray-300">
               <NotesPanel
                 notes={session.notes}
@@ -336,6 +362,7 @@ export default function EditorPage() {
                 autoSummary={session.auto_summary}
                 pendingArticleCount={session.pending_ai_article_count}
                 pendingQuestionCount={session.pending_ai_question_count}
+                aiStatus={aiStatus}
               />
             </div>
           </div>

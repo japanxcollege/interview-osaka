@@ -141,6 +141,15 @@ class SummaryTask:
                             'data': {'front_summary': summary}
                         })
 
+                        await ws_manager.broadcast(session_id, {
+                            'type': 'ai_status_update',
+                            'data': {
+                                'target': 'summary',
+                                'status': 'completed',
+                                'message': '要約を更新しました'
+                            }
+                        })
+
                         logger.info(f"📝 Generated front summary: {len(summary)} chars")
 
             # recent_transcript を更新
@@ -181,70 +190,109 @@ class SummaryTask:
         logger.info("📝 Starting article generation: last_index=%d, total_transcripts=%d", 
                    last_index, len(session.transcript))
 
-        for _ in range(loop_count):
-            total_transcripts = len(session.transcript)
-            # 10件分の発話を取得
-            new_utterances = session.transcript[last_index:min(last_index + 10, total_transcripts)]
-            if not new_utterances:
-                break
-
-            article_section = await gemini_client.generate_article_section(
-                current_article=session.article_draft.text,
-                recent_transcript=new_utterances,
-                front_summary=session.front_summary or ""
-            )
-
-            if not article_section:
-                logger.warning("⚠️ Gemini failed, using fallback section for %s", session_id)
-                article_section = self._build_fallback_section(new_utterances)
-            else:
-                logger.info("✅ Gemini generated article section for %s (%d chars)", session_id, len(article_section))
-
-            new_last_index = last_index + len(new_utterances)
-            
-            article = await self.session_manager.append_article_section(
-                session_id=session_id,
-                section_text=article_section,
-                transcript_count=new_last_index
-            )
-
-            pending -= 10
-            await self.session_manager.reset_ai_counters(
-                session_id,
-                article_count=pending,
-                question_count=None
-            )
-            
-            # セッションを再取得して最新のlast_article_transcript_indexを取得
-            session = self.session_manager.get_session(session_id)
-            last_index = getattr(session, "last_article_transcript_index", 0) or 0
-            
-            logger.debug("📝 Updated last_index to %d after article generation", last_index)
-
             await ws_manager.broadcast(session_id, {
-                'type': 'article_updated',
+                'type': 'ai_status_update',
                 'data': {
-                    'text': article.text,
-                    'last_updated': article.last_updated
+                    'target': 'article',
+                    'status': 'processing',
+                    'message': '文字起こしを解析中...'
                 }
             })
 
-            # AIカウンター更新をブロードキャスト
-            if session:
-                await ws_manager.broadcast(session_id, {
-                    'type': 'ai_counters_updated',
-                    'data': {
-                        'pending_article_count': pending,
-                        'pending_question_count': getattr(session, 'pending_ai_question_count', 0)
-                    }
-                })
+            for _ in range(loop_count):
+                total_transcripts = len(session.transcript)
+                # 10件分の発話を取得
+                new_utterances = session.transcript[last_index:min(last_index + 10, total_transcripts)]
+                if not new_utterances:
+                    break
 
-            logger.info(
-                "📰 Appended article section for %s (utterances=%d, remaining pending=%d)",
-                session_id,
-                len(new_utterances),
-                pending
-            )
+                try:
+                    await ws_manager.broadcast(session_id, {
+                        'type': 'ai_status_update',
+                        'data': {
+                            'target': 'article',
+                            'status': 'processing',
+                            'message': '原稿セクションを執筆中...'
+                        }
+                    })
+
+                    article_section = await gemini_client.generate_article_section(
+                        current_article=session.article_draft.text,
+                        recent_transcript=new_utterances,
+                        front_summary=session.front_summary or ""
+                    )
+
+                    if not article_section:
+                        logger.warning("⚠️ Gemini failed, using fallback section for %s", session_id)
+                        article_section = self._build_fallback_section(new_utterances)
+                    else:
+                        logger.info("✅ Gemini generated article section for %s (%d chars)", session_id, len(article_section))
+
+                    new_last_index = last_index + len(new_utterances)
+                    
+                    article = await self.session_manager.append_article_section(
+                        session_id=session_id,
+                        section_text=article_section,
+                        transcript_count=new_last_index
+                    )
+
+                    pending -= 10
+                    await self.session_manager.reset_ai_counters(
+                        session_id,
+                        article_count=pending,
+                        question_count=None
+                    )
+                    
+                    # セッションを再取得して最新のlast_article_transcript_indexを取得
+                    session = self.session_manager.get_session(session_id)
+                    last_index = getattr(session, "last_article_transcript_index", 0) or 0
+                    
+                    logger.debug("📝 Updated last_index to %d after article generation", last_index)
+
+                    await ws_manager.broadcast(session_id, {
+                        'type': 'article_updated',
+                        'data': {
+                            'text': article.text,
+                            'last_updated': article.last_updated
+                        }
+                    })
+
+                    # AIカウンター更新をブロードキャスト
+                    if session:
+                        await ws_manager.broadcast(session_id, {
+                            'type': 'ai_counters_updated',
+                            'data': {
+                                'pending_article_count': pending,
+                                'pending_question_count': getattr(session, 'pending_ai_question_count', 0)
+                            }
+                        })
+                    
+                    await ws_manager.broadcast(session_id, {
+                        'type': 'ai_status_update',
+                        'data': {
+                            'target': 'article',
+                            'status': 'completed',
+                            'message': '原稿が追加されました'
+                        }
+                    })
+
+                    logger.info(
+                        "📰 Appended article section for %s (utterances=%d, remaining pending=%d)",
+                        session_id,
+                        len(new_utterances),
+                        pending
+                    )
+                except Exception as e:
+                    logger.error(f"Error in article generation: {e}")
+                    await ws_manager.broadcast(session_id, {
+                        'type': 'ai_status_update',
+                        'data': {
+                            'target': 'article',
+                            'status': 'error',
+                            'message': f'エラー: {str(e)}'
+                        }
+                    })
+                    break
 
 
     def _build_fallback_section(self, utterances: List[Utterance]) -> str:
@@ -286,62 +334,108 @@ class SummaryTask:
         
         if pending < 5:
             return
+
+        await ws_manager.broadcast(session_id, {
+            'type': 'ai_status_update',
+            'data': {
+                'target': 'question',
+                'status': 'processing',
+                'message': '次の質問を検討中...'
+            }
+        })
         
         # 一度に1回だけ処理（5件分）
         loop_count = 1
 
         for _ in range(loop_count):
-            question = await gemini_client.suggest_question(
-                front_summary=session.front_summary or "",
-                recent_transcript=candidate_utterances,
-                previous_questions=session.suggested_questions[-5:]
-            )
-
-            if not question:
-                break
-
-            trimmed_question = question.strip()
-            existing_trimmed = {q.strip() for q in session.suggested_questions}
-            if trimmed_question in existing_trimmed:
-                logger.debug(
-                    "Skipping duplicate question suggestion for %s: %s",
-                    session_id,
-                    trimmed_question
+            try:
+                question = await gemini_client.suggest_question(
+                    front_summary=session.front_summary or "",
+                    recent_transcript=candidate_utterances,
+                    previous_questions=session.suggested_questions[-5:]
                 )
-                break
 
-            await self.session_manager.add_suggested_question(
-                session_id,
-                question,
-                transcript_count=len(session.transcript)
-            )
+                if not question:
+                    await ws_manager.broadcast(session_id, {
+                        'type': 'ai_status_update',
+                        'data': {
+                            'target': 'question',
+                            'status': 'error',
+                            'message': '質問案の生成に失敗しました'
+                        }
+                    })
+                    break
 
-            pending -= 5
-            await self.session_manager.reset_ai_counters(
-                session_id,
-                article_count=None,
-                question_count=pending
-            )
+                trimmed_question = question.strip()
+                existing_trimmed = {q.strip() for q in session.suggested_questions}
+                if trimmed_question in existing_trimmed:
+                    logger.debug(
+                        "Skipping duplicate question suggestion for %s: %s",
+                        session_id,
+                        trimmed_question
+                    )
+                    await ws_manager.broadcast(session_id, {
+                        'type': 'ai_status_update',
+                        'data': {
+                            'target': 'question',
+                            'status': 'idle',
+                            'message': ''
+                        }
+                    })
+                    break
 
-            await ws_manager.broadcast(session_id, {
-                'type': 'question_suggested',
-                'data': {'question': question}
-            })
+                await self.session_manager.add_suggested_question(
+                    session_id,
+                    question,
+                    transcript_count=len(session.transcript)
+                )
 
-            # AIカウンター更新をブロードキャスト
-            session = self.session_manager.get_session(session_id)
-            if session:
+                pending -= 5
+                await self.session_manager.reset_ai_counters(
+                    session_id,
+                    article_count=None,
+                    question_count=pending
+                )
+
                 await ws_manager.broadcast(session_id, {
-                    'type': 'ai_counters_updated',
+                    'type': 'question_suggested',
+                    'data': {'question': question}
+                })
+
+                # AIカウンター更新をブロードキャスト
+                session = self.session_manager.get_session(session_id)
+                if session:
+                    await ws_manager.broadcast(session_id, {
+                        'type': 'ai_counters_updated',
+                        'data': {
+                            'pending_article_count': getattr(session, 'pending_ai_article_count', 0),
+                            'pending_question_count': pending
+                        }
+                    })
+
+                await ws_manager.broadcast(session_id, {
+                    'type': 'ai_status_update',
                     'data': {
-                        'pending_article_count': getattr(session, 'pending_ai_article_count', 0),
-                        'pending_question_count': pending
+                        'target': 'question',
+                        'status': 'completed',
+                        'message': '新しい質問を提案しました'
                     }
                 })
 
-            logger.info(f"💡 Suggested question: {question[:50]}...")
+                logger.info(f"💡 Suggested question: {question[:50]}...")
 
-            if pending < 5:
+                if pending < 5:
+                    break
+            except Exception as e:
+                logger.error(f"Error suggesting question: {e}")
+                await ws_manager.broadcast(session_id, {
+                    'type': 'ai_status_update',
+                    'data': {
+                        'target': 'question',
+                        'status': 'error',
+                        'message': f'エラー: {str(e)}'
+                    }
+                })
                 break
 
     def _ensure_processing_lock(self, session_id: str):

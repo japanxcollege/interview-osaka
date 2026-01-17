@@ -1,0 +1,1983 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combined Slides</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" /><link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Noto+Sans+JP:wght@400;700;900&display=swap"
+        rel="stylesheet" /><link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
+        rel="stylesheet" /><link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
+        rel="stylesheet" /><link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
+        rel="stylesheet" /><link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
+    <style>
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #0f172a;
+        }
+
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 0 80px;
+        }
+
+        .accent-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, #2563eb 0%, #3b82f6 50%, #60a5fa 100%);
+        }
+
+        .left-section {
+            flex: 1;
+            z-index: 10;
+        }
+
+        .right-section {
+            flex: 1.2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .flow-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .flow-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 110px;
+            text-align: center;
+            position: relative;
+        }
+
+        .flow-icon-circle {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background-color: rgba(239, 246, 255, 0.08);
+            color: #93c5fd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 12px;
+            border: 2px solid rgba(191, 219, 254, 0.2);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .flow-step:last-child .flow-icon-circle {
+            background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+            color: #ffffff;
+            border-color: #60a5fa;
+            box-shadow: 0 10px 30px -3px rgba(37, 99, 235, 0.7), 0 0 40px rgba(59, 130, 246, 0.3);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                box-shadow: 0 10px 30px -3px rgba(37, 99, 235, 0.7), 0 0 40px rgba(59, 130, 246, 0.3);
+            }
+
+            50% {
+                box-shadow: 0 10px 40px -3px rgba(37, 99, 235, 0.9), 0 0 60px rgba(59, 130, 246, 0.5);
+            }
+        }
+
+        .flow-arrow {
+            color: rgba(203, 213, 225, 0.25);
+            font-size: 18px;
+            margin: 0 2px;
+            padding-top: 20px;
+        }
+
+        .bg-decoration-1 {
+            position: absolute;
+            right: -10%;
+            top: -20%;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.15) 0%, transparent 70%);
+            z-index: 0;
+        }
+
+        .bg-decoration-2 {
+            position: absolute;
+            left: -15%;
+            bottom: -25%;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+            z-index: 0;
+        }
+
+        .grid-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                linear-gradient(rgba(148, 163, 184, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(148, 163, 184, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: 0;
+        }
+
+        .flow-step p {
+            color: #cbd5e1;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .flow-step:last-child p.text-blue-600 {
+            color: #60a5fa;
+        }
+
+        .flow-step p.text-xs {
+            color: rgba(148, 163, 184, 0.6);
+            font-size: 10px;
+        }
+
+        .flow-step:last-child p.text-blue-300 {
+            color: rgba(147, 197, 253, 0.8);
+        }
+    
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #f8fafc;
+        }
+
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .accent-bar {
+            position: absolute;
+            top: 50px;
+            left: 0;
+            width: 6px;
+            height: 80px;
+            background: linear-gradient(180deg, #2563eb 0%, #3b82f6 100%);
+            border-radius: 0 4px 4px 0;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #f1f5f9;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px -10px rgba(37, 99, 235, 0.15);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #2563eb 0%, #3b82f6 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .card-number {
+            position: absolute;
+            top: -20px;
+            right: -10px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 140px;
+            color: #f8fafc;
+            z-index: 0;
+            line-height: 1;
+            letter-spacing: -8px;
+        }
+
+        .card-content {
+            position: relative;
+            z-index: 10;
+        }
+
+        .icon-circle {
+            width: 72px;
+            height: 72px;
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2563eb;
+            font-size: 32px;
+            margin-bottom: 24px;
+            box-shadow: 0 8px 20px -6px rgba(37, 99, 235, 0.2);
+        }
+
+        .problem-statement {
+            border-left: 3px solid #e2e8f0;
+            padding-left: 16px;
+            margin-top: 20px;
+        }
+
+        .highlight-text {
+            color: #ef4444;
+            font-weight: 700;
+        }
+    
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #ffffff;
+        }
+
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .accent-bar {
+            position: absolute;
+            top: 50px;
+            left: 0;
+            width: 6px;
+            height: 80px;
+            background: linear-gradient(180deg, #2563eb 0%, #3b82f6 100%);
+            border-radius: 0 4px 4px 0;
+        }
+
+        /* Horizontal Flywheel Layout */
+        .content-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            height: 100%;
+            padding: 0 80px;
+        }
+
+        .left-info {
+            flex: 1;
+            max-width: 450px;
+        }
+
+        .flywheel-wrapper {
+            position: relative;
+            width: 520px;
+            height: 520px;
+            flex-shrink: 0;
+        }
+
+        /* Central Hub */
+        .hub {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            border-radius: 50%;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            box-shadow: 0 15px 40px -10px rgba(37, 99, 235, 0.6);
+            z-index: 20;
+            border: 3px solid #bfdbfe;
+        }
+
+        /* Nodes */
+        .node-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform-origin: 0 0;
+            width: 0;
+            height: 0;
+        }
+
+        .node-card {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            width: 140px;
+            background-color: white;
+            border-radius: 16px;
+            padding: 14px;
+            box-shadow: 0 8px 20px -6px rgba(0, 0, 0, 0.12);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            z-index: 10;
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+
+        .node-card:hover {
+            transform: translate(-50%, -50%) scale(1.08);
+            border-color: #2563eb;
+            box-shadow: 0 12px 30px -6px rgba(37, 99, 235, 0.25);
+        }
+
+        .node-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            color: #2563eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        /* Connecting Arrows SVG */
+        .cycle-arrows {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            animation: spin 60s linear infinite;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            border-radius: 20px;
+            padding: 32px;
+            border: 2px solid #bfdbfe;
+            box-shadow: 0 10px 30px -10px rgba(37, 99, 235, 0.2);
+        }
+    
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #f8fafc;
+        }
+
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .accent-bar {
+            position: absolute;
+            top: 50px;
+            left: 0;
+            width: 6px;
+            height: 80px;
+            background: linear-gradient(180deg, #2563eb 0%, #3b82f6 100%);
+            border-radius: 0 4px 4px 0;
+        }
+
+        /* Horizontal Pipeline Layout */
+        .pipeline-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 0 40px;
+        }
+
+        .step-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            flex: 1;
+            position: relative;
+        }
+
+        .step-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: white;
+            border: 3px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #94a3b8;
+            font-size: 32px;
+            transition: all 0.3s ease;
+            margin-bottom: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+        }
+
+        .step-item.active .step-icon {
+            border-color: #2563eb;
+            color: #2563eb;
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            box-shadow: 0 8px 24px rgba(37, 99, 235, 0.25);
+        }
+
+        .step-content {
+            background-color: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 20px 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            min-height: 140px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .step-item.active .step-content {
+            border-color: #2563eb;
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.15);
+        }
+
+        .tech-badge {
+            font-size: 10px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            padding: 6px 12px;
+            border-radius: 6px;
+            background-color: #f1f5f9;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 12px;
+        }
+
+        .step-item.active .tech-badge {
+            background-color: #dbeafe;
+            color: #1e40af;
+        }
+
+        .arrow-connector {
+            color: #cbd5e1;
+            font-size: 28px;
+            flex-shrink: 0;
+        }
+
+        .step-item.active+.arrow-connector {
+            color: #60a5fa;
+        }
+
+        /* Demo Preview Area */
+        .demo-preview {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border-radius: 24px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3);
+            height: 280px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .play-button {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: rgba(37, 99, 235, 0.3);
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 36px;
+            border: 3px solid rgba(96, 165, 250, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .play-button:hover {
+            transform: scale(1.1);
+            background-color: rgba(37, 99, 235, 0.5);
+            box-shadow: 0 0 40px rgba(96, 165, 250, 0.6);
+        }
+    
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #f8fafc;
+        }
+
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .accent-bar {
+            position: absolute;
+            top: 50px;
+            left: 0;
+            width: 6px;
+            height: 80px;
+            background: linear-gradient(180deg, #ef4444 0%, #dc2626 100%);
+            border-radius: 0 4px 4px 0;
+        }
+
+        .challenges-row {
+            display: flex;
+            gap: 24px;
+            height: 100%;
+        }
+
+        .challenge-block {
+            flex: 1;
+            background-color: white;
+            border-radius: 20px;
+            border: 2px solid #fee2e2;
+            padding: 28px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 8px 24px -8px rgba(239, 68, 68, 0.12);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .challenge-block:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 40px -12px rgba(239, 68, 68, 0.25);
+            border-color: #fecaca;
+        }
+
+        .challenge-block::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #ef4444 0%, #dc2626 100%);
+        }
+
+        .block-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid #fee2e2;
+        }
+
+        .block-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+            color: #dc2626;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            margin-right: 16px;
+            flex-shrink: 0;
+        }
+
+        .block-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #991b1b;
+            line-height: 1.3;
+        }
+
+        .issues-section {
+            margin-bottom: 20px;
+        }
+
+        .section-label {
+            font-size: 11px;
+            font-weight: 700;
+            color: #ef4444;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-label i {
+            margin-right: 6px;
+            font-size: 10px;
+        }
+
+        .issue-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .issue-tag {
+            font-size: 11px;
+            padding: 4px 10px;
+            border-radius: 6px;
+            background-color: #fef2f2;
+            color: #7f1d1d;
+            border: 1px solid #fee2e2;
+            font-weight: 600;
+        }
+
+        .solution-section {
+            margin-top: auto;
+            padding-top: 16px;
+            border-top: 2px dashed #fee2e2;
+        }
+
+        .solution-label {
+            font-size: 11px;
+            font-weight: 700;
+            color: #059669;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .solution-label i {
+            margin-right: 6px;
+            font-size: 10px;
+        }
+
+        .solution-text {
+            font-size: 13px;
+            color: #065f46;
+            line-height: 1.6;
+            background-color: #ecfdf5;
+            padding: 12px;
+            border-radius: 8px;
+            border-left: 3px solid #10b981;
+        }
+
+        .emphasis {
+            font-weight: 700;
+            color: #047857;
+        }
+    
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #ffffff;
+        }
+
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .accent-bar {
+            position: absolute;
+            top: 50px;
+            left: 0;
+            width: 6px;
+            height: 80px;
+            background: linear-gradient(180deg, #2563eb 0%, #3b82f6 100%);
+            border-radius: 0 4px 4px 0;
+        }
+
+        /* Horizontal Metrics Layout */
+        .metrics-row {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .metric-card {
+            flex: 1;
+            background-color: #ffffff;
+            border-radius: 20px;
+            border: 2px solid #f1f5f9;
+            box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 32px 24px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .metric-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 40px -12px rgba(37, 99, 235, 0.2);
+            border-color: #bfdbfe;
+        }
+
+        .metric-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #2563eb 0%, #3b82f6 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .metric-card:hover::before {
+            opacity: 1;
+        }
+
+        .icon-bg {
+            position: absolute;
+            right: -20px;
+            bottom: -20px;
+            font-size: 140px;
+            color: #f8fafc;
+            transform: rotate(-15deg);
+            z-index: 0;
+            transition: color 0.3s ease;
+        }
+
+        .metric-card:hover .icon-bg {
+            color: #eff6ff;
+        }
+
+        .metric-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            width: 100%;
+        }
+
+        .metric-label {
+            color: #64748b;
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+
+        .metric-value {
+            color: #1e293b;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 64px;
+            line-height: 1;
+            letter-spacing: -2px;
+        }
+
+        .metric-card:nth-child(3) .metric-value {
+            color: #2563eb;
+        }
+
+        .metric-unit {
+            font-size: 18px;
+            font-weight: 700;
+            color: #94a3b8;
+            margin-left: 4px;
+        }
+
+        /* KPI Section */
+        .kpi-container {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            border-radius: 24px;
+            padding: 40px;
+            border: 2px solid #bfdbfe;
+            position: relative;
+            box-shadow: 0 10px 30px -10px rgba(37, 99, 235, 0.2);
+        }
+
+        .kpi-badge {
+            position: absolute;
+            top: -16px;
+            left: 40px;
+            background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+            color: white;
+            padding: 6px 20px;
+            border-radius: 24px;
+            font-size: 13px;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 1px;
+            box-shadow: 0 6px 16px -4px rgba(37, 99, 235, 0.5);
+        }
+
+        .kpi-row {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .kpi-item {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            background-color: white;
+            padding: 28px;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            border: 2px solid #e2e8f0;
+        }
+
+        .kpi-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            color: #2563eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            margin-right: 24px;
+            flex-shrink: 0;
+        }
+
+        .kpi-title {
+            font-size: 14px;
+            color: #64748b;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .kpi-target {
+            font-size: 20px;
+            color: #0f172a;
+            font-weight: 700;
+        }
+
+        .arrow-separator {
+            color: #94a3b8;
+            font-size: 32px;
+            flex-shrink: 0;
+        }
+    
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #ffffff;
+        }
+
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .accent-bar {
+            position: absolute;
+            top: 50px;
+            left: 0;
+            width: 6px;
+            height: 80px;
+            background: linear-gradient(180deg, #2563eb 0%, #3b82f6 100%);
+            border-radius: 0 4px 4px 0;
+        }
+
+        /* Horizontal Layout */
+        .content-row {
+            display: flex;
+            gap: 32px;
+            height: 100%;
+        }
+
+        .partner-card {
+            background-color: white;
+            border-radius: 24px;
+            border: 2px solid #e2e8f0;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 36px;
+            position: relative;
+            flex: 1;
+        }
+
+        .case-study-box {
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 28px;
+            border-left: 5px solid #64748b;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .condition-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .condition-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            color: #475569;
+            font-weight: 500;
+            font-size: 15px;
+        }
+
+        .check-icon {
+            color: #2563eb;
+            margin-right: 16px;
+            font-size: 20px;
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+        }
+
+        /* Right Column */
+        .cta-card {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border-radius: 24px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 36px;
+            position: relative;
+            color: white;
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3);
+            flex: 1;
+        }
+
+        .cta-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.2) 0%, transparent 70%);
+            border-radius: 0 24px 0 100%;
+            z-index: 0;
+        }
+
+        .wanted-item {
+            background-color: rgba(255, 255, 255, 0.08);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .wanted-item:hover {
+            transform: translateX(8px);
+            background-color: rgba(255, 255, 255, 0.12);
+            border-color: rgba(96, 165, 250, 0.4);
+        }
+
+        .wanted-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-right: 24px;
+            flex-shrink: 0;
+            color: white;
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+        }
+
+        .tag-badge {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 24px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: 0.05em;
+        }
+    
+
+        body { 
+            margin: 0; 
+            padding: 0; 
+            background-color: #f0f0f0; /* distinct from slide bg to see boundaries if needed */
+        }
+        .slide-page {
+            /* Ensure the slide dimensions are respected during print/pdf gen */
+            page-break-after: always;
+            break-after: page;
+        }
+        @media print {
+            @page {
+                size: 1280px 720px; 
+                margin: 0;
+            }
+            body {
+                margin: 0;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-page" style="page-break-after: always; position: relative; width: 1280px; height: 720px; overflow: hidden;"><div class="slide-container">
+        <!-- Background Elements -->
+        <div class="accent-bg"></div>
+        <div class="bg-decoration-1"></div>
+        <div class="bg-decoration-2"></div>
+        <div class="grid-pattern"></div>
+
+        <!-- Left Section: Title & Catchcopy -->
+        <div class="left-section">
+            <div class="mb-6 relative">
+                <p class="font-montserrat font-black tracking-tighter text-white"
+                    style="font-size: 180px; line-height: 0.85; text-shadow: 0 0 80px rgba(37, 99, 235, 0.3);">JXC</p>
+                <div
+                    style="position: absolute; bottom: 30px; right: -25px; width: 50px; height: 50px; background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%); border-radius: 50%; box-shadow: 0 10px 30px rgba(37, 99, 235, 0.6);">
+                </div>
+            </div>
+            <div class="text-left">
+                <p class="text-4xl font-bold text-gray-200 leading-snug mb-3">
+                    若い挑戦者の活動を
+                </p>
+                <p class="text-5xl font-black leading-tight">
+                    <span class="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent"
+                        style="text-shadow: 0 0 40px rgba(96, 165, 250, 0.3);">「消えない資産」</span>
+                </p>
+                <p class="text-4xl font-bold text-gray-200 leading-snug mt-2">に変える</p>
+            </div>
+
+            <!-- Footer Info -->
+            <div class="absolute bottom-10 left-20 z-10">
+                <div class="text-gray-500 text-xs font-montserrat tracking-widest mb-1">
+                    Japan X College
+                </div>
+                <div class="text-gray-400 text-lg font-bold font-montserrat">
+                    2025.12.22
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Section: Process Flow -->
+        <div class="right-section">
+            <div class="flow-container">
+                <!-- Step 1 -->
+                <div class="flow-step">
+                    <div class="flow-icon-circle">
+                        <i class="fas fa-microphone-lines"></i>
+                    </div>
+                    <p class="font-bold">取材</p>
+                    <p class="text-xs font-montserrat">INTERVIEW</p>
+                </div>
+                <!-- Arrow -->
+                <div class="flow-arrow"><i class="fas fa-chevron-right"></i></div>
+                <!-- Step 2 -->
+                <div class="flow-step">
+                    <div class="flow-icon-circle">
+                        <i class="fas fa-file-pen"></i>
+                    </div>
+                    <p class="font-bold">note記事</p>
+                    <p class="text-xs font-montserrat">ARTICLE</p>
+                </div>
+                <!-- Arrow -->
+                <div class="flow-arrow"><i class="fas fa-chevron-right"></i></div>
+                <!-- Step 3 -->
+                <div class="flow-step">
+                    <div class="flow-icon-circle">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <p class="font-bold">本</p>
+                    <p class="text-xs font-montserrat">BOOK</p>
+                </div>
+                <!-- Arrow -->
+                <div class="flow-arrow"><i class="fas fa-chevron-right"></i></div>
+                <!-- Step 4 -->
+                <div class="flow-step">
+                    <div class="flow-icon-circle">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <p class="font-bold">信用の可視化</p>
+                    <p class="text-xs font-montserrat">VISUALIZE</p>
+                </div>
+                <!-- Arrow -->
+                <div class="flow-arrow"><i class="fas fa-chevron-right"></i></div>
+                <!-- Step 5 -->
+                <div class="flow-step">
+                    <div class="flow-icon-circle">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <p class="font-bold text-blue-600">次の挑戦へ</p>
+                    <p class="text-xs text-blue-300 font-montserrat">NEXT STAGE</p>
+                </div>
+            </div>
+        </div>
+    </div></div>
+<div class="slide-page" style="page-break-after: always; position: relative; width: 1280px; height: 720px; overflow: hidden;"><div class="slide-container">
+        <!-- Background Pattern -->
+        <div
+            style="position: absolute; top: 0; right: 0; width: 50%; height: 100%; background: linear-gradient(135deg, transparent 0%, #f0f9ff 100%); clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%); z-index: 0;">
+        </div>
+
+        <!-- Header Section -->
+        <div class="relative z-10 pt-16 px-20 mb-10">
+            <div class="accent-bar"></div>
+            <div class="pl-8">
+                <p class="text-blue-600 font-montserrat font-bold tracking-widest text-sm mb-2">THE PROBLEM</p>
+                <h1 class="text-5xl font-black text-gray-900 mb-2">なぜ、やるのか？</h1>
+                <p class="text-2xl font-bold text-gray-500">若者の挑戦を取り巻く3つの壁</p>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="relative z-10 flex-1 px-20 flex items-stretch justify-between gap-8 pb-16">
+            <!-- Card 01 -->
+            <div class="card flex-1 p-8 flex flex-col">
+                <div class="card-number">01</div>
+                <div class="card-content flex flex-col h-full">
+                    <div class="icon-circle">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4 leading-tight">
+                        若者の挑戦が<br />発信されない
+                    </h2>
+                    <div class="mt-auto">
+                        <div class="problem-statement">
+                            <p class="text-gray-600 text-base leading-relaxed mb-3">
+                                どれだけ熱量を持って活動しても、その <span class="highlight-text">"頑張り"</span> が社会的な記録として残らない。
+                            </p>
+                            <p class="text-gray-500 text-sm">
+                                <i class="fas fa-search mr-2 text-gray-400"></i>外からは探せない「埋もれた資産」になっている
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 02 -->
+            <div class="card flex-1 p-8 flex flex-col">
+                <div class="card-number">02</div>
+                <div class="card-content flex flex-col h-full">
+                    <div class="icon-circle">
+                        <i class="fas fa-user-tag"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4 leading-tight">
+                        大人が学生に<br />アプローチしづらい
+                    </h2>
+                    <div class="mt-auto">
+                        <div class="problem-statement">
+                            <p class="text-gray-600 text-base leading-relaxed mb-3">
+                                接点がなく、会っても <span class="highlight-text">「信用できるか」</span> の判断材料が乏しい。
+                            </p>
+                            <p class="text-gray-500 text-sm">
+                                <i class="fas fa-link-slash mr-2 text-gray-400"></i>結果、有意義な交流が続かない
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 03 -->
+            <div class="card flex-1 p-8 flex flex-col">
+                <div class="card-number">03</div>
+                <div class="card-content flex flex-col h-full">
+                    <div class="icon-circle">
+                        <i class="fas fa-hourglass-end"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4 leading-tight">
+                        挑戦が<br />途切れてしまう
+                    </h2>
+                    <div class="mt-auto">
+                        <div class="problem-statement">
+                            <p class="text-gray-600 text-base leading-relaxed mb-3">
+                                支援や仲間が見つからず、孤独なまま卒業や就職を迎える。
+                            </p>
+                            <div
+                                class="bg-gradient-to-br from-red-50 to-red-100 p-4 rounded-lg mt-4 border border-red-200">
+                                <p class="text-red-800 font-bold text-base text-center">
+                                    夢を諦めた平均年齢<br />
+                                    <span class="text-4xl font-montserrat">24.0</span> <span class="text-sm">歳</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="relative z-10 w-full px-16 pb-8 flex justify-between items-end">
+            <div class="text-gray-400 text-xs font-montserrat tracking-widest">
+                JXC - Japan X College
+            </div>
+            <div class="flex items-center space-x-2">
+                <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+                <div class="w-10 h-2 rounded-full bg-blue-600"></div>
+                <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+                <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+                <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+                <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+            </div>
+        </div>
+    </div></div>
+<div class="slide-page" style="page-break-after: always; position: relative; width: 1280px; height: 720px; overflow: hidden;"><div class="slide-container">
+        <!-- Header Section -->
+        <div class="relative z-10 pt-16 px-20 mb-6">
+            <div class="accent-bar"></div>
+            <div class="pl-8">
+                <p class="text-blue-600 font-montserrat font-bold tracking-widest text-sm mb-2">OUR HYPOTHESIS</p>
+                <h1 class="text-5xl font-black text-gray-900">信用 × 交流のフライホイール</h1>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="relative flex-1">
+            <div class="content-wrapper">
+                <!-- Left: Explanation -->
+                <div class="left-info">
+                    <div class="info-box">
+                        <div class="flex items-center mb-4">
+                            <div
+                                class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center text-white mr-4">
+                                <i class="fas fa-lightbulb text-2xl"></i>
+                            </div>
+                            <h3 class="text-blue-800 font-bold text-xl">コアアイデア</h3>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed mb-4 text-lg font-medium">
+                            活動を<span class="font-bold text-blue-600">「本」</span>という物理的な形にすることで、デジタルの発信よりも強い<span
+                                class="font-bold text-blue-600">社会的信用</span>を生み出す。
+                        </p>
+                        <div class="bg-white rounded-xl p-4 border-l-4 border-blue-600">
+                            <p class="text-gray-600 text-base leading-relaxed">
+                                <i class="fas fa-arrow-right text-blue-500 mr-2"></i>
+                                信用が可視化されることで、大人が支援しやすくなり、交流が活性化。そして次の挑戦が続いていく。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Flywheel -->
+                <div class="flywheel-wrapper">
+                    <!-- Rotating Arrows SVG -->
+                    <svg class="cycle-arrows" viewbox="0 0 520 520">
+                        <defs>
+                            <marker id="arrowhead" markerheight="7" markerwidth="10" orient="auto" refx="9" refy="3.5">
+                                <polygon fill="#cbd5e1" points="0 0, 10 3.5, 0 7"></polygon>
+                            </marker>
+                        </defs>
+                        <path d="M 260, 50 A 210,210 0 1,1 259.9, 50" fill="none" stroke="#cbd5e1"
+                            stroke-dasharray="8, 8" stroke-width="2"></path>
+                    </svg>
+
+                    <!-- Center Hub -->
+                    <div class="hub">
+                        <p class="font-montserrat text-xs opacity-80 mb-2 tracking-widest">CORE VALUE</p>
+                        <div class="font-bold text-base leading-snug">
+                            <p>信用が見えると</p>
+                            <p class="text-yellow-300 text-xl my-1">交流が回る</p>
+                            <p class="text-sm font-normal opacity-90">そして挑戦が続く</p>
+                        </div>
+                    </div>
+
+                    <!-- Nodes (R=210px) -->
+                    <!-- 1. Top -->
+                    <div class="node-container" style="transform: translate(0, -210px);">
+                        <div class="node-card">
+                            <div class="node-icon"><i class="fas fa-microphone-lines"></i></div>
+                            <p class="font-bold text-gray-800 text-sm">取材・ログ</p>
+                            <p class="text-xs text-gray-400 mt-1">LOGGING</p>
+                        </div>
+                    </div>
+                    <!-- 2. Top Right -->
+                    <div class="node-container" style="transform: translate(182px, -105px);">
+                        <div class="node-card">
+                            <div class="node-icon"><i class="fas fa-pen-nib"></i></div>
+                            <p class="font-bold text-gray-800 text-sm">記事化</p>
+                            <p class="text-xs text-gray-400 mt-1">ARTICLE</p>
+                        </div>
+                    </div>
+                    <!-- 3. Bottom Right -->
+                    <div class="node-container" style="transform: translate(182px, 105px);">
+                        <div class="node-card">
+                            <div class="node-icon"><i class="fas fa-book-open"></i></div>
+                            <p class="font-bold text-gray-800 text-sm">書籍化</p>
+                            <p class="text-xs text-gray-400 mt-1">PUBLISHING</p>
+                        </div>
+                    </div>
+                    <!-- 4. Bottom -->
+                    <div class="node-container" style="transform: translate(0, 210px);">
+                        <div class="node-card border-blue-400 ring-2 ring-blue-100">
+                            <div class="node-icon bg-blue-600 text-white"><i class="fas fa-star"></i></div>
+                            <p class="font-bold text-blue-800 text-sm">信用可視化</p>
+                            <p class="text-xs text-blue-400 mt-1">TRUST</p>
+                        </div>
+                    </div>
+                    <!-- 5. Bottom Left -->
+                    <div class="node-container" style="transform: translate(-182px, 105px);">
+                        <div class="node-card">
+                            <div class="node-icon"><i class="fas fa-handshake"></i></div>
+                            <p class="font-bold text-gray-800 text-sm">支援・協働</p>
+                            <p class="text-xs text-gray-400 mt-1">COLLAB</p>
+                        </div>
+                    </div>
+                    <!-- 6. Top Left -->
+                    <div class="node-container" style="transform: translate(-182px, -105px);">
+                        <div class="node-card">
+                            <div class="node-icon"><i class="fas fa-flag"></i></div>
+                            <p class="font-bold text-gray-800 text-sm">次の挑戦</p>
+                            <p class="text-xs text-gray-400 mt-1">NEXT</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="relative z-10 w-full px-16 pb-8 flex justify-between items-end">
+            <div class="text-gray-400 text-xs font-montserrat tracking-widest">
+                JXC - Japan X College
+            </div>
+            <div class="flex items-center space-x-2">
+                <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+                <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+                <div class="w-10 h-2 rounded-full bg-blue-600"></div>
+                <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+                <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+                <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+            </div>
+        </div>
+    </div></div>
+<div class="slide-page" style="page-break-after: always; position: relative; width: 1280px; height: 720px; overflow: hidden;"><div class="slide-container">
+        <!-- Background Decoration -->
+        <div
+            style="position: absolute; right: 0; top: 0; width: 40%; height: 100%; background: linear-gradient(135deg, transparent 0%, #f0f9ff 100%); clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%); z-index: 0;">
+        </div>
+
+        <!-- Header Section -->
+        <div class="relative z-10 pt-16 px-20 mb-8">
+            <div class="accent-bar"></div>
+            <div class="pl-8">
+                <div class="flex items-center space-x-4 mb-2">
+                    <p class="text-blue-600 font-montserrat font-bold tracking-widest text-sm">SOLUTION</p>
+                    <span class="text-gray-300 text-2xl">|</span>
+                    <p class="text-gray-500 font-semibold text-sm">Automated Publishing Pipeline</p>
+                </div>
+                <h1 class="text-5xl font-black text-gray-900 mb-2">何を作っているか</h1>
+                <p class="text-2xl font-bold text-gray-500">取材から書籍化・発信までを自動化する仕組み</p>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="relative z-10 flex-1 px-20 pb-12 flex flex-col gap-10">
+            <!-- Process Flow (Horizontal) -->
+            <div class="pipeline-container">
+                <!-- Step 1 -->
+                <div class="step-item active">
+                    <div class="step-icon">
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                    <div class="step-content">
+                        <div>
+                            <p class="font-bold text-gray-800 text-lg mb-1">取材</p>
+                            <p class="text-xs text-gray-500">音声収録</p>
+                        </div>
+                        <span class="tech-badge">Raw Audio</span>
+                    </div>
+                </div>
+
+                <div class="arrow-connector"><i class="fas fa-arrow-right"></i></div>
+
+                <!-- Step 2 -->
+                <div class="step-item active">
+                    <div class="step-icon">
+                        <i class="fas fa-wave-square"></i>
+                    </div>
+                    <div class="step-content">
+                        <div>
+                            <p class="font-bold text-gray-800 text-lg mb-1">文字起こし</p>
+                            <p class="text-xs text-gray-500">AIテキスト化</p>
+                        </div>
+                        <span class="tech-badge">Whisper</span>
+                    </div>
+                </div>
+
+                <div class="arrow-connector"><i class="fas fa-arrow-right"></i></div>
+
+                <!-- Step 3 -->
+                <div class="step-item active">
+                    <div class="step-icon">
+                        <i class="fas fa-file-pen"></i>
+                    </div>
+                    <div class="step-content">
+                        <div>
+                            <p class="font-bold text-gray-800 text-lg mb-1">記事化</p>
+                            <p class="text-xs text-gray-500">note記事整形</p>
+                        </div>
+                        <span class="tech-badge">LLM Edit</span>
+                    </div>
+                </div>
+
+                <div class="arrow-connector"><i class="fas fa-arrow-right"></i></div>
+
+                <!-- Step 4 -->
+                <div class="step-item active">
+                    <div class="step-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="step-content">
+                        <div>
+                            <p class="font-bold text-gray-800 text-lg mb-1">本の編集</p>
+                            <p class="text-xs text-gray-500">自動組版</p>
+                        </div>
+                        <span class="tech-badge">Custom</span>
+                    </div>
+                </div>
+
+                <div class="arrow-connector"><i class="fas fa-arrow-right"></i></div>
+
+                <!-- Step 5 -->
+                <div class="step-item active">
+                    <div class="step-icon">
+                        <i class="fas fa-share-nodes"></i>
+                    </div>
+                    <div class="step-content">
+                        <div>
+                            <p class="font-bold text-gray-800 text-lg mb-1">公開配布</p>
+                            <p class="text-xs text-gray-500">Web + 物理本</p>
+                        </div>
+                        <span class="tech-badge">Hybrid</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Demo Video Placeholder -->
+            <div class="px-40">
+                <div class="demo-preview">
+                    <div class="absolute inset-0 opacity-10 bg-cover bg-center"
+                        style='background-image: url("https://page.gensparksite.com/slides_images/640e11bc663d90635d8bf307b74f7f73.svg");'>
+                    </div>
+                    <div class="relative z-10 text-center px-8">
+                        <div class="play-button mx-auto mb-6">
+                            <i class="fas fa-play pl-1"></i>
+                        </div>
+                        <h3 class="text-white font-bold text-2xl mb-3">Automation Demo</h3>
+                        <p class="text-blue-200 text-base leading-relaxed">
+                            音声ファイルが記事と本になるまでの実際の動作画面
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="relative z-10 w-full px-16 pb-8 flex justify-between items-end">
+            <div class="text-gray-400 text-xs font-montserrat tracking-widest">
+                JXC - Japan X College
+            </div>
+            <div class="flex items-center space-x-2">
+                <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+                <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+                <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+                <div class="w-10 h-2 rounded-full bg-blue-600"></div>
+                <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+                <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+                <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+            </div>
+        </div>
+    </div></div>
+<div class="slide-page" style="page-break-after: always; position: relative; width: 1280px; height: 720px; overflow: hidden;"><div class="slide-container">
+        <!-- Background Decoration -->
+        <div
+            style="position: absolute; right: 0; bottom: 0; width: 40%; height: 100%; background: linear-gradient(135deg, transparent 0%, #fef2f2 100%); clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%); z-index: 0;">
+        </div>
+
+        <!-- Header Section -->
+        <div class="relative z-10 pt-16 px-20 mb-8">
+            <div class="accent-bar"></div>
+            <div class="pl-8">
+                <div class="flex items-center space-x-4 mb-2">
+                    <p class="text-red-600 font-montserrat font-bold tracking-widest text-sm">TECHNICAL CHALLENGES</p>
+                    <span class="text-gray-300 text-2xl">|</span>
+                    <p class="text-gray-500 font-semibold text-sm">Core Engineering Problems</p>
+                </div>
+                <h1 class="text-5xl font-black text-gray-900 mb-2">技術的な挑戦</h1>
+                <p class="text-2xl font-bold text-gray-500">自動化の裏側で解決している3つの難題</p>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="relative z-10 flex-1 px-20 pb-12">
+            <div class="challenges-row">
+                <!-- Challenge Block 1: Whisper -->
+                <div class="challenge-block">
+                    <div class="block-header">
+                        <div class="block-icon">
+                            <i class="fas fa-microphone-slash"></i>
+                        </div>
+                        <h2 class="block-title">日本語文字起こし<br />(Whisper)の壁</h2>
+                    </div>
+
+                    <div class="issues-section">
+                        <div class="section-label">
+                            <i class="fas fa-triangle-exclamation"></i>課題
+                        </div>
+                        <div class="issue-tags">
+                            <span class="issue-tag">Opus圧縮</span>
+                            <span class="issue-tag">同時発話</span>
+                            <span class="issue-tag">相槌</span>
+                            <span class="issue-tag">専門用語</span>
+                            <span class="issue-tag">話者識別</span>
+                            <span class="issue-tag">幻覚</span>
+                            <span class="issue-tag">コスト</span>
+                        </div>
+                    </div>
+
+                    <div class="solution-section">
+                        <div class="solution-label">
+                            <i class="fas fa-check-circle"></i>解決アプローチ
+                        </div>
+                        <p class="solution-text">
+                            <span class="emphasis">SSRCで話者確定</span>、hotwords+prompt、セグメント最適化、相槌/幻覚フィルタ、マルチプロバイダー、<span
+                                class="emphasis">無音除去でコスト圧縮</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Challenge Block 2: Pipeline -->
+                <div class="challenge-block">
+                    <div class="block-header">
+                        <div class="block-icon">
+                            <i class="fas fa-arrows-split-up-and-left"></i>
+                        </div>
+                        <h2 class="block-title">流れをつなぐ<br />(取材→記事→本)</h2>
+                    </div>
+
+                    <div class="issues-section">
+                        <div class="section-label">
+                            <i class="fas fa-triangle-exclamation"></i>課題
+                        </div>
+                        <p class="text-sm text-gray-700 leading-relaxed mb-3">
+                            音声→テキストが<span class="font-bold text-red-700">そのまま記事にならない</span>
+                        </p>
+                        <p class="text-xs text-gray-500 italic">
+                            話し言葉と書き言葉のギャップ、構造の欠如
+                        </p>
+                    </div>
+
+                    <div class="solution-section">
+                        <div class="solution-label">
+                            <i class="fas fa-check-circle"></i>解決アプローチ
+                        </div>
+                        <p class="solution-text">
+                            <span class="emphasis">中間表現</span>（Utterance/Turn/Article schema）を固定して<span
+                                class="emphasis">初稿まで自動化</span>、出力を複数形式に揃える
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Challenge Block 3: Zine Builder -->
+                <div class="challenge-block">
+                    <div class="block-header">
+                        <div class="block-icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <h2 class="block-title">InDesign模倣<br />(Zine Builder)の本丸</h2>
+                    </div>
+
+                    <div class="issues-section">
+                        <div class="section-label">
+                            <i class="fas fa-triangle-exclamation"></i>課題
+                        </div>
+                        <div class="issue-tags">
+                            <span class="issue-tag">テキストフロー</span>
+                            <span class="issue-tag">ページネーション</span>
+                            <span class="issue-tag">スタイル</span>
+                            <span class="issue-tag">画像配置</span>
+                            <span class="issue-tag">日本語組版</span>
+                            <span class="issue-tag">出力品質</span>
+                            <span class="issue-tag">編集UX</span>
+                        </div>
+                        <p class="text-xs text-gray-600 mt-3 font-bold">
+                            ※「見た目」じゃなくて<span class="text-red-700">組版エンジン</span>が難しい
+                        </p>
+                    </div>
+
+                    <div class="solution-section">
+                        <div class="solution-label">
+                            <i class="fas fa-check-circle"></i>解決アプローチ
+                        </div>
+                        <p class="solution-text">
+                            独自レイアウトエンジン実装、<span class="emphasis">禁則処理・行分割アルゴリズム</span>、PDF直接生成、リアルタイムプレビュー
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="relative z-10 w-full px-16 pb-8 flex justify-between items-end">
+            <div class="text-gray-400 text-xs font-montserrat tracking-widest">
+                JXC - Japan X College
+            </div>
+            <div class="flex items-center space-x-2">
+                <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+                <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+                <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+                <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+                <div class="w-10 h-2 rounded-full bg-red-600"></div>
+                <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+                <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+            </div>
+        </div>
+    </div></div>
+<div class="slide-page" style="page-break-after: always; position: relative; width: 1280px; height: 720px; overflow: hidden;"><div class="slide-container">
+        <!-- Background Elements -->
+        <div
+            style="position: absolute; left: 0; top: 0; width: 100%; height: 250px; background: linear-gradient(135deg, #f0f9ff 0%, transparent 100%); z-index: 0; clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);">
+        </div>
+
+        <!-- Header Section -->
+        <div class="relative z-10 pt-16 px-20 mb-8">
+            <div class="accent-bar"></div>
+            <div class="pl-8">
+                <div class="flex items-center space-x-4 mb-2">
+                    <p class="text-blue-600 font-montserrat font-bold tracking-widest text-sm">TRACTION</p>
+                    <span class="text-gray-300 text-2xl">|</span>
+                    <p class="text-gray-500 font-semibold text-sm">Current Metrics & Goals</p>
+                </div>
+                <h1 class="text-5xl font-black text-gray-900 mb-2">開発コミュニティの成果</h1>
+                <p class="text-2xl font-bold text-gray-500">実証実験フェーズにおける数値実績</p>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="relative z-10 flex-1 px-20 flex flex-col pb-12">
+            <!-- Current Achievements (Horizontal Cards) -->
+            <div class="metrics-row">
+                <!-- Card 1 -->
+                <div class="metric-card">
+                    <div class="icon-bg"><i class="fas fa-microphone"></i></div>
+                    <div class="metric-content">
+                        <p class="metric-value">15<span class="metric-unit">名</span></p>
+                        <p class="metric-label">インタビュアー</p>
+                        <div class="w-10 h-1.5 bg-gradient-to-r from-blue-400 to-blue-600 mx-auto rounded mt-3"></div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="metric-card">
+                    <div class="icon-bg"><i class="fas fa-users"></i></div>
+                    <div class="metric-content">
+                        <p class="metric-value">40<span class="metric-unit">名</span></p>
+                        <p class="metric-label">インタビュイー</p>
+                        <div class="w-10 h-1.5 bg-gradient-to-r from-blue-400 to-blue-600 mx-auto rounded mt-3"></div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="metric-card">
+                    <div class="icon-bg"><i class="fas fa-network-wired"></i></div>
+                    <div class="metric-content">
+                        <p class="metric-value">2,700</p>
+                        <p class="metric-label">関係人口 (SNS等)</p>
+                        <div class="w-10 h-1.5 bg-gradient-to-r from-blue-500 to-blue-700 mx-auto rounded mt-3"></div>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="metric-card">
+                    <div class="icon-bg"><i class="fas fa-align-left"></i></div>
+                    <div class="metric-content">
+                        <p class="metric-value">15<span class="metric-unit text-3xl">万+</span></p>
+                        <p class="metric-label">収集文字数</p>
+                        <div class="w-10 h-1.5 bg-gradient-to-r from-blue-400 to-blue-600 mx-auto rounded mt-3"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- KPI (Horizontal) -->
+            <div class="kpi-container flex-1">
+                <div class="kpi-badge">NEXT PHASE KPI</div>
+                <div class="kpi-row h-full">
+                    <!-- KPI Item 1 -->
+                    <div class="kpi-item h-full">
+                        <div class="kpi-icon">
+                            <i class="fas fa-book-journal-whills"></i>
+                        </div>
+                        <div>
+                            <p class="kpi-title">本の発行頻度</p>
+                            <p class="kpi-target">
+                                2ヶ月に1冊 <span class="text-sm text-gray-400 font-normal ml-1">(定期刊行)</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Arrow Separator -->
+                    <div class="arrow-separator">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+
+                    <!-- KPI Item 2 -->
+                    <div class="kpi-item h-full">
+                        <div class="kpi-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div>
+                            <p class="kpi-title">創出インパクト (月次)</p>
+                            <p class="kpi-target">
+                                100冊配布 <span class="text-base font-normal text-gray-500">/ 100人の新規接点</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="relative z-10 w-full px-16 pb-8 flex justify-between items-end">
+            <div class="text-gray-400 text-xs font-montserrat tracking-widest">
+                JXC - Japan X College
+            </div>
+            <div class="flex items-center space-x-2">
+                <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+                <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+                <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+                <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+                <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+                <div class="w-10 h-2 rounded-full bg-blue-600"></div>
+                <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+            </div>
+        </div>
+    </div></div>
+<div class="slide-page" style="page-break-after: always; position: relative; width: 1280px; height: 720px; overflow: hidden;"><div class="slide-container">
+        <!-- Header Section -->
+        <div class="relative z-10 pt-16 px-20 mb-8">
+            <div class="accent-bar"></div>
+            <div class="pl-8">
+                <div class="flex items-center space-x-4 mb-2">
+                    <p class="text-blue-600 font-montserrat font-bold tracking-widest text-sm">PARTNERSHIP & CALL TO
+                        ACTION</p>
+                    <span class="text-gray-300 text-2xl">|</span>
+                    <p class="text-gray-500 font-semibold text-sm">Collaboration & Needs</p>
+                </div>
+                <h1 class="text-5xl font-black text-gray-900 mb-2">連携と協力募集</h1>
+                <p class="text-2xl font-bold text-gray-500">メディア連携モデルの確立と、次なる展開へ</p>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="relative z-10 flex-1 px-20 pb-12">
+            <div class="content-row">
+                <!-- Left Column: Partnership Model -->
+                <div class="partner-card">
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="text-3xl font-bold text-gray-800">
+                            <i class="fas fa-handshake text-blue-600 mr-3"></i>連携モデル
+                        </h2>
+                        <span class="tag-badge bg-blue-100 text-blue-700">CASE STUDY</span>
+                    </div>
+
+                    <!-- Case Study Box -->
+                    <div class="case-study-box">
+                        <p class="text-xs font-bold text-gray-500 mb-3 uppercase tracking-wide">COLLABORATION TARGET</p>
+                        <div class="flex items-center mb-3">
+                            <div
+                                class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md text-gray-700 mr-4">
+                                <i class="fas fa-hammer text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-gray-800 text-lg">伝統工芸メディア・団体</p>
+                                <p class="text-sm text-gray-500">職人の技と物語を発信</p>
+                            </div>
+                        </div>
+                        <p class="text-base text-gray-600 mt-3 border-t border-gray-300 pt-3">
+                            <i class="fas fa-arrows-rotate mr-2 text-gray-400"></i>
+                            取材・発信・書籍化のサイクルを共有・共同運営
+                        </p>
+                    </div>
+
+                    <!-- Conditions -->
+                    <h3 class="text-sm font-bold text-gray-400 mb-5 uppercase tracking-widest">PARTNERSHIP CONDITIONS
+                    </h3>
+                    <ul class="condition-list">
+                        <li class="condition-item">
+                            <div class="check-icon"><i class="fas fa-check"></i></div>
+                            <span>JXCの自動化システムを利用可能</span>
+                        </li>
+                        <li class="condition-item">
+                            <div class="check-icon"><i class="fas fa-check"></i></div>
+                            <span>JXCマガジンへの記事掲載</span>
+                        </li>
+                        <li class="condition-item">
+                            <div class="check-icon"><i class="fas fa-check"></i></div>
+                            <span>記事・書籍化コンテンツの二次利用権</span>
+                        </li>
+                        <li class="condition-item">
+                            <div class="check-icon"><i class="fas fa-pen-nib"></i></div>
+                            <span class="text-gray-500 text-sm">※ 記事内に「JXCのサポート」を明記</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Right Column: Call To Action -->
+                <div class="cta-card">
+                    <div class="relative z-10">
+                        <div class="flex items-center justify-between mb-10">
+                            <div>
+                                <span class="tag-badge bg-blue-500 text-white">WANTED</span>
+                                <h2 class="text-4xl font-bold text-white mt-2">募集していること</h2>
+                            </div>
+                            <i class="fas fa-bullhorn text-5xl text-blue-400 opacity-40"></i>
+                        </div>
+
+                        <!-- Wanted Item 1 -->
+                        <div class="wanted-item">
+                            <div class="wanted-icon">
+                                <i class="fas fa-user-plus"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-xl mb-1">挑戦者・職人の紹介</p>
+                                <p class="text-base text-gray-300">取材させていただく若き才能や伝統の担い手</p>
+                            </div>
+                        </div>
+
+                        <!-- Wanted Item 2 -->
+                        <div class="wanted-item">
+                            <div class="wanted-icon">
+                                <i class="fas fa-hand-holding-heart"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-xl mb-1">協賛・制作支援</p>
+                                <p class="text-base text-gray-300">「本」をフックにした参加型スポンサーシップ</p>
+                            </div>
+                        </div>
+
+                        <!-- Wanted Item 3 -->
+                        <div class="wanted-item">
+                            <div class="wanted-icon">
+                                <i class="fas fa-map-location-dot"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-xl mb-1">実証フィールド</p>
+                                <p class="text-base text-gray-300">JXCシステムを活用したいコミュニティや地域</p>
+                            </div>
+                        </div>
+
+                        <!-- Contact Hint -->
+                        <div class="mt-10 flex justify-center">
+                            <div
+                                class="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white font-bold py-4 px-10 rounded-full shadow-xl transition-all duration-300 cursor-pointer flex items-center text-lg">
+                                <span>CONTACT US</span>
+                                <i class="fas fa-arrow-right ml-3"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="relative z-10 w-full px-16 pb-8 flex justify-between items-end">
+            <div class="text-gray-400 text-xs font-montserrat tracking-widest">
+                JXC - Japan X College
+            </div>
+            <div class="flex items-center space-x-2">
+                <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+                <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+                <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+                <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+                <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+                <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+                <div class="w-10 h-2 rounded-full bg-blue-600"></div>
+            </div>
+        </div>
+    </div></div>
+
+</body>
+</html>

@@ -137,11 +137,16 @@ class SettingsUpdate(BaseModel):
     whisper_model: str
     whisper_language: str = "ja"
 
+class ChatMessage(BaseModel):
+    role: str
+    content: str
+
 class AIEditRequest(BaseModel):
     instruction: str
     selected_text: str = ""
     context: str = ""
     model_provider: str = "gemini"
+    messages: list[ChatMessage] = []
 
 @app.get("/api/settings")
 async def get_settings():
@@ -182,11 +187,11 @@ async def process_uploaded_file(session_id: str, file_path: Path, prompt: str):
             await session_manager.update_upload_progress(session_id, 100)
         else:
             logger.warning(f"⚠️ No text transcribed for {session_id} (text is None/Empty)")
-            await session_manager.update_upload_progress(session_id, -1) # Error state
+            await session_manager.update_upload_progress(session_id, -1, error_message="Transcription yielded no text") # Error state
             
     except Exception as e:
         logger.error(f"❌ Error processing file {session_id}: {e}", exc_info=True)
-        await session_manager.update_upload_progress(session_id, -1) # Error state
+        await session_manager.update_upload_progress(session_id, -1, error_message=str(e)) # Error state
     finally:
         # Cleanup
         if file_path.exists():
@@ -270,12 +275,17 @@ def _save_upload_file_sync(file_obj, path: Path):
 
 class WizardUpdate(BaseModel):
     key_points: list[str] = []
+    context: str = ""
 
 @app.put("/api/sessions/{session_id}/wizard")
 async def update_wizard(session_id: str, data: WizardUpdate):
     """ウィザード入力（キーポイント）更新"""
     try:
-        await session_manager.update_wizard_inputs(session_id, key_points=data.key_points)
+        await session_manager.update_wizard_inputs(
+            session_id, 
+            key_points=data.key_points,
+            context=data.context
+        )
         return {"status": "ok"}
     except Exception as e:
         logger.error(f"Wizard update failed: {e}")
@@ -297,6 +307,7 @@ async def generate_draft(session_id: str):
         transcript_text=full_transcript,
         style=session.interview_style,
         key_points=session.user_key_points,
+        context=session.context,
         model_provider="gemini" # Default or from session?
     )
     
@@ -316,7 +327,8 @@ async def ai_edit(request: AIEditRequest):
             instruction=request.instruction,
             selected_text=request.selected_text,
             context=request.context,
-            model_provider=request.model_provider
+            model_provider=request.model_provider,
+            chat_history=request.messages
         )
         if not result:
              raise HTTPException(status_code=500, detail="AI generation failed")

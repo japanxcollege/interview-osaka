@@ -31,6 +31,16 @@ class WhisperClient:
         self._init_openai_client()
 
     def _init_openai_client(self) -> None:
+        # Check for Mock Mode
+        if os.getenv("USE_MOCK_WHISPER", "false").lower() == "true":
+            self.use_mock = True
+            self.enabled = True
+            logger.info("⚠️ FAST WHISPER CLIENT: Running in MOCK MODE (Dummy transcription)")
+            print("⚠️ FAST WHISPER CLIENT: Running in MOCK MODE")
+            return
+
+        self.use_mock = False
+
         if not self.api_key:
             logger.warning("⚠️ OPENAI_API_KEY not set. Whisper transcription disabled. Please set OPENAI_API_KEY environment variable.")
             print("⚠️ OPENAI_API_KEY not set. Whisper transcription disabled.") # Ensure visibility in standard output
@@ -38,9 +48,13 @@ class WhisperClient:
             return
 
         try:
-            self.client = OpenAI(api_key=self.api_key)
+            # Set timeout to 30 minutes (1800s) to handle long files up to ~2 hours
+            self.client = OpenAI(
+                api_key=self.api_key,
+                timeout=1800.0
+            )
             self.enabled = True
-            logger.info(f"✅ OpenAI Whisper client initialised (model={self.model})")
+            logger.info(f"✅ OpenAI Whisper client initialised (model={self.model}, timeout=1800s)")
         except Exception as exc:
             logger.error(f"Failed to initialise OpenAI Whisper client: {exc}")
             print(f"❌ Failed to initialise OpenAI Whisper client: {exc}")
@@ -50,59 +64,75 @@ class WhisperClient:
     async def transcribe_file(self, file_path: str, prompt: Optional[str] = None) -> Optional[str]:
         """ファイル全体を文字起こし (非同期)"""
         if not self.enabled:
-            return None
+            # Propagate error if client is disabled
+            error_msg = "Whisper client is disabled. Please check your API key in .env or logs for initialization errors."
+            logger.error(error_msg)
+            raise RuntimeError(error_msg)
+
+        if self.use_mock:
+            logger.info(f"🎭 [MOCK] Transcribing file: {file_path}")
+            await asyncio.sleep(2) # Simulate delay
+            return (
+                "【MOCK TRANSCRIPTION】\n"
+                "これらはテスト用のモック文字起こしテキストです。Whisper APIのクォータ制限を回避しています。\n\n"
+                "(End of Mock Transcription)"
+            )
         
         loop = asyncio.get_event_loop()
-        try:
-            # Check file size (limit is 25MB)
-            file_size = os.path.getsize(file_path)
-            limit_bytes = 25 * 1024 * 1024 # 25MB
+        
+        # Check file size (limit is 25MB)
+        file_size = os.path.getsize(file_path)
+        limit_bytes = 25 * 1024 * 1024 # 25MB
 
-            if file_size > limit_bytes:
-                logger.warning(f"⚠️ File size {file_size} bytes exceeds Whisper limit ({limit_bytes}). Compressing...")
+        if file_size > limit_bytes:
+            logger.warning(f"⚠️ File size {file_size} bytes exceeds Whisper limit ({limit_bytes}). Compressing...")
+            try:
                 compressed_audio = await loop.run_in_executor(
                     None,
                     self._compress_audio_blocking,
                     file_path
                 )
-                if compressed_audio:
-                     logger.info(f"✅ Compression successful. New size: {len(compressed_audio)} bytes")
-                     # Use the compressed bytes for transcription
-                     audio_bytes = compressed_audio
-                     filename = "compressed.mp3" # Force MP3 for compressed
-                else:
-                     logger.error("❌ Compression failed, attempting original file (will likely fail)")
-                     with open(file_path, "rb") as f:
-                        audio_bytes = f.read()
-                     filename = os.path.basename(file_path)
+            except Exception as e:
+                logger.error(f"Compression error: {e}")
+                compressed_audio = None
+
+            if compressed_audio:
+                 logger.info(f"✅ Compression successful. New size: {len(compressed_audio)} bytes")
+                 # Use the compressed bytes for transcription
+                 audio_bytes = compressed_audio
+                 filename = "compressed.mp3" # Force MP3 for compressed
             else:
-                with open(file_path, "rb") as f:
+                 logger.error("❌ Compression failed, attempting original file (will likely fail)")
+                 with open(file_path, "rb") as f:
                     audio_bytes = f.read()
-                filename = os.path.basename(file_path)
+                 filename = os.path.basename(file_path)
+        else:
+            with open(file_path, "rb") as f:
+                audio_bytes = f.read()
+            filename = os.path.basename(file_path)
 
-            response = await loop.run_in_executor(
-                None,
-                self._transcribe_blocking,
-                audio_bytes,
-                filename,
-                prompt
-            )
+        # Call OpenAI (Blocking)
+        # Note: We let exceptions propagate here so main.py can capture the real error (e.g. 429, 401)
+        response = await loop.run_in_executor(
+            None,
+            self._transcribe_blocking,
+            audio_bytes,
+            filename,
+            prompt
+        )
 
-            if not response:
-                return None
+        if not response:
+            raise RuntimeError("OpenAI API returned an empty response (None).")
 
-            text = getattr(response, "text", None)
-            if not text and isinstance(response, dict):
-                text = response.get("text")
-                
-            # Local model string return
-            if isinstance(response, str):
-                text = response
+        text = getattr(response, "text", None)
+        if not text and isinstance(response, dict):
+            text = response.get("text")
+            
+        # Local model string return
+        if isinstance(response, str):
+            text = response
 
-            return text
-        except Exception as e:
-            logger.error(f"File transcription failed: {e}")
-            return None
+        return text
 
     def _compress_audio_blocking(self, file_path: str) -> Optional[bytes]:
         """ffmpegを使って音声を圧縮 (32k mono mp3)"""
