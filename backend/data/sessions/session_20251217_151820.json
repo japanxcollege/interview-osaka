@@ -1,0 +1,23 @@
+{
+  "session_id": "session_20251217_151820",
+  "title": "5",
+  "created_at": "2025-12-17T15:18:20.037687",
+  "status": "preparing",
+  "transcript": [],
+  "article_draft": {
+    "text": "",
+    "last_updated": "2025-12-17T15:18:20.037687"
+  },
+  "notes": [],
+  "session_key": "sk_-KXkcjP5GVh0HK3Cg1SDCQ",
+  "discord_channel_id": null,
+  "discord_voice_channel_id": null,
+  "front_summary": "",
+  "recent_transcript": [],
+  "suggested_questions": [],
+  "auto_summary": "",
+  "last_article_transcript_index": 0,
+  "last_question_transcript_index": 0,
+  "pending_ai_article_count": 0,
+  "pending_ai_question_count": 0
+}

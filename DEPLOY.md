@@ -75,9 +75,9 @@ git push origin main
    ```
    Framework Preset: Next.js
    Root Directory: frontend
-   Build Command: npm run build
+   Build Command: pnpm build
    Output Directory: .next
-   Install Command: npm install
+   Install Command: pnpm install
    ```
 
 5. **Environment Variables** を追加:

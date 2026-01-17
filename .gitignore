@@ -1,46 +1,4 @@
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-venv/
-env/
-ENV/
+.vercel
 
-# Node
-node_modules/
-.next/
-out/
-*.log
+.verbackend/config.json
 
-# Environment variables
-.env
-.env.local
-
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# OS
-.DS_Store
-Thumbs.db
-
-# Data
-backend/data/
-
-
-
-
-
-
-
-
-
-
-
-
-
-backend/config.json

@@ -1,0 +1,32 @@
+{
+  "session_id": "session_20260103_193053",
+  "title": "New Recording 147",
+  "created_at": "2026-01-03T19:30:53.715881",
+  "status": "preparing",
+  "transcript": [],
+  "article_draft": {
+    "draft_id": "default",
+    "name": "Original Draft",
+    "style_id": "qa",
+    "text": "",
+    "last_updated": "2026-01-03T19:30:53.715881"
+  },
+  "drafts": [],
+  "notes": [],
+  "session_key": "sk_k7Amu8dZeBv_YgJMgfu6ow",
+  "discord_channel_id": null,
+  "discord_voice_channel_id": null,
+  "front_summary": "",
+  "recent_transcript": [],
+  "suggested_questions": [],
+  "auto_summary": "",
+  "last_article_transcript_index": 0,
+  "last_question_transcript_index": 0,
+  "pending_ai_article_count": 0,
+  "pending_ai_question_count": 0,
+  "interview_style": "qa",
+  "user_key_points": [],
+  "context": "",
+  "upload_progress": -1,
+  "upload_error": "Error code: 400 - {'error': {'message': 'audio duration 2742.656 seconds is longer than 1400 seconds which is the maximum for this model', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_value'}}"
+}

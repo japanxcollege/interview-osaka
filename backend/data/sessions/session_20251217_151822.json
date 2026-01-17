@@ -1,0 +1,263 @@
+{
+  "session_id": "session_20251217_151822",
+  "title": "5",
+  "created_at": "2025-12-17T15:18:22.236887",
+  "status": "editing",
+  "transcript": [
+    {
+      "utterance_id": "utterance_20251217_151852_657187",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-12-17T15:18:52.657220",
+      "text": "私はこちらを曲がしましたね。"
+    },
+    {
+      "utterance_id": "utterance_20251217_151900_617920",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-12-17T15:19:00.617961",
+      "text": "Yes, yes.これでちゃんと。"
+    },
+    {
+      "utterance_id": "utterance_20251217_151909_502786",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-12-17T15:19:09.502798",
+      "text": "聞いてみましょうか。"
+    },
+    {
+      "utterance_id": "utterance_20251217_151916_521019",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-12-17T15:19:16.521031",
+      "text": "確認をしばらくしましょうね。これAPIはちゃんと"
+    },
+    {
+      "utterance_id": "utterance_20251217_151924_688293",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-12-17T15:19:24.688303",
+      "text": "よくなってるんでしょうか。それも聞きたいですね。"
+    },
+    {
+      "utterance_id": "utterance_20251217_151932_988130",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-12-17T15:19:32.988138",
+      "text": "そういうのもここでまとめて作れれば。"
+    },
+    {
+      "utterance_id": "utterance_20251217_151940_563155",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-12-17T15:19:40.563165",
+      "text": "あとこの、しまった、これたぶん"
+    },
+    {
+      "utterance_id": "utterance_20251217_151948_339036",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-12-17T15:19:48.339046",
+      "text": "めちゃくちゃ長い文書を続けて言った場合、ダメですねこれ。"
+    },
+    {
+      "utterance_id": "utterance_20251217_151956_018097",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-12-17T15:19:56.018105",
+      "text": "これめちゃくちゃ長い文章を続けていった場合、"
+    },
+    {
+      "utterance_id": "utterance_20251217_152005_028299",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-12-17T15:20:05.028318",
+      "text": "文章をまとめてチャンクで文字起こししてほしいんだけど、それがうまくいかないので、沈黙が出たときにそれを、"
+    },
+    {
+      "utterance_id": "utterance_20251217_152011_532098",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-12-17T15:20:11.532106",
+      "text": "チャンクの区切りとして送るようにしてほしいです。なぜなら、今の感じだと"
+    },
+    {
+      "utterance_id": "utterance_20251217_152021_035051",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-12-17T15:20:21.035062",
+      "text": "聞き逃してるところがあるからです。やり直してみてください。"
+    },
+    {
+      "utterance_id": "utterance_20251217_152029_283819",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-12-17T15:20:29.283838",
+      "text": "したらVercelでデプロイしてください。"
+    },
+    {
+      "utterance_id": "utterance_20251217_152036_531451",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-12-17T15:20:36.531473",
+      "text": "バックエンドはレンダーに使うことにしましょうか。"
+    },
+    {
+      "utterance_id": "utterance_20251217_152045_273320",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-12-17T15:20:45.273331",
+      "text": "それは文字。"
+    },
+    {
+      "utterance_id": "utterance_20251217_152100_516506",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-12-17T15:21:00.516513",
+      "text": "さっき言ったスイスの話が入ってこないんだね。"
+    },
+    {
+      "utterance_id": "utterance_20251217_152102_263840",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-12-17T15:21:02.263847",
+      "text": "わかんないけど動いてなさそう。"
+    }
+  ],
+  "article_draft": {
+    "text": "",
+    "last_updated": "2025-12-17T15:18:22.236887"
+  },
+  "notes": [],
+  "session_key": "sk_IuPJyjdjjUhbuTZa3yHY9A",
+  "discord_channel_id": null,
+  "discord_voice_channel_id": null,
+  "front_summary": "",
+  "recent_transcript": [
+    {
+      "utterance_id": "utterance_20251217_151852_657187",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-12-17T15:18:52.657220",
+      "text": "私はこちらを曲がしましたね。"
+    },
+    {
+      "utterance_id": "utterance_20251217_151900_617920",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-12-17T15:19:00.617961",
+      "text": "Yes, yes.これでちゃんと。"
+    },
+    {
+      "utterance_id": "utterance_20251217_151909_502786",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-12-17T15:19:09.502798",
+      "text": "聞いてみましょうか。"
+    },
+    {
+      "utterance_id": "utterance_20251217_151916_521019",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-12-17T15:19:16.521031",
+      "text": "確認をしばらくしましょうね。これAPIはちゃんと"
+    },
+    {
+      "utterance_id": "utterance_20251217_151924_688293",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-12-17T15:19:24.688303",
+      "text": "よくなってるんでしょうか。それも聞きたいですね。"
+    },
+    {
+      "utterance_id": "utterance_20251217_151932_988130",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-12-17T15:19:32.988138",
+      "text": "そういうのもここでまとめて作れれば。"
+    },
+    {
+      "utterance_id": "utterance_20251217_151940_563155",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-12-17T15:19:40.563165",
+      "text": "あとこの、しまった、これたぶん"
+    },
+    {
+      "utterance_id": "utterance_20251217_151948_339036",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-12-17T15:19:48.339046",
+      "text": "めちゃくちゃ長い文書を続けて言った場合、ダメですねこれ。"
+    },
+    {
+      "utterance_id": "utterance_20251217_151956_018097",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-12-17T15:19:56.018105",
+      "text": "これめちゃくちゃ長い文章を続けていった場合、"
+    },
+    {
+      "utterance_id": "utterance_20251217_152005_028299",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-12-17T15:20:05.028318",
+      "text": "文章をまとめてチャンクで文字起こししてほしいんだけど、それがうまくいかないので、沈黙が出たときにそれを、"
+    },
+    {
+      "utterance_id": "utterance_20251217_152011_532098",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-12-17T15:20:11.532106",
+      "text": "チャンクの区切りとして送るようにしてほしいです。なぜなら、今の感じだと"
+    },
+    {
+      "utterance_id": "utterance_20251217_152021_035051",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-12-17T15:20:21.035062",
+      "text": "聞き逃してるところがあるからです。やり直してみてください。"
+    },
+    {
+      "utterance_id": "utterance_20251217_152029_283819",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-12-17T15:20:29.283838",
+      "text": "したらVercelでデプロイしてください。"
+    },
+    {
+      "utterance_id": "utterance_20251217_152036_531451",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-12-17T15:20:36.531473",
+      "text": "バックエンドはレンダーに使うことにしましょうか。"
+    },
+    {
+      "utterance_id": "utterance_20251217_152045_273320",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-12-17T15:20:45.273331",
+      "text": "それは文字。"
+    },
+    {
+      "utterance_id": "utterance_20251217_152100_516506",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-12-17T15:21:00.516513",
+      "text": "さっき言ったスイスの話が入ってこないんだね。"
+    },
+    {
+      "utterance_id": "utterance_20251217_152102_263840",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-12-17T15:21:02.263847",
+      "text": "わかんないけど動いてなさそう。"
+    }
+  ],
+  "suggested_questions": [],
+  "auto_summary": "",
+  "last_article_transcript_index": 0,
+  "last_question_transcript_index": 0,
+  "pending_ai_article_count": 17,
+  "pending_ai_question_count": 17
+}

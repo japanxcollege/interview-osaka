@@ -1,0 +1,32 @@
+{
+  "session_id": "session_20260103_004422",
+  "title": "Test Error",
+  "created_at": "2026-01-03T00:44:22.830188",
+  "status": "preparing",
+  "transcript": [],
+  "article_draft": {
+    "draft_id": "default",
+    "name": "Original Draft",
+    "style_id": "qa",
+    "text": "",
+    "last_updated": "2026-01-03T00:44:22.830188"
+  },
+  "drafts": [],
+  "notes": [],
+  "session_key": "sk_Ds791r8NvgFYA-TgXobtqg",
+  "discord_channel_id": null,
+  "discord_voice_channel_id": null,
+  "front_summary": "",
+  "recent_transcript": [],
+  "suggested_questions": [],
+  "auto_summary": "",
+  "last_article_transcript_index": 0,
+  "last_question_transcript_index": 0,
+  "pending_ai_article_count": 0,
+  "pending_ai_question_count": 0,
+  "interview_style": "qa",
+  "user_key_points": [],
+  "context": "",
+  "upload_progress": -1,
+  "upload_error": "Transcription yielded no text"
+}

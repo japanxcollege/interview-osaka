@@ -1,0 +1,48 @@
+{
+  "session_id": "session_20260103_192852",
+  "title": "Billing Check",
+  "created_at": "2026-01-03T19:28:52.804423",
+  "status": "preparing",
+  "transcript": [
+    {
+      "utterance_id": "utterance_20260103_192859_585892",
+      "speaker_id": "Speaker",
+      "speaker_name": "AudioFile",
+      "timestamp": "2026-01-03T19:28:59.585907",
+      "text": "This is a test recording for the interview editor application. We are verifying the Whisper audio transcription."
+    }
+  ],
+  "article_draft": {
+    "draft_id": "default",
+    "name": "Original Draft",
+    "style_id": "qa",
+    "text": "",
+    "last_updated": "2026-01-03T19:28:52.804423"
+  },
+  "drafts": [],
+  "notes": [],
+  "session_key": "sk_Y-z4r7Yya4xecx65OhQkAw",
+  "discord_channel_id": null,
+  "discord_voice_channel_id": null,
+  "front_summary": "",
+  "recent_transcript": [
+    {
+      "utterance_id": "utterance_20260103_192859_585892",
+      "speaker_id": "Speaker",
+      "speaker_name": "AudioFile",
+      "timestamp": "2026-01-03T19:28:59.585907",
+      "text": "This is a test recording for the interview editor application. We are verifying the Whisper audio transcription."
+    }
+  ],
+  "suggested_questions": [],
+  "auto_summary": "",
+  "last_article_transcript_index": 0,
+  "last_question_transcript_index": 0,
+  "pending_ai_article_count": 1,
+  "pending_ai_question_count": 1,
+  "interview_style": "qa",
+  "user_key_points": [],
+  "context": "",
+  "upload_progress": 100,
+  "upload_error": null
+}

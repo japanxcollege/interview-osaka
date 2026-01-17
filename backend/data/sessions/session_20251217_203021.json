@@ -1,0 +1,42 @@
+{
+  "session_id": "session_20251217_203021",
+  "title": "Test Session",
+  "created_at": "2025-12-17T20:30:21.451423",
+  "status": "preparing",
+  "transcript": [
+    {
+      "utterance_id": "utterance_20251217_203025_719734",
+      "speaker_id": "Speaker",
+      "speaker_name": "AudioFile",
+      "timestamp": "2025-12-17T20:30:25.719748",
+      "text": "TestWord"
+    }
+  ],
+  "article_draft": {
+    "text": "",
+    "last_updated": "2025-12-17T20:30:21.451423"
+  },
+  "notes": [],
+  "session_key": "sk_PHAjnbUYmZ8m9Bvsp4dZrw",
+  "discord_channel_id": null,
+  "discord_voice_channel_id": null,
+  "front_summary": "",
+  "recent_transcript": [
+    {
+      "utterance_id": "utterance_20251217_203025_719734",
+      "speaker_id": "Speaker",
+      "speaker_name": "AudioFile",
+      "timestamp": "2025-12-17T20:30:25.719748",
+      "text": "TestWord"
+    }
+  ],
+  "suggested_questions": [],
+  "auto_summary": "",
+  "last_article_transcript_index": 0,
+  "last_question_transcript_index": 0,
+  "pending_ai_article_count": 1,
+  "pending_ai_question_count": 1,
+  "interview_style": "narrative",
+  "user_key_points": [],
+  "upload_progress": 100
+}

@@ -1,0 +1,6 @@
+{
+  "openai_api_key": "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",
+  "whisper_provider": "openai",
+  "whisper_model": "gpt-4o-mini-transcribe",
+  "whisper_language": "ja"
+}

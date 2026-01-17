@@ -1,0 +1,5157 @@
+{
+  "session_id": "session_20251110_163659",
+  "title": "1",
+  "created_at": "2025-11-10T16:36:59.620376",
+  "status": "editing",
+  "transcript": [
+    {
+      "utterance_id": "utterance_20251110_174643_454538",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-10T17:46:43.454554",
+      "text": "あんまり。"
+    },
+    {
+      "utterance_id": "utterance_20251110_174646_876799",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-10T17:46:46.876812",
+      "text": "おはようございます。"
+    },
+    {
+      "utterance_id": "utterance_20251110_174648_214147",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-10T17:46:48.214160",
+      "text": "エヘン"
+    },
+    {
+      "utterance_id": "utterance_20251110_175327_187175",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-10T17:53:27.187198",
+      "text": "アレルギー"
+    },
+    {
+      "utterance_id": "utterance_20251110_175328_377308",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-10T17:53:28.377325",
+      "text": "ビシッと。"
+    },
+    {
+      "utterance_id": "utterance_20251110_175341_811951",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-10T17:53:41.811991",
+      "text": "ん?"
+    },
+    {
+      "utterance_id": "utterance_20251110_175343_635049",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-10T17:53:43.635070",
+      "text": "ん?"
+    },
+    {
+      "utterance_id": "utterance_20251110_175836_464481",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-10T17:58:36.464502",
+      "text": "船。"
+    },
+    {
+      "utterance_id": "utterance_20251110_175837_702715",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-10T17:58:37.702737",
+      "text": "いいえ。"
+    },
+    {
+      "utterance_id": "utterance_20251110_175839_933337",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-10T17:58:39.933351",
+      "text": "はい。"
+    },
+    {
+      "utterance_id": "utterance_20251110_175840_562005",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-10T17:58:40.562347",
+      "text": "はい。"
+    },
+    {
+      "utterance_id": "utterance_20251110_180410_893801",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-10T18:04:10.893838",
+      "text": "起訴。"
+    },
+    {
+      "utterance_id": "utterance_20251110_180412_124317",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-10T18:04:12.124339",
+      "text": "登録しましょう。"
+    },
+    {
+      "utterance_id": "utterance_20251110_180536_223372",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-10T18:05:36.223387",
+      "text": "はい。"
+    },
+    {
+      "utterance_id": "utterance_20251110_180537_238919",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-10T18:05:37.238987",
+      "text": "はい。"
+    },
+    {
+      "utterance_id": "utterance_20251110_180604_943371",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-10T18:06:04.943385",
+      "text": "一緒に。"
+    },
+    {
+      "utterance_id": "utterance_20251110_180605_716895",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-10T18:06:05.716932",
+      "text": "どんなことが。"
+    },
+    {
+      "utterance_id": "utterance_20251110_182524_994827",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-10T18:25:24.994966",
+      "text": "すみません。"
+    },
+    {
+      "utterance_id": "utterance_20251110_182526_095789",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-10T18:25:26.095814",
+      "text": "ありがとう。"
+    },
+    {
+      "utterance_id": "utterance_20251110_182727_852654",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-10T18:27:27.852739",
+      "text": "いいさ。"
+    },
+    {
+      "utterance_id": "utterance_20251110_182728_453817",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-10T18:27:28.453849",
+      "text": "まあ、さっさと。"
+    },
+    {
+      "utterance_id": "utterance_20251110_182807_970987",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-10T18:28:07.971015",
+      "text": "おはようございます。"
+    },
+    {
+      "utterance_id": "utterance_20251110_182809_598807",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-10T18:28:09.598824",
+      "text": "アイスクリーム。"
+    },
+    {
+      "utterance_id": "utterance_20251111_110905_417372",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:09:05.417383",
+      "text": "お願いします。"
+    },
+    {
+      "utterance_id": "utterance_20251111_110908_262802",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:09:08.262825",
+      "text": "ありがとうございました。"
+    },
+    {
+      "utterance_id": "utterance_20251111_110909_250320",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:09:09.250330",
+      "text": "ありがとうございます。"
+    },
+    {
+      "utterance_id": "utterance_20251111_111026_664892",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:10:26.664903",
+      "text": "一応でかすぎたら。"
+    },
+    {
+      "utterance_id": "utterance_20251111_111027_821834",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:10:27.821843",
+      "text": "これを乗っかっていけるだろう。"
+    },
+    {
+      "utterance_id": "utterance_20251111_111028_942092",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:10:28.942109",
+      "text": "これを乗っかっていけばいいかな。"
+    },
+    {
+      "utterance_id": "utterance_20251111_111046_452879",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:10:46.452902",
+      "text": "1日で5人。"
+    },
+    {
+      "utterance_id": "utterance_20251111_111048_082225",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:10:48.082256",
+      "text": "その間でインプラクトすると、センタータイムがある。"
+    },
+    {
+      "utterance_id": "utterance_20251111_111144_802768",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:11:44.802801",
+      "text": "私たちは"
+    },
+    {
+      "utterance_id": "utterance_20251111_111145_834317",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:11:45.834332",
+      "text": "私はあなたのことを考えています。"
+    },
+    {
+      "utterance_id": "utterance_20251111_111147_117853",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:11:47.117863",
+      "text": "私が言うことを聞きなさい。"
+    },
+    {
+      "utterance_id": "utterance_20251111_111152_388617",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:11:52.388629",
+      "text": "すみません。"
+    },
+    {
+      "utterance_id": "utterance_20251111_111153_265707",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:11:53.265774",
+      "text": "おはようございます。"
+    },
+    {
+      "utterance_id": "utterance_20251111_111158_034603",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:11:58.034625",
+      "text": "やりましょうか。"
+    },
+    {
+      "utterance_id": "utterance_20251111_111158_854687",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:11:58.854722",
+      "text": "やりましょうか。"
+    },
+    {
+      "utterance_id": "utterance_20251111_111405_905874",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:14:05.905889",
+      "text": "長く続けている人は結構多い。"
+    },
+    {
+      "utterance_id": "utterance_20251111_111407_059873",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:14:07.059889",
+      "text": "長く続けている人は結構多いと思いますよ。"
+    },
+    {
+      "utterance_id": "utterance_20251111_111803_683795",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:18:03.683817",
+      "text": "直近で入れるタイミングがあったら。"
+    },
+    {
+      "utterance_id": "utterance_20251111_111804_740286",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:18:04.740316",
+      "text": "直近で入れるタイミングがあったら。"
+    },
+    {
+      "utterance_id": "utterance_20251111_112214_918155",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:22:14.918166",
+      "text": "「無理でしょ」って。"
+    },
+    {
+      "utterance_id": "utterance_20251111_112215_739482",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:22:15.739497",
+      "text": "これがいいよ。"
+    },
+    {
+      "utterance_id": "utterance_20251111_112927_110113",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:29:27.110128",
+      "text": "できるなら。そうですね。"
+    },
+    {
+      "utterance_id": "utterance_20251111_112928_122713",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:29:28.122734",
+      "text": "できるんだったら。"
+    },
+    {
+      "utterance_id": "utterance_20251111_112929_271103",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:29:29.271270",
+      "text": "できるんだったら、そうですね。"
+    },
+    {
+      "utterance_id": "utterance_20251111_112930_468664",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:29:30.468674",
+      "text": "できるんだったら、そうですね。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113515_622685",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:35:15.622729",
+      "text": "視聴者が思っているかというと、ピザはやっていきたいです。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113518_852679",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:35:18.852689",
+      "text": "視聴者が思ったかというと、光さんが言いました。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113520_076259",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:35:20.076268",
+      "text": "ヒカルさんがやっていきたいです。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113521_058632",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:35:21.058643",
+      "text": "リサの言うと、ピザをやっていきたいです。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113522_511422",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:35:22.511434",
+      "text": "とりあえず視聴者さんが思っていたのは、ヒカルさんがやらないことをやっていきたいです。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113524_671420",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:35:24.671430",
+      "text": "チャンネル登録してるわけ。すごい言いやすいと思うので。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113525_753533",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:35:25.753542",
+      "text": "チャンネル登録してください。日頃から応援してください。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113526_793088",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:35:26.793098",
+      "text": "チャンネル登録してください。いろんなタレントさんと絡みます。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113527_893313",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:35:27.893331",
+      "text": "すごい言いやすいと思うんで、いえ大丈夫。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113529_314281",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:35:29.314293",
+      "text": "すごい言いやすいと思うので、よろしくお願いします。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113536_987574",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:35:36.987597",
+      "text": "すごいよくやっていて、難しい。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113539_045201",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:35:39.045216",
+      "text": "すごい言いやすいんで、商品と高くて心配してくれてるんですか。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113540_103099",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:35:40.103139",
+      "text": "いきます。チャンネル登録してる。っていうことです。難しいな。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113541_437019",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:35:41.437037",
+      "text": "すごい優しいんで、難しいな。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113542_724606",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:35:42.724621",
+      "text": "チャンネル登録してるわ、光さん応援したいからよ。商品のことだけを言うと、面白くないチャンネルになっちゃうんです。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113544_909704",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:35:44.909716",
+      "text": "パッケージがうまく使えない。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113546_001945",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:35:46.001958",
+      "text": "パッケージがうまく分かってない。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113546_951707",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:35:46.951722",
+      "text": "やっぱりちょっと難しいですよね。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113548_215053",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:35:48.215065",
+      "text": "カッティングがうまく話せない。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113555_717019",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:35:55.717029",
+      "text": "いいね、なんかいい感じに来てるかもしれない。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113556_659427",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:35:56.659470",
+      "text": "いいね、なんかいい感じに来てるかもしれん。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113557_669077",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:35:57.669098",
+      "text": "いいね、なんかいい感じにきてるかもしれない。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113559_281283",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:35:59.281294",
+      "text": "いいね、なんかいい感じに来てるかもしれない。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113605_972020",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:36:05.972046",
+      "text": "でもそこの関連性がいまいち、サムライのことやってると、"
+    },
+    {
+      "utterance_id": "utterance_20251111_113607_061622",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:36:07.061632",
+      "text": "でもそこの関連性がイマイチ。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113608_792825",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:36:08.792837",
+      "text": "でもそこの関連性がいまいち。だから侍のことやってると"
+    },
+    {
+      "utterance_id": "utterance_20251111_113616_679339",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:36:16.679381",
+      "text": "光さんのこと全然関係なくないですか、みたいな感じで、光さんの知名度で俺たちはある程度有名になったのにそれを"
+    },
+    {
+      "utterance_id": "utterance_20251111_113618_160530",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:36:18.160547",
+      "text": "関係ないし、ヒカルさんのこと全然関係なくないですかみたいな感じで、ヒカルさんの知名度で俺たちはある程度有名になったのに、それを言う"
+    },
+    {
+      "utterance_id": "utterance_20251111_113619_921022",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:36:19.921040",
+      "text": "言うのも全然関係なくないですかみたいな感じて、ヒカルさんの知名度で俺たちはある程度有名になったのに、"
+    },
+    {
+      "utterance_id": "utterance_20251111_113625_476793",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:36:25.476809",
+      "text": "見られ方としては。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113626_950465",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:36:26.950512",
+      "text": "見られ方としては、めっちゃいい。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113628_744468",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:36:28.744490",
+      "text": "見られ方としてはそこもだから、僕たち具体的にどういう。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113630_419218",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:36:30.419241",
+      "text": "めっちゃいいめっちゃいい。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113637_786060",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:36:37.786079",
+      "text": "オンラインでイヤホンで入れるのが難しい時に、それだけが心配です。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113638_989659",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:36:38.989698",
+      "text": "オンラインでイヤホンで入れるのが難しい時にそれだけが心配。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113640_923429",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:36:40.923450",
+      "text": "オンラインでイヤホンで入れるのが難しい時にそれだけが心配だ。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113642_194952",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:36:42.194974",
+      "text": "オンラインで、イヤホンで入れるのが難しいときにそれだけが心配だけど。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113646_656486",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:36:46.656724",
+      "text": "それを除いたときはもう完璧じゃないですか。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113648_087439",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:36:48.087458",
+      "text": "それを除いたときは、除いたらもう完璧じゃないですか。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113649_224353",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:36:49.224372",
+      "text": "覗いたらもう完璧じゃないですか。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113652_474233",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:36:52.474249",
+      "text": "それを除いたら完璧じゃないですか。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113653_917162",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:36:53.917185",
+      "text": "それを覗いたときは、覗いたらもう完璧じゃないですか。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113655_564163",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:36:55.564287",
+      "text": "それ除いたら完璧。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113656_488013",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:36:56.488048",
+      "text": "それ除いたら完璧。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113657_398216",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:36:57.398313",
+      "text": "それ除いたら完璧。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113659_188246",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:36:59.188264",
+      "text": "それ除いたら完璧。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113708_890665",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:37:08.891474",
+      "text": "和歌山県"
+    },
+    {
+      "utterance_id": "utterance_20251111_113709_874659",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:37:09.874680",
+      "text": "【質問】"
+    },
+    {
+      "utterance_id": "utterance_20251111_113716_793633",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:37:16.793649",
+      "text": "でも文字起こしをしているときに、"
+    },
+    {
+      "utterance_id": "utterance_20251111_113718_664374",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:37:18.664385",
+      "text": "でも文字起こしをしているときに、"
+    },
+    {
+      "utterance_id": "utterance_20251111_113726_028171",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:37:26.028182",
+      "text": "二つ同じようなものがアウトプットされる。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113727_019312",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:37:27.019327",
+      "text": "二つ同じようなものがアウトプットされるんだが。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113728_002753",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:37:28.002768",
+      "text": "2つ同じようなものがアウトプットされるんだが。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113729_279251",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:37:29.279263",
+      "text": "二つ同じようなものがアウトプットされるんだが。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113740_089724",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:37:40.089768",
+      "text": "これを直してほしいです。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113741_497842",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:37:41.497859",
+      "text": "これを直してほしいです。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113742_484392",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:37:42.484403",
+      "text": "これを直してほしいです。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113743_579946",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:37:43.579958",
+      "text": "これを直してほしいです。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113747_942785",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:37:47.942804",
+      "text": "行ったことを"
+    },
+    {
+      "utterance_id": "utterance_20251111_113749_414788",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:37:49.414806",
+      "text": "言ったことを"
+    },
+    {
+      "utterance_id": "utterance_20251111_113750_452694",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:37:50.452721",
+      "text": "言ったことを"
+    },
+    {
+      "utterance_id": "utterance_20251111_113751_748401",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:37:51.748412",
+      "text": "言ったことを"
+    },
+    {
+      "utterance_id": "utterance_20251111_113753_232105",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:37:53.232116",
+      "text": "言ったことを"
+    },
+    {
+      "utterance_id": "utterance_20251111_113758_581661",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:37:58.581672",
+      "text": "あなたは何をしているのですか?"
+    },
+    {
+      "utterance_id": "utterance_20251111_113759_807794",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:37:59.807803",
+      "text": "おはようございます。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113801_955334",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:38:01.955386",
+      "text": "日々、日々。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113803_804692",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:38:03.804713",
+      "text": "あなたは何をしていますか?"
+    },
+    {
+      "utterance_id": "utterance_20251111_113804_985668",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:38:04.985978",
+      "text": "ありがとう。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113806_089954",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:38:06.089969",
+      "text": "ネット接続が確立されてない、大丈夫か。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113807_156086",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:38:07.156101",
+      "text": "接続が確立されてない、大丈夫か。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113808_117096",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:38:08.117113",
+      "text": "ネット接続が確立されてない、大丈夫かな。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113816_335229",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:38:16.335251",
+      "text": "はい。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113829_494408",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:38:29.498327",
+      "text": "ソケットを切って戻してもいけると。いいですね。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113841_321303",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:38:41.321323",
+      "text": "大丈夫そうでしょうか、これ。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113842_648898",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:38:42.648911",
+      "text": "大丈夫そうでしょうか。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113843_596109",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:38:43.596122",
+      "text": "大丈夫そうでしょうか。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113844_778954",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:38:44.779017",
+      "text": "大丈夫そうでしょうか。戻せてるんでしょうか。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113845_977093",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:38:45.977105",
+      "text": "大丈夫そうでしょうか。戻せてるんでしょうか。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113846_835111",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:38:46.835228",
+      "text": "大丈夫そうでしょうか。戻せてるんでしょうか。"
+    },
+    {
+      "utterance_id": "utterance_20251111_113848_017918",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:38:48.017932",
+      "text": "大丈夫そうでしょうか、これ。戻せてるんでしょうか。"
+    },
+    {
+      "utterance_id": "utterance_20251111_114109_745980",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:41:09.746013",
+      "text": "シキブンブン、ムラサキ、シキブンブン、"
+    },
+    {
+      "utterance_id": "utterance_20251111_114110_928751",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:41:10.928771",
+      "text": "シキブンブン、ムラサキ、シキブンブン、"
+    },
+    {
+      "utterance_id": "utterance_20251111_114827_494939",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:48:27.494976",
+      "text": "それがあんまりまだ伝わってなかったかなというのは思いますね。"
+    },
+    {
+      "utterance_id": "utterance_20251111_114933_379044",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:49:33.379277",
+      "text": "俺もぶっちゃけで話すことないし。"
+    },
+    {
+      "utterance_id": "utterance_20251111_114935_384758",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:49:35.384768",
+      "text": "俺もぶっちゃけ話すことないっす。"
+    },
+    {
+      "utterance_id": "utterance_20251111_115842_579519",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:58:42.579546",
+      "text": "いきましょうタイム。こんにちは。"
+    },
+    {
+      "utterance_id": "utterance_20251111_115844_626642",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:58:44.626674",
+      "text": "いきましょうタイム。こんにちは世界の。"
+    },
+    {
+      "utterance_id": "utterance_20251111_115845_633252",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:58:45.633265",
+      "text": "こんにちは、世界の国々。"
+    },
+    {
+      "utterance_id": "utterance_20251111_115852_073824",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:58:52.073853",
+      "text": "世界の国かな、こんにちは、こんにちは、世界の国かな。"
+    },
+    {
+      "utterance_id": "utterance_20251111_115855_343083",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:58:55.343093",
+      "text": "こんにちは、こんにちは、世界の国から、センキュー"
+    },
+    {
+      "utterance_id": "utterance_20251111_115857_100283",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:58:57.100299",
+      "text": "こんにちは、世界の国から、センキュー"
+    },
+    {
+      "utterance_id": "utterance_20251111_115902_277108",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:59:02.277125",
+      "text": "1970年のこんにちは。"
+    },
+    {
+      "utterance_id": "utterance_20251111_115905_401511",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:59:05.401527",
+      "text": "こんにちは、こんにちは、拍手を。"
+    },
+    {
+      "utterance_id": "utterance_20251111_115906_662500",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:59:06.662520",
+      "text": "百七十年のこんにちはこんにちはこんにちは拍手を"
+    },
+    {
+      "utterance_id": "utterance_20251111_115912_196885",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:59:12.196911",
+      "text": "こんにちは、拍手をしよう"
+    },
+    {
+      "utterance_id": "utterance_20251111_115914_996586",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:59:14.996599",
+      "text": "しよう。"
+    },
+    {
+      "utterance_id": "utterance_20251111_115916_408347",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:59:16.408370",
+      "text": "しよう。"
+    },
+    {
+      "utterance_id": "utterance_20251111_115922_177010",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:59:22.177026",
+      "text": "わははは、わははは、わははは、わははは"
+    },
+    {
+      "utterance_id": "utterance_20251111_115954_699993",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:59:54.700005",
+      "text": "ウェブソケットが確立されていませんという状況。こんにちは。"
+    },
+    {
+      "utterance_id": "utterance_20251111_115956_378094",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T11:59:56.378111",
+      "text": "WebSocketが確立されていませんという状況。こんにちは。"
+    },
+    {
+      "utterance_id": "utterance_20251111_120005_438667",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:00:05.438709",
+      "text": "うまく文字起こしができているが。"
+    },
+    {
+      "utterance_id": "utterance_20251111_120007_367469",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:00:07.367611",
+      "text": "うまく文字起こしができているが。"
+    },
+    {
+      "utterance_id": "utterance_20251111_120015_108832",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:00:15.108845",
+      "text": "起動ログオン停止して再開すると"
+    },
+    {
+      "utterance_id": "utterance_20251111_120016_229750",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:00:16.229762",
+      "text": "一度ログオンを停止して再開すると"
+    },
+    {
+      "utterance_id": "utterance_20251111_120312_603027",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:03:12.603038",
+      "text": "【毎月払い、年払い】"
+    },
+    {
+      "utterance_id": "utterance_20251111_120313_710369",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:03:13.710388",
+      "text": "アクアリウム"
+    },
+    {
+      "utterance_id": "utterance_20251111_120314_675906",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:03:14.675916",
+      "text": "ここにある。"
+    },
+    {
+      "utterance_id": "utterance_20251111_120322_703995",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:03:22.704005",
+      "text": "日本に来るのは初めてです。"
+    },
+    {
+      "utterance_id": "utterance_20251111_120325_115487",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:03:25.115499",
+      "text": "お前の言葉は嘘だ。"
+    },
+    {
+      "utterance_id": "utterance_20251111_120326_326522",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:03:26.326587",
+      "text": "死ぬ。"
+    },
+    {
+      "utterance_id": "utterance_20251111_120800_598806",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:08:00.598829",
+      "text": "うん。"
+    },
+    {
+      "utterance_id": "utterance_20251111_120801_606729",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:08:01.606748",
+      "text": "ふー。"
+    },
+    {
+      "utterance_id": "utterance_20251111_120805_077242",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:08:05.077264",
+      "text": "ふぅ"
+    },
+    {
+      "utterance_id": "utterance_20251111_120810_004640",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:08:10.004671",
+      "text": "家族のハーモニー。"
+    },
+    {
+      "utterance_id": "utterance_20251111_120811_010322",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:08:11.010356",
+      "text": "畑の花。"
+    },
+    {
+      "utterance_id": "utterance_20251111_120812_791666",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:08:12.791677",
+      "text": "あなたはどう思いますか?"
+    },
+    {
+      "utterance_id": "utterance_20251111_120820_245992",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:08:20.246023",
+      "text": "ラブライブ！"
+    },
+    {
+      "utterance_id": "utterance_20251111_120821_626028",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:08:21.626041",
+      "text": "私たちはそれをやり遂げた。"
+    },
+    {
+      "utterance_id": "utterance_20251111_120829_700760",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:08:29.700771",
+      "text": "風。"
+    },
+    {
+      "utterance_id": "utterance_20251111_120830_668873",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:08:30.668885",
+      "text": "ふす。"
+    },
+    {
+      "utterance_id": "utterance_20251111_120840_412113",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:08:40.412134",
+      "text": "お父さん。"
+    },
+    {
+      "utterance_id": "utterance_20251111_120842_017309",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:08:42.017326",
+      "text": "ピッ"
+    },
+    {
+      "utterance_id": "utterance_20251111_120843_370235",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:08:43.370247",
+      "text": "ぜんぜん。"
+    },
+    {
+      "utterance_id": "utterance_20251111_120850_252635",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:08:50.252656",
+      "text": "彼女は笑っている。"
+    },
+    {
+      "utterance_id": "utterance_20251111_120851_337552",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:08:51.337580",
+      "text": "どうぞ。"
+    },
+    {
+      "utterance_id": "utterance_20251111_120852_267923",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:08:52.267939",
+      "text": "木。"
+    },
+    {
+      "utterance_id": "utterance_20251111_120900_440967",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:09:00.440975",
+      "text": "妻。"
+    },
+    {
+      "utterance_id": "utterance_20251111_120903_577485",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:09:03.577495",
+      "text": "それがすべてです。"
+    },
+    {
+      "utterance_id": "utterance_20251111_120904_744340",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:09:04.744351",
+      "text": "行きましょう。"
+    },
+    {
+      "utterance_id": "utterance_20251111_120909_763502",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:09:09.763514",
+      "text": "見てください。"
+    },
+    {
+      "utterance_id": "utterance_20251111_120911_348445",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:09:11.348469",
+      "text": "日本語で話して。"
+    },
+    {
+      "utterance_id": "utterance_20251111_120912_750954",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:09:12.750964",
+      "text": "おいしい。"
+    },
+    {
+      "utterance_id": "utterance_20251111_120920_532819",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:09:20.532832",
+      "text": "僕は学校に行きます。"
+    },
+    {
+      "utterance_id": "utterance_20251111_120921_513703",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:09:21.513716",
+      "text": "あなたが言うことを聞くつもりです。"
+    },
+    {
+      "utterance_id": "utterance_20251111_120922_495593",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:09:22.495603",
+      "text": "私は彼の意見に賛成です。"
+    },
+    {
+      "utterance_id": "utterance_20251111_120930_438496",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:09:30.438523",
+      "text": "す。"
+    },
+    {
+      "utterance_id": "utterance_20251111_120932_028715",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:09:32.028733",
+      "text": "フフフ。"
+    },
+    {
+      "utterance_id": "utterance_20251111_120933_233140",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:09:33.233164",
+      "text": "おはようございます。"
+    },
+    {
+      "utterance_id": "utterance_20251111_120942_578997",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:09:42.579023",
+      "text": "南極大陸。"
+    },
+    {
+      "utterance_id": "utterance_20251111_120944_295090",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:09:44.295102",
+      "text": "日本語で話してください。"
+    },
+    {
+      "utterance_id": "utterance_20251111_120945_185909",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:09:45.185920",
+      "text": "さようなら。"
+    },
+    {
+      "utterance_id": "utterance_20251111_120950_037077",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:09:50.037086",
+      "text": "こんにちは、こんにちは。"
+    },
+    {
+      "utterance_id": "utterance_20251111_120950_916548",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:09:50.916560",
+      "text": "こんにちは、日本語で"
+    },
+    {
+      "utterance_id": "utterance_20251111_120952_510932",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:09:52.510953",
+      "text": "こんにちは、こんにちは、日本語です。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121000_806792",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:10:00.806814",
+      "text": "こんにちは、日本語で話して。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121001_765231",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:10:01.765262",
+      "text": "こんにちは、こんにちは、日本語で話して。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121002_621918",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:10:02.621932",
+      "text": "こんにちは、日本語で話して。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121010_750331",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:10:10.750374",
+      "text": "タラタッタラタラタッタラ"
+    },
+    {
+      "utterance_id": "utterance_20251111_121011_804887",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:10:11.804921",
+      "text": "タラッタタラッタタラッタタラッタタラッタタラッタタラッタ"
+    },
+    {
+      "utterance_id": "utterance_20251111_121012_783165",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:10:12.783218",
+      "text": "タラタタタラタタタラタタタラ"
+    },
+    {
+      "utterance_id": "utterance_20251111_121020_510035",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:10:20.510055",
+      "text": "今からWebSocket接続を。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121021_542015",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:10:21.542045",
+      "text": "今からWebSocket接続を"
+    },
+    {
+      "utterance_id": "utterance_20251111_121022_813828",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:10:22.813842",
+      "text": "さあ、今からWebSocket接続を"
+    },
+    {
+      "utterance_id": "utterance_20251111_121030_770162",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:10:30.770185",
+      "text": "停止してもう一回再起動しようと思います。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121032_087026",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:10:32.087041",
+      "text": "停止してもう一回再起動しようと思います。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121033_351129",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:10:33.351142",
+      "text": "停止してもう一回再起動しようと思います。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121110_727546",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:11:10.727558",
+      "text": "再開しましたか?"
+    },
+    {
+      "utterance_id": "utterance_20251111_121112_094128",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:11:12.094143",
+      "text": "再開しましたか?"
+    },
+    {
+      "utterance_id": "utterance_20251111_121121_420467",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:11:21.420484",
+      "text": "なるほどね。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121122_628611",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:11:22.628626",
+      "text": "なるほどね。ウェブソケットを。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121131_544758",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:11:31.544771",
+      "text": "ソケット表示があるときに。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121132_632472",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:11:32.632499",
+      "text": "ソケットと表示がある時に"
+    },
+    {
+      "utterance_id": "utterance_20251111_121141_186473",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:11:41.186490",
+      "text": "僕はできている、または別の方向から見ると、"
+    },
+    {
+      "utterance_id": "utterance_20251111_121142_681829",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:11:42.683165",
+      "text": "僕音ができている。別の方向から見ると"
+    },
+    {
+      "utterance_id": "utterance_20251111_121151_103391",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:11:51.103405",
+      "text": "録音停止して再開ボタンを押しても"
+    },
+    {
+      "utterance_id": "utterance_20251111_121152_400399",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:11:52.400427",
+      "text": "録音停止して再開ボタンを押しても"
+    },
+    {
+      "utterance_id": "utterance_20251111_121201_287197",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:12:01.287219",
+      "text": "うまく再開しない。むしろリロードしたら"
+    },
+    {
+      "utterance_id": "utterance_20251111_121202_498597",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:12:02.498607",
+      "text": "うまく再開しない。むしろ、リロードしたら"
+    },
+    {
+      "utterance_id": "utterance_20251111_121211_295061",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:12:11.295147",
+      "text": "出るがうまく読み込まれる。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121212_524008",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:12:12.524038",
+      "text": "出るがうまく読み込まれる。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121221_921183",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:12:21.921198",
+      "text": "よろしくお願いします。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121222_853443",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:12:22.853458",
+      "text": "お願いします。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121232_029519",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:12:32.029533",
+      "text": "それはそれで。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121233_184028",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:12:33.184047",
+      "text": "ジムに行く。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121242_399483",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:12:42.399501",
+      "text": "日本語が話せます。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121243_334343",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:12:43.334361",
+      "text": "日本で生まれた。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121251_516640",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:12:51.516652",
+      "text": "私は日本語を話します。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121252_807655",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:12:52.807666",
+      "text": "やはり、そういうことか。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121301_950437",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:13:01.950458",
+      "text": "その後に、"
+    },
+    {
+      "utterance_id": "utterance_20251111_121303_027342",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:13:03.027366",
+      "text": "ごめん。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121313_537358",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:13:13.537381",
+      "text": "アニメーションを作る。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121314_813790",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:13:14.813800",
+      "text": "そのため、"
+    },
+    {
+      "utterance_id": "utterance_20251111_121322_631271",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:13:22.631306",
+      "text": "山。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121323_744785",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:13:23.744800",
+      "text": "サッカーの試合。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121332_479140",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:13:32.479152",
+      "text": "ふふ。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121333_567687",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:13:33.567713",
+      "text": "父"
+    },
+    {
+      "utterance_id": "utterance_20251111_121341_850198",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:13:41.850215",
+      "text": "ゲームで遊ぶ"
+    },
+    {
+      "utterance_id": "utterance_20251111_121342_929632",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:13:42.929641",
+      "text": "田舎の生活。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121352_131837",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:13:52.131855",
+      "text": "すぐ。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121353_726709",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:13:53.726729",
+      "text": "あたしは。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121401_830397",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:14:01.830409",
+      "text": "ピシッ"
+    },
+    {
+      "utterance_id": "utterance_20251111_121403_019285",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:14:03.019299",
+      "text": "ごめんなさい。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121411_764318",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:14:11.764341",
+      "text": "すごい。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121412_812832",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:14:12.812874",
+      "text": "私たちは今夜、彼の家で食事をする予定です。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121422_247942",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:14:22.247953",
+      "text": "サッカーをする。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121423_399085",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:14:23.399096",
+      "text": "あなたは私を愛しています。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121431_898490",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:14:31.898513",
+      "text": "クレーンゲームは楽しい。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121433_044949",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:14:33.044975",
+      "text": "電車の中で。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121442_399285",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:14:42.399297",
+      "text": "大丈夫。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121443_298010",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:14:43.298020",
+      "text": "私は今、すべてを見ています"
+    },
+    {
+      "utterance_id": "utterance_20251111_121452_054945",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:14:52.054957",
+      "text": "一人で徒歩で下りた。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121453_154663",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:14:53.154726",
+      "text": "違う。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121502_614643",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:15:02.614652",
+      "text": "私が頼んだものを持ってきてくれ。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121503_697807",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:15:03.697821",
+      "text": "私たちはとても楽しみです。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121512_367956",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:15:12.367969",
+      "text": "日本語で書いてください。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121513_470215",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:15:13.470238",
+      "text": "そのように。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121524_814334",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:15:24.814372",
+      "text": "心理学者。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121525_771466",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:15:25.771482",
+      "text": "彼は私に助けを求めた。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121532_255011",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:15:32.255087",
+      "text": "そうです。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121533_281862",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:15:33.281900",
+      "text": "そして、彼女は私に本を渡した。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121542_537768",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:15:42.537800",
+      "text": "こんにちは。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121543_413090",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:15:43.413119",
+      "text": "彼は悲しそうな表情をしていた。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121631_373099",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:16:31.373114",
+      "text": "すぐに死んだ。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121632_237810",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:16:32.237823",
+      "text": "ワンワン。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121633_200856",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:16:33.200869",
+      "text": "伏せ目で。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121641_876506",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:16:41.876529",
+      "text": "ススス。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121642_721697",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:16:42.721717",
+      "text": "す。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121643_904749",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:16:43.904765",
+      "text": "すす。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121651_453321",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:16:51.453356",
+      "text": "四国の瀬戸内海側。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121652_669187",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:16:52.669221",
+      "text": "これは何ですか?"
+    },
+    {
+      "utterance_id": "utterance_20251111_121701_903086",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:17:01.903103",
+      "text": "砂糖"
+    },
+    {
+      "utterance_id": "utterance_20251111_121703_336032",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:17:03.336043",
+      "text": "砂糖。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121704_570941",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:17:04.570950",
+      "text": "砂糖。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121711_381633",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:17:11.381667",
+      "text": "お好きなようにしてください。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121712_430401",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:17:12.430423",
+      "text": "やったー。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121722_046402",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:17:22.046415",
+      "text": "ドキュメント"
+    },
+    {
+      "utterance_id": "utterance_20251111_121723_153140",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:17:23.153152",
+      "text": "かしこまりました"
+    },
+    {
+      "utterance_id": "utterance_20251111_121724_176049",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:17:24.176066",
+      "text": "何が何でも。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121732_057765",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:17:32.057780",
+      "text": "それを見てみよう。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121733_088532",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:17:33.088548",
+      "text": "それはいいことだ。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121734_171373",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:17:34.171385",
+      "text": "日本の花鳥風月。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121745_075211",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:17:45.075223",
+      "text": "三年。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121746_020486",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:17:46.020499",
+      "text": "花の色は匂い。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121747_591714",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:17:47.591724",
+      "text": "私はそれを描いた。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121751_653908",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:17:51.653926",
+      "text": "何かありますか?"
+    },
+    {
+      "utterance_id": "utterance_20251111_121752_812020",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:17:52.812033",
+      "text": "私たちはその決定を受け入れました。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121753_967324",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:17:53.967554",
+      "text": "人々は私にさようならを言いました。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121801_924504",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:18:01.924525",
+      "text": "スギの木。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121803_169856",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:18:03.169883",
+      "text": "その後、"
+    },
+    {
+      "utterance_id": "utterance_20251111_121806_445762",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:18:06.445801",
+      "text": "お願いします。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121811_646564",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:18:11.646573",
+      "text": "この事件は、世界中に衝撃を与えました。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121813_221890",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:18:13.221921",
+      "text": "どうぞ"
+    },
+    {
+      "utterance_id": "utterance_20251111_121814_334794",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:18:14.334814",
+      "text": "さすがに。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121821_827346",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:18:21.827365",
+      "text": "埼玉県。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121823_456885",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:18:23.456904",
+      "text": "ごめん。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121824_957963",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:18:24.958039",
+      "text": "これが私の家族です。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121832_077602",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:18:32.077626",
+      "text": "すべてのものが輝いて見えた。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121833_222375",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:18:33.222388",
+      "text": "私たちは毎日勉強します。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121834_370533",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:18:34.370674",
+      "text": "私たちの人生を支えるもの"
+    },
+    {
+      "utterance_id": "utterance_20251111_121842_242933",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:18:42.242946",
+      "text": "フッ。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121843_542108",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:18:43.542117",
+      "text": "フフ。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121844_479936",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:18:44.479949",
+      "text": "スポーツクラブ"
+    },
+    {
+      "utterance_id": "utterance_20251111_121852_981596",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:18:52.981606",
+      "text": "ボンボン。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121855_184265",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:18:55.184489",
+      "text": "日本語"
+    },
+    {
+      "utterance_id": "utterance_20251111_121902_443547",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:19:02.443568",
+      "text": "私はあなたを愛しています。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121903_907341",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:19:03.907350",
+      "text": "何もかもが新たな気持ちにしてくれる。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121905_191423",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:19:05.191434",
+      "text": "日本語で話して。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121912_525955",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:19:12.526032",
+      "text": "アアアア"
+    },
+    {
+      "utterance_id": "utterance_20251111_121914_168414",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:19:14.168428",
+      "text": "アアアアア。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121915_096212",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:19:15.096231",
+      "text": "うん。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121922_210203",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:19:22.210215",
+      "text": "その後。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121923_732722",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:19:23.732738",
+      "text": "どこから来たの?"
+    },
+    {
+      "utterance_id": "utterance_20251111_121924_788104",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:19:24.788127",
+      "text": "ああ、そうか。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121932_697882",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:19:32.697899",
+      "text": "こんにちは。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121934_045668",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:19:34.045680",
+      "text": "The boy is running."
+    },
+    {
+      "utterance_id": "utterance_20251111_121935_374406",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:19:35.374414",
+      "text": "彼はそのことに気づかなかった。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121942_545135",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:19:42.545156",
+      "text": "風邪をひきました。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121943_583248",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:19:43.583260",
+      "text": "フランス語で話す。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121944_887810",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:19:44.887831",
+      "text": "歌手。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121953_163682",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:19:53.163699",
+      "text": "あなたは私を愛していますか?"
+    },
+    {
+      "utterance_id": "utterance_20251111_121954_493192",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:19:54.493205",
+      "text": "ごきげんよう。"
+    },
+    {
+      "utterance_id": "utterance_20251111_121956_319332",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:19:56.319349",
+      "text": "どこかで聞いたことのあるような話です。"
+    },
+    {
+      "utterance_id": "utterance_20251111_122001_881050",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:20:01.881115",
+      "text": "すばらしい。"
+    },
+    {
+      "utterance_id": "utterance_20251111_122002_748344",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:20:02.748362",
+      "text": "それは高い。"
+    },
+    {
+      "utterance_id": "utterance_20251111_122004_020303",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:20:04.020314",
+      "text": "カタログを作成しました。"
+    },
+    {
+      "utterance_id": "utterance_20251111_122014_695694",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:20:14.695718",
+      "text": "さあ、消しましょう。"
+    },
+    {
+      "utterance_id": "utterance_20251111_122022_899073",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:20:22.899102",
+      "text": "さあ行きましょう。"
+    },
+    {
+      "utterance_id": "utterance_20251111_122024_483064",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:20:24.483226",
+      "text": "さあ行きましょう。"
+    },
+    {
+      "utterance_id": "utterance_20251111_122025_508352",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:20:25.508363",
+      "text": "さあ行きましょう。"
+    },
+    {
+      "utterance_id": "utterance_20251111_122037_365796",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:20:37.365812",
+      "text": "今どうですかね。聞こえておりますか?"
+    },
+    {
+      "utterance_id": "utterance_20251111_122038_330126",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:20:38.330142",
+      "text": "今どうですかね、聞こえておりますか?"
+    },
+    {
+      "utterance_id": "utterance_20251111_122039_550588",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:20:39.550604",
+      "text": "今どうですかね?聞こえておりますか?これはエラーがすごく出ている。"
+    },
+    {
+      "utterance_id": "utterance_20251111_122046_684785",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:20:46.684796",
+      "text": "出てきてませんか?"
+    },
+    {
+      "utterance_id": "utterance_20251111_122047_766165",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:20:47.766175",
+      "text": "見てくれませんか?"
+    },
+    {
+      "utterance_id": "utterance_20251111_122048_754210",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:20:48.754315",
+      "text": "エンカウンター。"
+    },
+    {
+      "utterance_id": "utterance_20251111_122056_735288",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:20:56.735299",
+      "text": "Two children with a key"
+    },
+    {
+      "utterance_id": "utterance_20251111_122057_921922",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:20:57.921951",
+      "text": "子供たち。"
+    },
+    {
+      "utterance_id": "utterance_20251111_122058_889048",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:20:58.889077",
+      "text": "Two children with a key"
+    },
+    {
+      "utterance_id": "utterance_20251111_122107_495568",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:21:07.495610",
+      "text": "ぐっすり眠る。"
+    },
+    {
+      "utterance_id": "utterance_20251111_122108_875659",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:21:08.875668",
+      "text": "うんうん。"
+    },
+    {
+      "utterance_id": "utterance_20251111_122110_169167",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:21:10.169193",
+      "text": "クエン。"
+    },
+    {
+      "utterance_id": "utterance_20251111_122117_453786",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:21:17.453821",
+      "text": "一応ね、ぐっすり眠るとは言ってないよ。"
+    },
+    {
+      "utterance_id": "utterance_20251111_122118_824261",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:21:18.824272",
+      "text": "一応ね、ぐっすり眠るとは言ってないよ。"
+    },
+    {
+      "utterance_id": "utterance_20251111_122120_514650",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:21:20.514661",
+      "text": "一応ね、ぐっすり眠るとは言ってないよ。"
+    },
+    {
+      "utterance_id": "utterance_20251111_122127_588266",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:21:27.588290",
+      "text": "なんか同じことを入れてしまうのかな。"
+    },
+    {
+      "utterance_id": "utterance_20251111_122129_440463",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:21:29.440474",
+      "text": "なんか同じことを入れてしまうのかな、君たちは。"
+    },
+    {
+      "utterance_id": "utterance_20251111_122130_727129",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:21:30.727148",
+      "text": "なんか同じことを入れてしまうのかな。"
+    },
+    {
+      "utterance_id": "utterance_20251111_122137_049089",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:21:37.049100",
+      "text": "この時間のチャンクっていうのをちゃんと出して。"
+    },
+    {
+      "utterance_id": "utterance_20251111_122138_123396",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:21:38.123409",
+      "text": "この時間のチャンクっていうのをちゃんと出して。"
+    },
+    {
+      "utterance_id": "utterance_20251111_122138_981275",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:21:38.981288",
+      "text": "この時間のチャンクっていうのをちゃんと出して"
+    },
+    {
+      "utterance_id": "utterance_20251111_122220_559459",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:22:20.559473",
+      "text": "僕はあなたを愛しています"
+    },
+    {
+      "utterance_id": "utterance_20251111_122221_614640",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:22:21.614650",
+      "text": "これらの言葉を使ってください。"
+    },
+    {
+      "utterance_id": "utterance_20251111_122230_439604",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:22:30.439623",
+      "text": "全然だめじゃん。"
+    },
+    {
+      "utterance_id": "utterance_20251111_122231_904264",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:22:31.904289",
+      "text": "全然だめじゃん。"
+    },
+    {
+      "utterance_id": "utterance_20251111_122240_929751",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:22:40.929761",
+      "text": "ひどい。行けるかこれ。"
+    },
+    {
+      "utterance_id": "utterance_20251111_122406_982506",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:24:06.982524",
+      "text": "いけますかって話"
+    },
+    {
+      "utterance_id": "utterance_20251111_122413_020083",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:24:13.020111",
+      "text": "行けますかって話。"
+    },
+    {
+      "utterance_id": "utterance_20251111_122905_554443",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:29:05.554991",
+      "text": "行きましょう行きましょう。ジャパニーズ。真夜中のドアを叩き"
+    },
+    {
+      "utterance_id": "utterance_20251111_123351_409855",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:33:51.409873",
+      "text": "レッツゴー、ステイウィズミー"
+    },
+    {
+      "utterance_id": "utterance_20251111_124633_175797",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:46:33.175809",
+      "text": "Stay with me. Yes, let's go!"
+    },
+    {
+      "utterance_id": "utterance_20251111_124634_199380",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:46:34.199388",
+      "text": "STAY WITH ME, YES, LET'S GO"
+    },
+    {
+      "utterance_id": "utterance_20251111_124636_370087",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:46:36.370101",
+      "text": "ステイウィズミー、イエス、レッツゴー。"
+    },
+    {
+      "utterance_id": "utterance_20251111_124637_460136",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:46:37.460147",
+      "text": "Stay with me, yes, let's go."
+    },
+    {
+      "utterance_id": "utterance_20251111_124643_420882",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:46:43.420895",
+      "text": "今、どういう感じ?"
+    },
+    {
+      "utterance_id": "utterance_20251111_124644_573409",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:46:44.573419",
+      "text": "今、どういう感じ?"
+    },
+    {
+      "utterance_id": "utterance_20251111_124645_435299",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:46:45.435314",
+      "text": "今、どういう感じ?"
+    },
+    {
+      "utterance_id": "utterance_20251111_124647_292865",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:46:47.292885",
+      "text": "今どういう感じ?"
+    },
+    {
+      "utterance_id": "utterance_20251111_124652_710002",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:46:52.710013",
+      "text": "今どういう感じ?"
+    },
+    {
+      "utterance_id": "utterance_20251111_124653_883381",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:46:53.883413",
+      "text": "どういう感じ?"
+    },
+    {
+      "utterance_id": "utterance_20251111_124655_084475",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:46:55.084548",
+      "text": "どういう感じ?"
+    },
+    {
+      "utterance_id": "utterance_20251111_124656_315625",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:46:56.315640",
+      "text": "どういう感じ?"
+    },
+    {
+      "utterance_id": "utterance_20251111_124704_166761",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:47:04.166780",
+      "text": "これ言えません。"
+    },
+    {
+      "utterance_id": "utterance_20251111_124705_465431",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:47:05.465464",
+      "text": "これ言いません。"
+    },
+    {
+      "utterance_id": "utterance_20251111_124707_366150",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:47:07.366160",
+      "text": "これ言えません。"
+    },
+    {
+      "utterance_id": "utterance_20251111_124709_111156",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:47:09.111166",
+      "text": "言えません。"
+    },
+    {
+      "utterance_id": "utterance_20251111_124712_930631",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:47:12.930646",
+      "text": "あなたの目は美しい。"
+    },
+    {
+      "utterance_id": "utterance_20251111_124714_336358",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:47:14.336373",
+      "text": "強くなる。"
+    },
+    {
+      "utterance_id": "utterance_20251111_124715_744275",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:47:15.744285",
+      "text": "あなたは誰ですか"
+    },
+    {
+      "utterance_id": "utterance_20251111_124716_751363",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:47:16.751374",
+      "text": "アメリカの都市。"
+    },
+    {
+      "utterance_id": "utterance_20251111_124723_472354",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:47:23.472371",
+      "text": "私はそれを見ていない。"
+    },
+    {
+      "utterance_id": "utterance_20251111_124725_260781",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:47:25.260808",
+      "text": "おいしい。"
+    },
+    {
+      "utterance_id": "utterance_20251111_124726_311909",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:47:26.311933",
+      "text": "さようなら。"
+    },
+    {
+      "utterance_id": "utterance_20251111_124733_352894",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:47:33.352915",
+      "text": "彼はそれを知っていた。"
+    },
+    {
+      "utterance_id": "utterance_20251111_124735_476545",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:47:35.476875",
+      "text": "お願いします。"
+    },
+    {
+      "utterance_id": "utterance_20251111_124736_586727",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:47:36.586757",
+      "text": "さまざまな。"
+    },
+    {
+      "utterance_id": "utterance_20251111_124743_471443",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:47:43.471456",
+      "text": "全然重複してますので。"
+    },
+    {
+      "utterance_id": "utterance_20251111_124745_104217",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:47:45.104227",
+      "text": "全然重複してますので。"
+    },
+    {
+      "utterance_id": "utterance_20251111_124746_100888",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:47:46.100916",
+      "text": "全然重複してます。"
+    },
+    {
+      "utterance_id": "utterance_20251111_124755_043313",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:47:55.043338",
+      "text": "ウェブソケットメッセージってのがいらないです外。"
+    },
+    {
+      "utterance_id": "utterance_20251111_124756_126689",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:47:56.126701",
+      "text": "ウェブソケットメッセージっていうのはいらないです。"
+    },
+    {
+      "utterance_id": "utterance_20251111_124757_558393",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:47:57.558411",
+      "text": "WebSocketメッセージってのがいらないです。"
+    },
+    {
+      "utterance_id": "utterance_20251111_124803_307281",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:48:03.307294",
+      "text": "私たちは、私たちの国を愛しています。"
+    },
+    {
+      "utterance_id": "utterance_20251111_124804_468667",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:48:04.468680",
+      "text": "ふっ。"
+    },
+    {
+      "utterance_id": "utterance_20251111_124805_598590",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:48:05.598653",
+      "text": "カニの巣。"
+    },
+    {
+      "utterance_id": "utterance_20251111_124813_734007",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:48:13.734027",
+      "text": "テキスト。"
+    },
+    {
+      "utterance_id": "utterance_20251111_124814_957032",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:48:14.957073",
+      "text": "中華人民共和国。"
+    },
+    {
+      "utterance_id": "utterance_20251111_124816_503320",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:48:16.503343",
+      "text": "タイプしている。"
+    },
+    {
+      "utterance_id": "utterance_20251111_124823_777313",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:48:23.777323",
+      "text": "それを見てください。"
+    },
+    {
+      "utterance_id": "utterance_20251111_124824_836515",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:48:24.836543",
+      "text": "どうして?"
+    },
+    {
+      "utterance_id": "utterance_20251111_124826_360090",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:48:26.360122",
+      "text": "タイプする。"
+    },
+    {
+      "utterance_id": "utterance_20251111_124833_902548",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:48:33.902589",
+      "text": "全く言ってない時"
+    },
+    {
+      "utterance_id": "utterance_20251111_124835_142369",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:48:35.142379",
+      "text": "全く言ってないとき"
+    },
+    {
+      "utterance_id": "utterance_20251111_124836_530870",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:48:36.530903",
+      "text": "全く言ってない時に"
+    },
+    {
+      "utterance_id": "utterance_20251111_124844_344076",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:48:44.344092",
+      "text": "に文字起こしが発生するんだけど。"
+    },
+    {
+      "utterance_id": "utterance_20251111_124845_387468",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:48:45.387491",
+      "text": "におこしが発生するんだけど。"
+    },
+    {
+      "utterance_id": "utterance_20251111_124846_456969",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:48:46.456987",
+      "text": "におこしが発生するんだけど。"
+    },
+    {
+      "utterance_id": "utterance_20251111_124854_217532",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:48:54.217550",
+      "text": "それダミーですか?"
+    },
+    {
+      "utterance_id": "utterance_20251111_124855_307346",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:48:55.307366",
+      "text": "これダミーですか?"
+    },
+    {
+      "utterance_id": "utterance_20251111_124856_529435",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:48:56.529445",
+      "text": "これダミーですか?"
+    },
+    {
+      "utterance_id": "utterance_20251111_124857_465998",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:48:57.466008",
+      "text": "ダミー混じってる。"
+    },
+    {
+      "utterance_id": "utterance_20251111_124904_229146",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:49:04.229167",
+      "text": "私は日本語を話します。"
+    },
+    {
+      "utterance_id": "utterance_20251111_124905_356794",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:49:05.356811",
+      "text": "出かけました。"
+    },
+    {
+      "utterance_id": "utterance_20251111_124906_447892",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:49:06.447910",
+      "text": "やっぱり。"
+    },
+    {
+      "utterance_id": "utterance_20251111_124914_669641",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:49:14.669666",
+      "text": "お前がどこにいるのか。"
+    },
+    {
+      "utterance_id": "utterance_20251111_124915_758672",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:49:15.758703",
+      "text": "ふふ"
+    },
+    {
+      "utterance_id": "utterance_20251111_124924_128581",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:49:24.128601",
+      "text": "楽しい時間を過ごしました。"
+    },
+    {
+      "utterance_id": "utterance_20251111_124925_475500",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:49:25.475518",
+      "text": "事故の影響で電車は遅れています。"
+    },
+    {
+      "utterance_id": "utterance_20251111_124926_908492",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:49:26.908505",
+      "text": "ありがとう。"
+    },
+    {
+      "utterance_id": "utterance_20251111_124934_816655",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:49:34.816677",
+      "text": "スリムな。"
+    },
+    {
+      "utterance_id": "utterance_20251111_124955_217277",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:49:55.217293",
+      "text": "スピード。"
+    },
+    {
+      "utterance_id": "utterance_20251111_124956_472182",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:49:56.472194",
+      "text": "日本は、"
+    },
+    {
+      "utterance_id": "utterance_20251111_124957_566561",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:49:57.566607",
+      "text": "もう一度言ってください。"
+    },
+    {
+      "utterance_id": "utterance_20251111_125004_984414",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:50:04.984459",
+      "text": "ごめんなさい。"
+    },
+    {
+      "utterance_id": "utterance_20251111_125015_429734",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:50:15.429747",
+      "text": "今日はいい日だ。"
+    },
+    {
+      "utterance_id": "utterance_20251111_125016_575894",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:50:16.575904",
+      "text": "私は彼女と話した。"
+    },
+    {
+      "utterance_id": "utterance_20251111_125017_511614",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:50:17.511625",
+      "text": "私は彼らのことを知らない。"
+    },
+    {
+      "utterance_id": "utterance_20251111_125024_587147",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:50:24.587174",
+      "text": "それぞれの人々"
+    },
+    {
+      "utterance_id": "utterance_20251111_125026_250165",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:50:26.250190",
+      "text": "私たちの夢は世界を変えることだ。"
+    },
+    {
+      "utterance_id": "utterance_20251111_125027_322453",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:50:27.322463",
+      "text": "あなたは何者ですか?"
+    },
+    {
+      "utterance_id": "utterance_20251111_125035_096951",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:50:35.096963",
+      "text": "君は何をしているの?"
+    },
+    {
+      "utterance_id": "utterance_20251111_125036_438138",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:50:36.438170",
+      "text": "私は彼女です。"
+    },
+    {
+      "utterance_id": "utterance_20251111_125044_968191",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:50:44.968212",
+      "text": "ループを使って、同じことを繰り返すのはとても便利です。"
+    },
+    {
+      "utterance_id": "utterance_20251111_125046_257291",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:50:46.257301",
+      "text": "この問題は難しいです。"
+    },
+    {
+      "utterance_id": "utterance_20251111_125047_461354",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:50:47.461369",
+      "text": "私は日本に住んでいます。"
+    },
+    {
+      "utterance_id": "utterance_20251111_125054_882248",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:50:54.882279",
+      "text": "シッ。"
+    },
+    {
+      "utterance_id": "utterance_20251111_125058_285105",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:50:58.285216",
+      "text": "すっ"
+    },
+    {
+      "utterance_id": "utterance_20251111_125105_477274",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:51:05.477287",
+      "text": "クレアドマン。"
+    },
+    {
+      "utterance_id": "utterance_20251111_125107_423905",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:51:07.423920",
+      "text": "クレアドマレおん"
+    },
+    {
+      "utterance_id": "utterance_20251111_125108_540698",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:51:08.540730",
+      "text": "クレードがれオン。"
+    },
+    {
+      "utterance_id": "utterance_20251111_125114_604201",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:51:14.604218",
+      "text": "ほぼゼロのチャンクは送らないほうがいい。"
+    },
+    {
+      "utterance_id": "utterance_20251111_125125_770107",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:51:25.770117",
+      "text": "パパ。"
+    },
+    {
+      "utterance_id": "utterance_20251111_125136_465514",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:51:36.465526",
+      "text": "シューシュー"
+    },
+    {
+      "utterance_id": "utterance_20251111_125138_251557",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:51:38.251569",
+      "text": "チュチュチュチュチュ"
+    },
+    {
+      "utterance_id": "utterance_20251111_125145_589171",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:51:45.589193",
+      "text": "マスクを外すと息苦しさが消えた。"
+    },
+    {
+      "utterance_id": "utterance_20251111_125146_776362",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:51:46.776371",
+      "text": "私のことは気にしないでください。"
+    },
+    {
+      "utterance_id": "utterance_20251111_125148_248706",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:51:48.248725",
+      "text": "そういうものは、"
+    },
+    {
+      "utterance_id": "utterance_20251111_125155_495003",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:51:55.495012",
+      "text": "すぐに戻ってくるね。"
+    },
+    {
+      "utterance_id": "utterance_20251111_125156_960799",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:51:56.960812",
+      "text": "現在は何時ですか?"
+    },
+    {
+      "utterance_id": "utterance_20251111_125346_320982",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:53:46.321017",
+      "text": "うんうん、いいですね。"
+    },
+    {
+      "utterance_id": "utterance_20251111_125643_466507",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:56:43.466559",
+      "text": "めっちゃ時間かかる。"
+    },
+    {
+      "utterance_id": "utterance_20251111_125645_340869",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T12:56:45.340878",
+      "text": "めっちゃ時間かかる"
+    },
+    {
+      "utterance_id": "utterance_20251111_131327_055178",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T13:13:27.055201",
+      "text": "Yes, yes, let's go."
+    },
+    {
+      "utterance_id": "utterance_20251111_131336_041203",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T13:13:36.041214",
+      "text": "カチカチ。"
+    },
+    {
+      "utterance_id": "utterance_20251111_131415_089613",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T13:14:15.089633",
+      "text": "こんにちは、おはようございます。"
+    },
+    {
+      "utterance_id": "utterance_20251111_131425_150861",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T13:14:25.150899",
+      "text": "聞けてますかね。"
+    },
+    {
+      "utterance_id": "utterance_20251111_131715_365942",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T13:17:15.365956",
+      "text": "消え去きとよ。"
+    },
+    {
+      "utterance_id": "utterance_20251111_131724_558062",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T13:17:24.558094",
+      "text": "眠たいだけ　奇跡が生んだこの星で起こるすべてき。"
+    },
+    {
+      "utterance_id": "utterance_20251111_141118_779178",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T14:11:18.779224",
+      "text": "ア"
+    },
+    {
+      "utterance_id": "utterance_20251111_141120_636315",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T14:11:20.636345",
+      "text": "一番。"
+    },
+    {
+      "utterance_id": "utterance_20251111_141143_233386",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T14:11:43.233451",
+      "text": "「選挙の結果が出ました。"
+    },
+    {
+      "utterance_id": "utterance_20251111_141146_525392",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T14:11:46.525414",
+      "text": "おおきくなれよ。"
+    },
+    {
+      "utterance_id": "utterance_20251111_141303_381270",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T14:13:03.381301",
+      "text": "すごいな。"
+    },
+    {
+      "utterance_id": "utterance_20251111_141313_686275",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T14:13:13.686306",
+      "text": "うん。"
+    },
+    {
+      "utterance_id": "utterance_20251111_142748_441275",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T14:27:48.441287",
+      "text": "そうか。"
+    },
+    {
+      "utterance_id": "utterance_20251111_142757_935489",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T14:27:57.935501",
+      "text": "うーん。"
+    },
+    {
+      "utterance_id": "utterance_20251111_142808_097769",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T14:28:08.097792",
+      "text": "なるほど。"
+    },
+    {
+      "utterance_id": "utterance_20251111_142828_179723",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T14:28:28.179745",
+      "text": "JALフライト2往復。"
+    },
+    {
+      "utterance_id": "utterance_20251111_142838_807792",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T14:28:38.807816",
+      "text": "行きます。"
+    },
+    {
+      "utterance_id": "utterance_20251111_142921_131538",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T14:29:21.131552",
+      "text": "アカウントを作成した。"
+    },
+    {
+      "utterance_id": "utterance_20251111_142929_995172",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T14:29:29.995235",
+      "text": "パソコンを使う"
+    },
+    {
+      "utterance_id": "utterance_20251111_143607_085996",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T14:36:07.086025",
+      "text": "ありがとうございます。"
+    },
+    {
+      "utterance_id": "utterance_20251111_143624_728571",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T14:36:24.728595",
+      "text": "うーん。"
+    },
+    {
+      "utterance_id": "utterance_20251111_143634_470789",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T14:36:34.470806",
+      "text": "うん。"
+    },
+    {
+      "utterance_id": "utterance_20251111_143644_381633",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T14:36:44.381681",
+      "text": "ローカリンク"
+    },
+    {
+      "utterance_id": "utterance_20251111_143654_707705",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T14:36:54.707716",
+      "text": "数週も体型型パッケージっすわ。"
+    },
+    {
+      "utterance_id": "utterance_20251111_143705_435903",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T14:37:05.435924",
+      "text": "いいです。"
+    },
+    {
+      "utterance_id": "utterance_20251111_143715_901255",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T14:37:15.901281",
+      "text": "まだ終わってない"
+    },
+    {
+      "utterance_id": "utterance_20251111_143725_193262",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T14:37:25.193465",
+      "text": "うん。"
+    },
+    {
+      "utterance_id": "utterance_20251111_143736_624336",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T14:37:36.624396",
+      "text": "コードタイプエラー。"
+    },
+    {
+      "utterance_id": "utterance_20251111_143746_365618",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T14:37:46.365640",
+      "text": "ふん。"
+    },
+    {
+      "utterance_id": "utterance_20251111_143756_391212",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T14:37:56.391235",
+      "text": "口調としてあんぞいか。"
+    },
+    {
+      "utterance_id": "utterance_20251111_143826_752801",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T14:38:26.752838",
+      "text": "うん。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180039_718479",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:00:39.718541",
+      "text": "前にも不自然な本棚の。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180041_332315",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:00:41.332327",
+      "text": "カムイタンがあの前で。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180042_807801",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:00:42.807857",
+      "text": "バラバラに見えねえだと思い下げた瞬間。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180043_756718",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:00:43.756731",
+      "text": "倒れ始める。次々と。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180044_515199",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:00:44.515222",
+      "text": "静かに呼びかけながら、鉄パイプを。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180046_547203",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:00:46.547275",
+      "text": "しかしその"
+    },
+    {
+      "utterance_id": "utterance_20251111_180047_916850",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:00:47.916871",
+      "text": "散らかり方は不自然だ。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180050_018644",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:00:50.018688",
+      "text": "長めに傾いた棚の前。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180052_103688",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:00:52.103724",
+      "text": "花は見えただろうか。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180101_415445",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:01:01.415459",
+      "text": "源太は最後の。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180106_127789",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:01:06.127814",
+      "text": "どこに?"
+    },
+    {
+      "utterance_id": "utterance_20251111_180107_796584",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:01:07.796632",
+      "text": "スピーカー"
+    },
+    {
+      "utterance_id": "utterance_20251111_180109_259290",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:01:09.259322",
+      "text": "やる。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180115_788627",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:01:15.788643",
+      "text": "本当にわかる?"
+    },
+    {
+      "utterance_id": "utterance_20251111_180117_731921",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:01:17.731931",
+      "text": "やるときね。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180119_468027",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:01:19.468046",
+      "text": "지금은 지나는데요?"
+    },
+    {
+      "utterance_id": "utterance_20251111_180121_873756",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:01:21.873775",
+      "text": "ミミミ"
+    },
+    {
+      "utterance_id": "utterance_20251111_180123_770532",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:01:23.770590",
+      "text": "ええ。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180126_350080",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:01:26.350095",
+      "text": "ね。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180128_137952",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:01:28.137965",
+      "text": "日本語。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180129_543696",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:01:29.543709",
+      "text": "ねえ、できる?"
+    },
+    {
+      "utterance_id": "utterance_20251111_180131_295738",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:01:31.295754",
+      "text": "ぶり。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180138_607244",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:01:38.607390",
+      "text": "いく?"
+    },
+    {
+      "utterance_id": "utterance_20251111_180140_600170",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:01:40.600237",
+      "text": "お前。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180141_228915",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:01:41.228941",
+      "text": "やった。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180142_722381",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:01:42.722408",
+      "text": "おおおおお"
+    },
+    {
+      "utterance_id": "utterance_20251111_180144_798030",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:01:44.798055",
+      "text": "ありがとう。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180147_087585",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:01:47.087691",
+      "text": "えっ、えっ、えっ?"
+    },
+    {
+      "utterance_id": "utterance_20251111_180149_364912",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:01:49.364980",
+      "text": "富士山。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180154_217129",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:01:54.217143",
+      "text": "もっと。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180154_757159",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:01:54.757179",
+      "text": "伝説だ。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180156_059846",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:01:56.060039",
+      "text": "てる。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180157_830488",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:01:57.830503",
+      "text": "シュータリズカイ。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180159_921600",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:01:59.921612",
+      "text": "おおおおお"
+    },
+    {
+      "utterance_id": "utterance_20251111_180202_132881",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:02:02.133043",
+      "text": "質素な生活。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180204_453907",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:02:04.454048",
+      "text": "すげえ"
+    },
+    {
+      "utterance_id": "utterance_20251111_180206_347157",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:02:06.347170",
+      "text": "何それ。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180208_021165",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:02:08.021179",
+      "text": "サンゴ。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180210_355925",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:02:10.355944",
+      "text": "キタオ."
+    },
+    {
+      "utterance_id": "utterance_20251111_180212_235880",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:02:12.235892",
+      "text": "どろどろころん"
+    },
+    {
+      "utterance_id": "utterance_20251111_180214_731343",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:02:14.731361",
+      "text": "本当に。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180216_403822",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:02:16.403835",
+      "text": "わかる?"
+    },
+    {
+      "utterance_id": "utterance_20251111_180218_448876",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:02:18.448890",
+      "text": "ごめん。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180220_345977",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:02:20.346261",
+      "text": "すっげー"
+    },
+    {
+      "utterance_id": "utterance_20251111_180222_749041",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:02:22.749055",
+      "text": "お問い合わせ"
+    },
+    {
+      "utterance_id": "utterance_20251111_180224_362526",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:02:24.362544",
+      "text": "インシトール。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180226_944534",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:02:26.944549",
+      "text": "かわいい。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180229_046678",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:02:29.046691",
+      "text": "すっげぇ。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180231_142983",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:02:31.143000",
+      "text": "何それ?もう一回。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180239_308334",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:02:39.308481",
+      "text": "おはようございます。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180240_958718",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:02:40.958738",
+      "text": "そばとみ。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180241_770307",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:02:41.771668",
+      "text": "こんにちは。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180242_599129",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:02:42.599151",
+      "text": "本当にわかる?"
+    },
+    {
+      "utterance_id": "utterance_20251111_180243_700329",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:02:43.700341",
+      "text": "出会い。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180244_505672",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:02:44.505697",
+      "text": "怖い怖い。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180246_222912",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:02:46.222956",
+      "text": "私は見かけたわ。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180248_715180",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:02:48.715227",
+      "text": "タゲット。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180255_964913",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:02:55.964926",
+      "text": "少し遅くなった。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180259_935655",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:02:59.935668",
+      "text": "アハハハ。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180300_711134",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:03:00.711145",
+      "text": "笑った。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180303_020790",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:03:03.020843",
+      "text": "うん。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180304_856156",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:03:04.856172",
+      "text": "どうだのちゃうかな。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180307_057440",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:03:07.057452",
+      "text": "のんびり者"
+    },
+    {
+      "utterance_id": "utterance_20251111_180309_201080",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:03:09.201091",
+      "text": "話が腐ったのかな。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180311_145084",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:03:11.145102",
+      "text": "別になしとも言ってないです。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180314_010149",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:03:14.010189",
+      "text": "なんでそんな。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180315_284636",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:03:15.284685",
+      "text": "かもしれません。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180321_485223",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:03:21.485284",
+      "text": "お前らしゅう。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180322_130734",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:03:22.130745",
+      "text": "私はこういうリスク。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180322_944573",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:03:22.944611",
+      "text": "何を言うんだ。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180324_403870",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:03:24.403888",
+      "text": "ご飯食べてみてください。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180326_077465",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:03:26.077504",
+      "text": "さすがにね、"
+    },
+    {
+      "utterance_id": "utterance_20251111_180328_050983",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:03:28.050998",
+      "text": "会社会社会社。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180330_082537",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:03:30.082548",
+      "text": "新世代の作詞家。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180332_430526",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:03:32.430548",
+      "text": "またお会いしましょう。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180334_442948",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:03:34.442981",
+      "text": "中止してるんだよ。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180337_072268",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:03:37.072284",
+      "text": "全国での募集冊。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180338_492846",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:03:38.492862",
+      "text": "ちょっと待ってください。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180340_576967",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:03:40.576991",
+      "text": "チョイチョイチョイ。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180343_727671",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:03:43.727685",
+      "text": "それぐらいと思います。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180345_188764",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:03:45.188774",
+      "text": "やばい、たくさんいる。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180352_322669",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:03:52.322682",
+      "text": "と言われており、"
+    },
+    {
+      "utterance_id": "utterance_20251111_180352_860402",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:03:52.860423",
+      "text": "出張く。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180353_480955",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:03:53.480974",
+      "text": "マンゴーのプリントがあるんです。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180354_086096",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:03:54.086105",
+      "text": "あぶねえよ。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180355_203787",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:03:55.203805",
+      "text": "アイドルスターは、パートナーのニューヨークプルーです。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180357_685846",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:03:57.685865",
+      "text": "彼の能力を認めた。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180358_309435",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:03:58.309454",
+      "text": "タクシー"
+    },
+    {
+      "utterance_id": "utterance_20251111_180411_599125",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:04:11.599137",
+      "text": "プラスチック。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180413_936410",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:04:13.936428",
+      "text": "うん。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180415_655786",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:04:15.655815",
+      "text": "【大声で叫ぶ】"
+    },
+    {
+      "utterance_id": "utterance_20251111_180418_026122",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:04:18.026133",
+      "text": "がんばってください。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180419_458154",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:04:19.458168",
+      "text": "私が持てばファイルへ。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180421_635788",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:04:21.635800",
+      "text": "モモンガ"
+    },
+    {
+      "utterance_id": "utterance_20251111_180423_510001",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:04:23.510016",
+      "text": "わたしの。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180425_557999",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:04:25.558033",
+      "text": "私たちの家族。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180427_730878",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:04:27.730889",
+      "text": "確かに。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180431_216759",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:04:31.216773",
+      "text": "ありがとうございます。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180432_508464",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:04:32.508474",
+      "text": "Thank you, please."
+    },
+    {
+      "utterance_id": "utterance_20251111_180433_681883",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:04:33.681899",
+      "text": "それに比べて元々。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180435_980645",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:04:35.980665",
+      "text": "一生懸命ASを使うんだけど"
+    },
+    {
+      "utterance_id": "utterance_20251111_180437_992046",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:04:37.992087",
+      "text": "話をしている。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180439_714866",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:04:39.714894",
+      "text": "I know what I know."
+    },
+    {
+      "utterance_id": "utterance_20251111_180441_967603",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:04:41.967621",
+      "text": "大丈夫。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180443_690230",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:04:43.690251",
+      "text": "うん。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180445_841187",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:04:45.841201",
+      "text": "カンパーイ"
+    },
+    {
+      "utterance_id": "utterance_20251111_180448_178617",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:04:48.178638",
+      "text": "にゃん。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180449_842698",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:04:49.842718",
+      "text": "ん"
+    },
+    {
+      "utterance_id": "utterance_20251111_180451_935718",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:04:51.935732",
+      "text": "AIが全然使えない。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180454_515475",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:04:54.515509",
+      "text": "ナジェスティ。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180458_391835",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:04:58.391844",
+      "text": "行きました。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180500_240429",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:05:00.240441",
+      "text": "どこにあるの?"
+    },
+    {
+      "utterance_id": "utterance_20251111_180502_329289",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:05:02.329304",
+      "text": "自分の人生を。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180504_853457",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:05:04.853468",
+      "text": "Please translate the following Japanese sentence"
+    },
+    {
+      "utterance_id": "utterance_20251111_180506_686724",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:05:06.686733",
+      "text": "おはようございます"
+    },
+    {
+      "utterance_id": "utterance_20251111_180508_646241",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:05:08.646256",
+      "text": "タイトル"
+    },
+    {
+      "utterance_id": "utterance_20251111_180510_734590",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:05:10.734602",
+      "text": "タイプ"
+    },
+    {
+      "utterance_id": "utterance_20251111_180512_663393",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:05:12.663426",
+      "text": "タブレット"
+    },
+    {
+      "utterance_id": "utterance_20251111_180514_679416",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:05:14.679433",
+      "text": "書類"
+    },
+    {
+      "utterance_id": "utterance_20251111_180516_832712",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:05:16.832722",
+      "text": "どこ。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180518_928971",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:05:18.928980",
+      "text": "日本。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180522_070955",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:05:22.071076",
+      "text": "すげえ。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180523_947009",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:05:23.947028",
+      "text": "という。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180526_000784",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:05:26.001494",
+      "text": "猫。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180528_346814",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:05:28.346828",
+      "text": "あああああ"
+    },
+    {
+      "utterance_id": "utterance_20251111_180530_220304",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:05:30.220317",
+      "text": "この恋は"
+    },
+    {
+      "utterance_id": "utterance_20251111_180533_183083",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:05:33.183098",
+      "text": "みんなみんな"
+    },
+    {
+      "utterance_id": "utterance_20251111_180535_181215",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:05:35.181236",
+      "text": "完全に。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180538_096693",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:05:38.096718",
+      "text": "走るわちゃちゃちゃ"
+    },
+    {
+      "utterance_id": "utterance_20251111_180539_631029",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:05:39.631053",
+      "text": "ううう。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180544_330284",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:05:44.330308",
+      "text": "安倍晋三。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180551_692489",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:05:51.692531",
+      "text": "みなみ。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180557_502674",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:05:57.502724",
+      "text": "どうぞ。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180558_446418",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:05:58.446442",
+      "text": "助けてほしいるわ。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180601_511474",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:06:01.511531",
+      "text": "しろ"
+    },
+    {
+      "utterance_id": "utterance_20251111_180607_241064",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:06:07.241101",
+      "text": "楽しみにしている。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180608_321045",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:06:08.321059",
+      "text": "ミッシェル。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180611_546574",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:06:11.546603",
+      "text": "おはようございます。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180613_326338",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:06:13.326347",
+      "text": "ありがとう。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180620_110752",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:06:20.110774",
+      "text": "フフッ。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180623_722472",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:06:23.722511",
+      "text": "どこの国?"
+    },
+    {
+      "utterance_id": "utterance_20251111_180625_934218",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:06:25.934233",
+      "text": "私はあなたを愛しています。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180628_915524",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:06:28.915539",
+      "text": "イスラム教。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180629_837529",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:06:29.837562",
+      "text": "みんなが。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180643_939526",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:06:43.939572",
+      "text": "ありがとう。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180647_216063",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:06:47.216151",
+      "text": "うん。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180648_368084",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:06:48.368188",
+      "text": "すべては"
+    },
+    {
+      "utterance_id": "utterance_20251111_180649_224731",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:06:49.224753",
+      "text": "作業中。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180651_573339",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:06:51.573367",
+      "text": "館の中で。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180653_580192",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:06:53.580214",
+      "text": "どこに?"
+    },
+    {
+      "utterance_id": "utterance_20251111_180655_729849",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:06:55.729863",
+      "text": "おはようございます。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180657_703573",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:06:57.703750",
+      "text": "パラパラ。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180659_669955",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:06:59.669965",
+      "text": "す"
+    },
+    {
+      "utterance_id": "utterance_20251111_180702_173667",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:07:02.173694",
+      "text": "すぐに。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180704_176410",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:07:04.176423",
+      "text": "もっかい。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180706_653042",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:07:06.653062",
+      "text": "私は医者です。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180708_336965",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:07:08.336983",
+      "text": "する。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180710_423381",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:07:10.423447",
+      "text": "と。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180713_216989",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:07:13.217003",
+      "text": "トゥットゥルン"
+    },
+    {
+      "utterance_id": "utterance_20251111_180714_939672",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:07:14.939693",
+      "text": "イエス。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180717_383673",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:07:17.387238",
+      "text": "しろ"
+    },
+    {
+      "utterance_id": "utterance_20251111_180719_325153",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:07:19.325172",
+      "text": "あの島へ"
+    },
+    {
+      "utterance_id": "utterance_20251111_180723_128921",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:07:23.128950",
+      "text": "うーん"
+    },
+    {
+      "utterance_id": "utterance_20251111_180725_083411",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:07:25.083484",
+      "text": "私。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180726_276318",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:07:26.276382",
+      "text": "だ。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180728_229102",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:07:28.229144",
+      "text": "ありがとう。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180730_215708",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:07:30.215723",
+      "text": "シス。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180732_038188",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:07:32.038199",
+      "text": "てんてん"
+    },
+    {
+      "utterance_id": "utterance_20251111_180734_474251",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:07:34.474299",
+      "text": "苗。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180737_855930",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:07:37.856324",
+      "text": "カワウソ。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180739_249170",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:07:39.249188",
+      "text": "飛行機"
+    },
+    {
+      "utterance_id": "utterance_20251111_180742_502765",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:07:42.502856",
+      "text": "うん。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180743_835624",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:07:43.835636",
+      "text": "おはよう"
+    },
+    {
+      "utterance_id": "utterance_20251111_180745_755354",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:07:45.755393",
+      "text": "見てください。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180747_866245",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:07:47.866309",
+      "text": "やる気が出ない"
+    },
+    {
+      "utterance_id": "utterance_20251111_180749_840787",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:07:49.840812",
+      "text": "一時。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180752_146207",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:07:52.146226",
+      "text": "電話。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180754_712165",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:07:54.712180",
+      "text": "助けてください。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180756_950114",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:07:56.950149",
+      "text": "こんぐ。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180758_046765",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:07:58.046845",
+      "text": "コロコロ。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180800_984849",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:08:00.984906",
+      "text": "タイピング"
+    },
+    {
+      "utterance_id": "utterance_20251111_180802_781127",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:08:02.781139",
+      "text": "シンデレラ"
+    },
+    {
+      "utterance_id": "utterance_20251111_180804_991432",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:08:04.991443",
+      "text": "おはようございます。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180806_596238",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:08:06.596253",
+      "text": "タイプ"
+    },
+    {
+      "utterance_id": "utterance_20251111_180808_821014",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:08:08.821024",
+      "text": "ポン。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180810_759726",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:08:10.759738",
+      "text": "字幕"
+    },
+    {
+      "utterance_id": "utterance_20251111_180812_819081",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:08:12.819093",
+      "text": "すぐに回答します。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180814_644883",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:08:14.644899",
+      "text": "早く。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180817_058119",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:08:17.058143",
+      "text": "know how to make government work"
+    },
+    {
+      "utterance_id": "utterance_20251111_180818_853304",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:08:18.853315",
+      "text": "new cops. The parking was"
+    },
+    {
+      "utterance_id": "utterance_20251111_180821_318610",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:08:21.318622",
+      "text": "and keep our families safe"
+    },
+    {
+      "utterance_id": "utterance_20251111_180822_865903",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:08:22.865914",
+      "text": "They desperately need."
+    },
+    {
+      "utterance_id": "utterance_20251111_180824_810306",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:08:24.810318",
+      "text": "but I'm ready to be."
+    },
+    {
+      "utterance_id": "utterance_20251111_180827_680455",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:08:27.680491",
+      "text": "ソーシャルメディア作ってるんだ。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180829_222639",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:08:29.222652",
+      "text": "AIが。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180831_196809",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:08:31.197386",
+      "text": "最近半分くらいオンライン。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180833_283465",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:08:33.283480",
+      "text": "AIが来ちゃった。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180842_265735",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:08:42.265751",
+      "text": "全部買っちゃってる。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180843_156222",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:08:43.156233",
+      "text": "外して。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180844_227450",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:08:44.227499",
+      "text": "こんなにかっこよく見えた。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180847_699190",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:08:47.699205",
+      "text": "今のタイミングに。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180848_413528",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:08:48.413541",
+      "text": "今回の名前だった。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180849_882866",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:08:49.882880",
+      "text": "彼は、"
+    },
+    {
+      "utterance_id": "utterance_20251111_180852_212075",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:08:52.212096",
+      "text": "アイデアフラッシュ。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180853_922807",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:08:53.922835",
+      "text": "どんなふうに。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180855_913755",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:08:55.913767",
+      "text": "質問させていただきます。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180858_608639",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:08:58.608651",
+      "text": "以前紹介したんですけど"
+    },
+    {
+      "utterance_id": "utterance_20251111_180859_940567",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:08:59.940579",
+      "text": "少し仕事が少なかったので。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180902_049270",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:09:02.049283",
+      "text": "大学の学生はAIによって仕事がどうなるか。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180904_012680",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:09:04.012690",
+      "text": "学生たちが学んだこと。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180906_107777",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:09:06.107789",
+      "text": "ちょっと待ってね。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180910_143553",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:09:10.143572",
+      "text": "最初は簡単に言う。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180910_765495",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:09:10.765505",
+      "text": "だんだん、"
+    },
+    {
+      "utterance_id": "utterance_20251111_180912_164100",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:09:12.164123",
+      "text": "バッグが来たら"
+    },
+    {
+      "utterance_id": "utterance_20251111_180914_258375",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:09:14.258391",
+      "text": "なかなか複雑。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180916_336721",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:09:16.336746",
+      "text": "安定した速さでなくて。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180918_094092",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:09:18.094104",
+      "text": "おせっかいな人で、"
+    },
+    {
+      "utterance_id": "utterance_20251111_180921_461578",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:09:21.461598",
+      "text": "マイクロソン"
+    },
+    {
+      "utterance_id": "utterance_20251111_180922_683794",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:09:22.683813",
+      "text": "大変なものに立ち向けちゃって。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180924_191384",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:09:24.191397",
+      "text": "試作に近い。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180926_229647",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:09:26.229660",
+      "text": "マイクロソフトも。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180928_548538",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:09:28.548547",
+      "text": "インスタ見るよ。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180932_198284",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:09:32.198300",
+      "text": "僕はこれにハマって。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180933_523524",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:09:33.523570",
+      "text": "ちょっと待って。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180935_514623",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:09:35.514929",
+      "text": "AIはいろんなことさせてくれるけど。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180937_784120",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:09:37.784162",
+      "text": "どんな風にするかなど。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180941_574580",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:09:41.574598",
+      "text": "インタインタインタ。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180943_454294",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:09:43.454308",
+      "text": "やすだきんでございます。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180945_095009",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:09:45.095022",
+      "text": "ちょっとやっぱり。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180947_247178",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:09:47.247194",
+      "text": "やってください。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180952_375486",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:09:52.375509",
+      "text": "その三千四百億人が。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180957_567073",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:09:57.567093",
+      "text": "最初出た頃ってみんなありえない。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180958_638434",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:09:58.638471",
+      "text": "ちょっと待ってください。"
+    }
+  ],
+  "article_draft": {
+    "text": "## チャンネル登録のお願いと今後の展望\n\nありがとうございます。チャンネル登録、ぜひお願いします！日頃から応援してくださると嬉しいです。色んなタレントさんと絡んでいきたいですし。\n\n視聴者の方々が「ヒカルさんがやらないことをやってほしい」と思っているんじゃないか、という意見も出ていますね。ヒカルさんの知名度があるからこそ、今の自分たちがいる。その上で、視聴者の方の期待に応えていきたいです。\n\n## インタビューを終えて\n\nインタビュー中は、様々な言葉が飛び交い、まるで万華鏡のようでした。「あなたの目は美しい」という言葉や、「私たちの夢は世界を変えることだ」という力強いメッセージも。\n\nもちろん、技術的な話も多く、「ウェブソケットメッセージっていうのはいらないです」といった具体的な改善点も挙がりました。短い時間でしたが、非常に濃密な時間となりました。",
+    "last_updated": "2025-11-11T14:38:29.855099"
+  },
+  "notes": [],
+  "session_key": "sk_lLFGWBfwVNbvKZl6nH0FZg",
+  "discord_channel_id": null,
+  "discord_voice_channel_id": null,
+  "front_summary": "インタビューでは、文字起こしに関する問題点や改善点が多数指摘されています。特に、同じ内容が繰り返し出力される、Websocket接続が確立されないといった技術的な問題が深刻なようです。また、タレントのヒカルさんの知名度を利用した戦略や、視聴者が求めるコンテンツに関する議論も行われています。全体として、文字起こしの精度向上とコンテンツの方向性について模索している様子が伺えます。",
+  "recent_transcript": [
+    {
+      "utterance_id": "utterance_20251111_180912_164100",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:09:12.164123",
+      "text": "バッグが来たら"
+    },
+    {
+      "utterance_id": "utterance_20251111_180914_258375",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:09:14.258391",
+      "text": "なかなか複雑。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180916_336721",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:09:16.336746",
+      "text": "安定した速さでなくて。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180918_094092",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:09:18.094104",
+      "text": "おせっかいな人で、"
+    },
+    {
+      "utterance_id": "utterance_20251111_180921_461578",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:09:21.461598",
+      "text": "マイクロソン"
+    },
+    {
+      "utterance_id": "utterance_20251111_180922_683794",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:09:22.683813",
+      "text": "大変なものに立ち向けちゃって。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180924_191384",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:09:24.191397",
+      "text": "試作に近い。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180926_229647",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:09:26.229660",
+      "text": "マイクロソフトも。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180928_548538",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:09:28.548547",
+      "text": "インスタ見るよ。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180932_198284",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:09:32.198300",
+      "text": "僕はこれにハマって。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180933_523524",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:09:33.523570",
+      "text": "ちょっと待って。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180935_514623",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:09:35.514929",
+      "text": "AIはいろんなことさせてくれるけど。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180937_784120",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:09:37.784162",
+      "text": "どんな風にするかなど。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180941_574580",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:09:41.574598",
+      "text": "インタインタインタ。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180943_454294",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:09:43.454308",
+      "text": "やすだきんでございます。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180945_095009",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:09:45.095022",
+      "text": "ちょっとやっぱり。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180947_247178",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:09:47.247194",
+      "text": "やってください。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180952_375486",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:09:52.375509",
+      "text": "その三千四百億人が。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180957_567073",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:09:57.567093",
+      "text": "最初出た頃ってみんなありえない。"
+    },
+    {
+      "utterance_id": "utterance_20251111_180958_638434",
+      "speaker_id": "speaker_web",
+      "speaker_name": "Interviewer",
+      "timestamp": "2025-11-11T18:09:58.638471",
+      "text": "ちょっと待ってください。"
+    }
+  ],
+  "suggested_questions": [
+    "（笑）真夜中のドアを叩き…って、今の状況に何か通じるところがありますか？",
+    "「コードタイプエラー」について具体的にどのような状況で発生し、それは文字起こしの精度にどのように影響しているとお考えですか？"
+  ],
+  "auto_summary": "",
+  "last_article_transcript_index": 480,
+  "last_question_transcript_index": 480
+}

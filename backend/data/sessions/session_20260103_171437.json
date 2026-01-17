@@ -1,0 +1,32 @@
+{
+  "session_id": "session_20260103_171437",
+  "title": "Test Speech",
+  "created_at": "2026-01-03T17:14:37.103840",
+  "status": "preparing",
+  "transcript": [],
+  "article_draft": {
+    "draft_id": "default",
+    "name": "Original Draft",
+    "style_id": "qa",
+    "text": "",
+    "last_updated": "2026-01-03T17:14:37.103840"
+  },
+  "drafts": [],
+  "notes": [],
+  "session_key": "sk_pq8_C1AZH561tg5E1iY0pw",
+  "discord_channel_id": null,
+  "discord_voice_channel_id": null,
+  "front_summary": "",
+  "recent_transcript": [],
+  "suggested_questions": [],
+  "auto_summary": "",
+  "last_article_transcript_index": 0,
+  "last_question_transcript_index": 0,
+  "pending_ai_article_count": 0,
+  "pending_ai_question_count": 0,
+  "interview_style": "qa",
+  "user_key_points": [],
+  "context": "",
+  "upload_progress": -1,
+  "upload_error": "Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+}
