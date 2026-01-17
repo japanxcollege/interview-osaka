@@ -47,6 +47,8 @@ export interface InterviewSession {
   last_question_transcript_index?: number; // Phase 1: 質問提案に利用済みの発話数
   pending_ai_article_count?: number; // Phase 1: 原稿生成用の未処理カウント
   pending_ai_question_count?: number; // Phase 1: 質問提案用の未処理カウント
+  upload_progress?: number;
+  upload_error?: string | null;
 }
 
 // WebSocketメッセージ型
