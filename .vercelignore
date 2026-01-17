@@ -1,0 +1,12 @@
+backend/
+venv/
+uploads/
+test_audio.mp3
+test_audio_2.mp3
+test_audio_error.mp3
+test_speech.wav
+@soil/
+FUTURE_TASKS.md
+USAGE.md
+README.md
+DEPLOY.md
