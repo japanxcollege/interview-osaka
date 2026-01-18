@@ -401,6 +401,7 @@ async def process_message(
                 
                 context = message['data'].get('context', '')
                 model_provider = message['data'].get('model_provider', 'gemini')
+                ai_mode = message['data'].get('ai_mode', 'empath') # New field
                 chat_history = message['data'].get('messages', [])
                 
                 session = session_manager.get_session(session_id)
@@ -412,7 +413,8 @@ async def process_message(
                     transcript_text=transcript_text,
                     context=context,
                     chat_history=chat_history,
-                    model_provider=model_provider
+                    model_provider=model_provider,
+                    ai_mode=ai_mode
                 )
                 
                 if response_text:
