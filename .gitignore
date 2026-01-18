@@ -1,4 +1,19 @@
+# Backend
+backend/config.json
+backend/data/*.json
+backend/*.log
+backend/venv/
+backend/__pycache__/
+
+# Frontend .gitignore
 .vercel
-
-.verbackend/config.json
-
+.next
+node_modules
+.env.local
+.env.production.local
+.env.development.local
+.env.test.local
+build/
+dist/
+.DS_Store
+*.log

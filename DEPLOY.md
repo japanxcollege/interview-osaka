@@ -74,7 +74,7 @@ git push origin main
 4. 以下を設定:
    ```
    Framework Preset: Next.js
-   Root Directory: frontend
+   Root Directory: . (デフォルト / 空欄)
    Build Command: pnpm build
    Output Directory: .next
    Install Command: pnpm install
