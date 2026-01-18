@@ -33,7 +33,7 @@ class AIEditorService:
         
         # Add chat history context if available
         if chat_history:
-            history_text = "\n".join([f"{msg.role}: {msg.content}" for msg in chat_history])
+            history_text = "\n".join([f"{msg.get('role', 'unknown')}: {msg.get('content', '')}" for msg in chat_history])
             user_content.append(f"# これまでの会話履歴\n{history_text}\n")
 
         if context:
