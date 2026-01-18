@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { InterviewSession, Utterance } from '@/types';
 import { WebSocketClient } from '@/lib/websocket';
-import AudioRecorder from './AudioRecorder';
+import WebSpeechRecorder from './Interview/WebSpeechRecorder'; // Using new WebSpeechRecorder
 
 interface InterviewerPanelProps {
     session: InterviewSession;
@@ -17,15 +17,12 @@ export default function InterviewerPanel({ session, wsClient }: InterviewerPanel
     const [isTtsEnabled, setIsTtsEnabled] = useState(true);
     const [selectedModel, setSelectedModel] = useState<'gemini' | 'claude'>('gemini');
     const [context, setContext] = useState(session.context || '');
+    const [interimText, setInterimText] = useState('');
 
     const scrollRef = useRef<HTMLDivElement>(null);
-    const lastTranscriptLengthRef = useRef(session.transcript.length);
 
     // Sync session transcript to messages (filtering for user/interviewer)
     useEffect(() => {
-        // If transcript changed, we might want to update our local messages
-        // However, for a "Chat" experience, we might want to manage messages separately 
-        // or derive from transcript.
         const newMessages = session.transcript.map(u => ({
             role: u.speaker_name === 'Interviewer' ? 'ai' : 'user' as any,
             text: u.text
@@ -38,7 +35,7 @@ export default function InterviewerPanel({ session, wsClient }: InterviewerPanel
         if (scrollRef.current) {
             scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
         }
-    }, [messages]);
+    }, [messages, interimText]);
 
     // Handle AI Response from WebSocket
     useEffect(() => {
@@ -51,6 +48,10 @@ export default function InterviewerPanel({ session, wsClient }: InterviewerPanel
                 if (isTtsEnabled) {
                     speak(aiText);
                 }
+            } else if (event.type === 'utterance_added') {
+                // Utterance added event is standard, already updates session via page prop, 
+                // but we track isAiProcessing state to turn off if it was AI?
+                // Actually easier to just turn off on interviewer_response
             }
         };
 
@@ -73,7 +74,6 @@ export default function InterviewerPanel({ session, wsClient }: InterviewerPanel
         if (!wsClient) return;
         setIsAiProcessing(true);
 
-        // Convert messages to history for AI
         const history = messages.map(m => ({
             role: m.role === 'ai' ? 'assistant' : 'user',
             content: m.text
@@ -82,8 +82,36 @@ export default function InterviewerPanel({ session, wsClient }: InterviewerPanel
         wsClient.send('interviewer_generate_response', {
             context: context,
             model_provider: selectedModel,
+            ai_mode: session.ai_mode || 'empath',
             messages: history
         });
+    };
+
+    const handleFinalResult = (text: string) => {
+        if (!wsClient || !text.trim()) return;
+
+        // 1. Send user utterance to persist
+        wsClient.send('user_utterance', {
+            text: text,
+            speaker_name: 'User',
+            context: session.context
+        });
+
+        // 2. Clear recording state
+        setIsRecording(false);
+        setInterimText('');
+
+        // 3. Trigger AI response logic
+        // We set processing to true immediately to show feedback
+        setIsAiProcessing(true);
+
+        // Send request
+        triggerAiResponse();
+    };
+
+    const handleError = (msg: string) => {
+        alert(msg);
+        setIsRecording(false);
     };
 
     const toggleRecording = () => {
@@ -91,10 +119,9 @@ export default function InterviewerPanel({ session, wsClient }: InterviewerPanel
             setIsRecording(true);
         } else {
             setIsRecording(false);
-            // When stopping recording, wait a bit for last transcription and then trigger AI
-            setTimeout(() => {
-                triggerAiResponse();
-            }, 1000);
+            // Manual stop without final result? WebSpeechRecorder usually handles final on stop?
+            // If user clicks stop, we depend on onFinalResult being called if there was speech.
+            // If silence, just stop.
         }
     };
 
@@ -145,8 +172,8 @@ export default function InterviewerPanel({ session, wsClient }: InterviewerPanel
                 {messages.map((m, i) => (
                     <div key={i} className={`flex ${m.role === 'ai' ? 'justify-start' : 'justify-end'}`}>
                         <div className={`max-w-[80%] p-4 rounded-2xl shadow-sm ${m.role === 'ai'
-                                ? 'bg-white border border-gray-100 text-gray-800'
-                                : 'bg-blue-600 text-white'
+                            ? 'bg-white border border-gray-100 text-gray-800'
+                            : 'bg-blue-600 text-white'
                             }`}>
                             <p className="text-sm leading-relaxed whitespace-pre-wrap">{m.text}</p>
                             {m.role === 'ai' && (
@@ -160,6 +187,16 @@ export default function InterviewerPanel({ session, wsClient }: InterviewerPanel
                         </div>
                     </div>
                 ))}
+
+                {/* Interim Result (Phantom) */}
+                {interimText && (
+                    <div className="flex justify-end">
+                        <div className="max-w-[80%] p-4 rounded-2xl shadow-sm bg-blue-400/20 text-blue-900 border border-blue-200">
+                            <p className="text-sm leading-relaxed whitespace-pre-wrap animate-pulse">{interimText}</p>
+                        </div>
+                    </div>
+                )}
+
                 {isAiProcessing && (
                     <div className="flex justify-start">
                         <div className="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 italic text-gray-400 text-sm">
@@ -172,19 +209,19 @@ export default function InterviewerPanel({ session, wsClient }: InterviewerPanel
             {/* Controls */}
             <div className="p-6 bg-white border-t border-gray-200">
                 <div className="flex flex-col items-center gap-4">
-                    <AudioRecorder
-                        sessionId={session.session_id}
-                        wsClient={wsClient}
+                    {/* Integrated WebSpeechRecorder logic */}
+                    <WebSpeechRecorder
                         isRecording={isRecording}
-                        speakerId="speaker_user"
-                        speakerName="User"
+                        onInterimResult={setInterimText}
+                        onFinalResult={handleFinalResult}
+                        onError={handleError}
                     />
 
                     <button
                         onClick={toggleRecording}
                         className={`w-20 h-20 rounded-full flex items-center justify-center text-white transition-all shadow-xl hover:scale-105 active:scale-95 ${isRecording
-                                ? 'bg-red-500 animate-pulse'
-                                : 'bg-blue-600 hover:bg-blue-700'
+                            ? 'bg-red-500 animate-pulse'
+                            : 'bg-blue-600 hover:bg-blue-700'
                             }`}
                     >
                         {isRecording ? (
@@ -208,7 +245,7 @@ export default function InterviewerPanel({ session, wsClient }: InterviewerPanel
                         >
                             ← 編集モードに切り替える
                         </button>
-                        <span>音声認識: OpenAI Whisper</span>
+                        <span>音声認識: Google Web Speech API</span>
                     </div>
                 </div>
             </div>
