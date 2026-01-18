@@ -13,6 +13,7 @@ class AIEditorService:
 
     async def edit_text(
         self,
+        # Instructions for editing text
         instruction: str,
         selected_text: Optional[str] = None,
         context: Optional[str] = None,
