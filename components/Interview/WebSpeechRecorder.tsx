@@ -122,14 +122,5 @@ export default function WebSpeechRecorder({
         return <div className="text-red-500 text-xs">{error}</div>;
     }
 
-    return (
-        <div className="flex items-center gap-2">
-            {isRecording && (
-                <div className="flex items-center gap-1">
-                    <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
-                    <span className="text-xs text-red-600 font-medium">Recording (Web Speech API)</span>
-                </div>
-            )}
-        </div>
-    );
+    return null;
 }

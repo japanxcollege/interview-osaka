@@ -309,20 +309,28 @@ export default function EditorPage() {
     }
   };
 
+  // Responsive Tab State
+  const [activeTab, setActiveTab] = useState<'article' | 'transcript' | 'assistant'>('transcript');
+
   return (
-    <div className="flex flex-col h-screen overflow-hidden">
+    <div className="flex flex-col h-screen overflow-hidden bg-white">
       {/* Toast Notifications */}
       <Toast toasts={toasts} removeToast={removeToast} />
 
       {/* Header */}
-      <header className="bg-white border-b border-gray-300 px-6 py-4 flex justify-between items-center shrink-0">
-        <div>
-          <h1 className="text-xl font-bold">{session.title}</h1>
-          <p className="text-sm text-gray-500">
-            {isConnected ? '🟢 接続中' : '🔴 切断'} | {session.status}
-          </p>
+      <header className="bg-white border-b border-gray-300 px-4 py-3 sm:px-6 sm:py-4 flex flex-col sm:flex-row justify-between items-start sm:items-center shrink-0 gap-3 sm:gap-0">
+        <div className="flex justify-between w-full sm:w-auto items-center">
+          <div>
+            <h1 className="text-lg sm:text-xl font-bold truncate max-w-[200px] sm:max-w-md">{session.title}</h1>
+            <p className="text-xs sm:text-sm text-gray-500">
+              {isConnected ? '🟢 接続中' : '🔴 切断'} | {session.status}
+            </p>
+          </div>
+          {/* Mobile Back Button (visible only on mobile if you want, but sticking to desktop pattern for now) */}
+          <button onClick={() => router.push('/')} className="sm:hidden p-2 bg-gray-100 rounded hover:bg-gray-200 transition text-sm">Esc</button>
         </div>
-        <div className="flex gap-3">
+
+        <div className="flex gap-2 sm:gap-3 w-full sm:w-auto justify-end">
           <AudioRecorder
             sessionId={sessionId}
             wsClient={wsClient.current}
@@ -336,18 +344,18 @@ export default function EditorPage() {
           />
           <button
             onClick={toggleRecording}
-            className={`px-4 py-2 rounded text-white transition shadow hover:shadow-md ${isRecording ? 'bg-red-500 hover:bg-red-600' : 'bg-green-500 hover:bg-green-600'}`}
+            className={`px-3 py-2 sm:px-4 text-xs sm:text-sm rounded text-white transition shadow hover:shadow-md ${isRecording ? 'bg-red-500 hover:bg-red-600' : 'bg-green-500 hover:bg-green-600'}`}
           >
-            {isRecording ? 'Stop Recording' : 'Start Recording'}
+            {isRecording ? 'Stop' : 'Rec'}
           </button>
-          <button onClick={() => router.push('/')} className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300 transition">Back</button>
+          <button onClick={() => router.push('/')} className="hidden sm:block px-4 py-2 bg-gray-200 rounded hover:bg-gray-300 transition text-sm">Back</button>
         </div>
       </header>
 
       {/* Main Content */}
-      <div className="flex-1 flex overflow-hidden">
-        {/* Left: Article (35%) */}
-        <div className="w-[35%] border-r border-gray-300">
+      <div className="flex-1 flex flex-col lg:flex-row overflow-hidden relative">
+        {/* Left: Article (Mobile: Tab | Desktop: 35%) */}
+        <div className={`${activeTab === 'article' ? 'flex' : 'hidden'} lg:flex w-full lg:w-[35%] h-full border-r border-gray-300 flex-col overflow-hidden`}>
           <ArticlePanel
             text={content} // History Content
             lastUpdated={session.article_draft.last_updated}
@@ -368,8 +376,8 @@ export default function EditorPage() {
           />
         </div>
 
-        {/* Center: Transcript (30%) */}
-        <div className="w-[30%] border-r border-gray-300">
+        {/* Center: Transcript (Mobile: Tab | Desktop: 30%) */}
+        <div className={`${activeTab === 'transcript' ? 'flex' : 'hidden'} lg:flex w-full lg:w-[30%] h-full border-r border-gray-300 flex-col overflow-hidden`}>
           <TranscriptPanel
             transcript={session.transcript}
             onEdit={handleEditUtterance}
@@ -378,17 +386,18 @@ export default function EditorPage() {
           />
         </div>
 
-        {/* Right: Assistant (Chat + Notes + Suggestions) (35%) */}
-        <div className="w-[35%] flex flex-col overflow-hidden">
-          <div className="flex h-full overflow-hidden">
-            <div className="w-1/2 h-full border-r border-gray-300">
+        {/* Right: Assistant (Mobile: Tab | Desktop: 35%) */}
+        <div className={`${activeTab === 'assistant' ? 'flex' : 'hidden'} lg:flex w-full lg:w-[35%] h-full flex-col overflow-hidden`}>
+          <div className="flex h-full w-full overflow-hidden flex-col sm:flex-row">
+            {/* On Mobile, stack Notes (top 1/3) and Assistant (bottom 2/3) */}
+            <div className="w-full sm:w-1/2 h-1/3 sm:h-full border-b sm:border-b-0 sm:border-r border-gray-300">
               <NotesPanel
                 notes={session.notes}
                 onAdd={handleAddNote}
                 onDelete={handleDeleteNote}
               />
             </div>
-            <div className="w-1/2 h-full">
+            <div className="w-full sm:w-1/2 h-2/3 sm:h-full">
               <AssistantPanel
                 onRunCommand={handleRunAICommand}
                 onApply={handleApplyAI}
@@ -406,6 +415,31 @@ export default function EditorPage() {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Mobile Bottom Navigation */}
+      <div className="lg:hidden shrink-0 h-16 bg-white border-t border-gray-200 flex justify-around items-center px-2 shadow-[0_-1px_3px_rgba(0,0,0,0.1)] z-20">
+        <button
+          onClick={() => setActiveTab('transcript')}
+          className={`flex flex-col items-center justify-center w-full h-full ${activeTab === 'transcript' ? 'text-blue-600' : 'text-gray-400'}`}
+        >
+          <span className="text-2xl">💬</span>
+          <span className="text-[10px] font-medium">Transcript</span>
+        </button>
+        <button
+          onClick={() => setActiveTab('article')}
+          className={`flex flex-col items-center justify-center w-full h-full ${activeTab === 'article' ? 'text-blue-600' : 'text-gray-400'}`}
+        >
+          <span className="text-2xl">📝</span>
+          <span className="text-[10px] font-medium">Article</span>
+        </button>
+        <button
+          onClick={() => setActiveTab('assistant')}
+          className={`flex flex-col items-center justify-center w-full h-full ${activeTab === 'assistant' ? 'text-blue-600' : 'text-gray-400'}`}
+        >
+          <span className="text-2xl">🤖</span>
+          <span className="text-[10px] font-medium">Assistant</span>
+        </button>
       </div>
     </div>
   );

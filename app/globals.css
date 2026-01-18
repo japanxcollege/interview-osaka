@@ -1,3 +1,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+    --background: 255, 255, 255;
+    --foreground: 23, 23, 23;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: 10, 10, 10;
+        --foreground: 237, 237, 237;
+    }
+}
+
+body {
+    color: rgb(var(--foreground));
+    background: rgb(var(--background));
+    @apply antialiased;
+}
+
+@layer utilities {
+    .glass {
+        @apply bg-white/70 backdrop-blur-lg border border-white/20 shadow-xl;
+    }
+
+    .glass-dark {
+        @apply bg-black/70 backdrop-blur-lg border border-white/10 shadow-xl;
+    }
+
+    .text-gradient {
+        @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600;
+    }
+}
