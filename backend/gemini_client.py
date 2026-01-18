@@ -30,9 +30,23 @@ class GeminiClient:
 
         try:
             genai.configure(api_key=self.api_key)
-            self.model = genai.GenerativeModel('gemini-2.0-flash')
+            
+            # Safety settings to allow all content (since this is an editor for adults/interviews)
+            from google.generativeai.types import HarmCategory, HarmBlockThreshold
+            
+            self.safety_settings = {
+                HarmCategory.HARM_CATEGORY_HARASSMENT: HarmBlockThreshold.BLOCK_NONE,
+                HarmCategory.HARM_CATEGORY_HATE_SPEECH: HarmBlockThreshold.BLOCK_NONE,
+                HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT: HarmBlockThreshold.BLOCK_NONE,
+                HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: HarmBlockThreshold.BLOCK_NONE,
+            }
+            
+            self.model = genai.GenerativeModel(
+                'gemini-2.0-flash',
+                # safety_settings=self.safety_settings # Constructor might accept it or generate_content
+            )
             self.enabled = True
-            logger.info("✅ Gemini API initialized")
+            logger.info("✅ Gemini API initialized with BLOCK_NONE safety settings")
         except Exception as e:
             logger.error(f"Failed to initialize Gemini API: {e}")
             self.enabled = False
@@ -89,11 +103,11 @@ class GeminiClient:
 回答は質問文のみを出力してください（説明不要）。
 """
 
-            response = await self.model.generate_content_async(prompt)
-            question = response.text.strip()
+            response = await self.model.generate_content_async(prompt, safety_settings=self.safety_settings)
+            query_text = response.text.strip()
 
-            logger.info(f"💡 Suggested question: {question[:50]}...")
-            return question
+            logger.info(f"💡 Suggested question: {query_text[:50]}...")
+            return query_text
 
         except Exception as e:
             logger.error(f"Failed to suggest question: {e}")
@@ -464,8 +478,17 @@ class GeminiClient:
 
         try:
             full_prompt = f"{system_prompt}\n\n---\n\n{user_prompt}"
-            response = await self.model.generate_content_async(full_prompt)
+            response = await self.model.generate_content_async(full_prompt, safety_settings=self.safety_settings)
+            if response.prompt_feedback and response.prompt_feedback.block_reason:
+                logger.warning(f"⚠️ Prompt blocked: {response.prompt_feedback}")
+                return None
             return response.text.strip()
+        except ValueError as e:
+            # Often blocked content raises ValueError on .text access
+            logger.warning(f"⚠️ Failed to get text from response (likely blocked): {e}")
+            if response and response.prompt_feedback:
+                 logger.warning(f"Prompt feedback: {response.prompt_feedback}")
+            return None
         except Exception as e:
             logger.error(f"Failed to generate text (Gemini): {e}")
             return None
