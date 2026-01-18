@@ -449,6 +449,8 @@ class GeminiClient:
 
         except Exception as e:
             logger.error(f"Failed to generate article section: {e}")
+            return None
+
     async def generate_text(self, system_prompt: str, user_prompt: str) -> Optional[str]:
         """
         汎用テキスト生成

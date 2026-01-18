@@ -173,10 +173,17 @@ Markdown形式で出力してください。
         if model_provider == "claude":
             if anthropic_client.enabled:
                 return await anthropic_client.generate_text(system_prompt, user_prompt)
+            else:
+                logger.warning("Claude requested but anthropic_client is not enabled")
         
         # Default Gemini
         if gemini_client.enabled:
-            return await gemini_client.generate_text(system_prompt, user_prompt)
+            result = await gemini_client.generate_text(system_prompt, user_prompt)
+            if not result:
+                logger.warning("Gemini returned None for interviewer response")
+            return result
+        else:
+            logger.warning("Gemini API not enabled for interviewer response")
             
         return None
 

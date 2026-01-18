@@ -410,6 +410,8 @@ async def process_message(
                 
                 transcript_text = "\n".join([f"{u.speaker_name}: {u.text}" for u in session.transcript[-10:]]) # 直近10発話
                 
+                logger.info(f"📝 Interviewer request: ai_mode={ai_mode}, provider={model_provider}, transcript_len={len(transcript_text)}, chat_history_len={len(chat_history)}")
+                
                 response_text = await ai_editor.generate_interviewer_response(
                     transcript_text=transcript_text,
                     context=context,
@@ -417,6 +419,8 @@ async def process_message(
                     model_provider=model_provider,
                     ai_mode=ai_mode
                 )
+                
+                logger.info(f"📝 Interviewer response: {response_text[:100] if response_text else 'None'}")
                 
                 if response_text:
                     # Save AI response as utterance
