@@ -384,10 +384,22 @@ async def create_session_v2(request: CreateSessionV2Request):
 
 @app.post("/api/sessions/{session_id}/versions")
 async def create_version(session_id: str):
-    """バージョン作成 (保存)"""
+    """バージョン作成 (保存) [Deprecated: Use /drafts/snapshot]"""
     try:
         version = await session_manager.create_version(session_id)
         return version
+    except ValueError as e:
+        raise HTTPException(status_code=404, detail=str(e))
+
+@app.post("/api/sessions/{session_id}/drafts/snapshot")
+async def create_snapshot_draft_endpoint(session_id: str):
+    """現在の記事を新しいドラフト(Vn)として保存"""
+    try:
+        new_draft = await session_manager.create_snapshot_draft(session_id)
+        # Broadcast updated session to all clients
+        updated_session = session_manager.get_session(session_id)
+        await ws_manager.broadcast(session_id, {"type": "initial_data", "data": updated_session.dict()})
+        return new_draft
     except ValueError as e:
         raise HTTPException(status_code=404, detail=str(e))
 

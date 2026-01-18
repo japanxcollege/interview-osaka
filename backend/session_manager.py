@@ -212,6 +212,38 @@ class SessionManager:
             session.drafts.append(draft)
             self._save_session(session_id)
 
+    async def create_snapshot_draft(self, session_id: str) -> ArticleDraft:
+        """
+        現在の article_draft を新しいバージョン (V1, V2...) としてスナップショット保存
+        自動的にバージョン番号とタイムスタンプ付きの名前を生成
+        """
+        self._ensure_lock(session_id)
+        async with self.locks[session_id]:
+            session = self.get_session(session_id)
+            if not session:
+                raise ValueError(f"Session {session_id} not found")
+            
+            # 現在のバージョン番号を計算 (既存の drafts 数 + 1)
+            version_num = len(session.drafts) + 1
+            now = datetime.now()
+            timestamp = now.strftime('%H:%M')
+            
+            # 新しいドラフトを作成
+            import copy
+            new_draft = ArticleDraft(
+                draft_id=f"draft_{now.strftime('%Y%m%d_%H%M%S_%f')}",
+                name=f"V{version_num} ({timestamp})",
+                style_id="snapshot",
+                text=session.article_draft.text,
+                last_updated=now.isoformat()
+            )
+            
+            session.drafts.append(new_draft)
+            self._save_session(session_id)
+            
+            logger.info(f"📸 Created snapshot draft: {new_draft.name} for session {session_id}")
+            return new_draft
+
     async def switch_draft(self, session_id: str, draft_id: str) -> Optional[ArticleDraft]:
         """アクティブなドラフトを切り替え"""
         self._ensure_lock(session_id)

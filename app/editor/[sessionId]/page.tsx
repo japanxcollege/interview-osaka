@@ -228,7 +228,10 @@ export default function EditorPage() {
     wsClient.current?.send('edit_article', { text: newText });
   };
 
-  const handleApplyAI = (text: string) => {
+  const handleApplyAI = async (text: string) => {
+    // Auto-save current state as a version before applying AI changes
+    await handleSaveDraft();
+
     // User clicked "Apply" in Chat
     setPendingAIContent(text);
     addToast('原稿にAI生成内容を挿入しました', 'success');
@@ -267,6 +270,44 @@ export default function EditorPage() {
   };
 
   if (!session) return <div className="p-10">Loading...</div>;
+
+  const handleSaveDraft = async () => {
+    try {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8005';
+      const res = await fetch(`${apiUrl}/api/sessions/${sessionId}/drafts/snapshot`, {
+        method: 'POST'
+      });
+      if (res.ok) {
+        addToast('新しいバージョン（タブ）として保存しました', 'success');
+        // Session update via WS broadcast will handle UI update
+      } else {
+        throw new Error('Failed to create snapshot');
+      }
+    } catch (e) {
+      console.error(e);
+      addToast('バージョンの保存に失敗しました', 'error');
+    }
+  };
+
+  const handleSwitchDraft = async (draftId: string) => {
+    try {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8005';
+      const res = await fetch(`${apiUrl}/api/sessions/${sessionId}/drafts/switch`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ draft_id: draftId })
+      });
+      if (res.ok) {
+        const updatedSession = await res.json();
+        setSession(updatedSession);
+        setContent(updatedSession.article_draft?.text || '');
+        addToast('ドラフトを切り替えました', 'info');
+      }
+    } catch (e) {
+      console.error(e);
+      addToast('ドラフトの切り替えに失敗しました', 'error');
+    }
+  };
 
   return (
     <div className="flex flex-col h-screen overflow-hidden">
@@ -316,16 +357,14 @@ export default function EditorPage() {
             onRedo={redo}
             canUndo={canUndo}
             canRedo={canRedo}
-            onSaveVersion={() => {
-              saveSnapshot(`Version ${new Date().toLocaleTimeString()}`);
-              addToast('バージョン保存しました', 'success');
-            }}
+            onSaveVersion={handleSaveDraft}
             externalAction={pendingAIContent ? { type: 'insert', text: pendingAIContent } : null}
             onActionComplete={() => setPendingAIContent(null)}
             // Pass styles etc
             availableStyles={availableStyles}
             drafts={session.drafts || []}
             activeDraftId={session.article_draft?.draft_id}
+            onSwitchDraft={handleSwitchDraft}
           />
         </div>
 
