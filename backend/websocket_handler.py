@@ -467,6 +467,36 @@ async def process_message(
                     'message': f'AIインタビュアー処理中にエラーが発生しました: {str(e)}'
                 })
 
+        elif msg_type == 'user_utterance':
+            # ユーザー発話（Web Speech APIなどからの直接テキスト入力）
+            try:
+                text = message['data'].get('text', '')
+                speaker_name = message['data'].get('speaker_name', 'User')
+                
+                if not text:
+                    return
+
+                utterance = await session_manager.add_transcription_text(
+                    session_id=session_id,
+                    text=text,
+                    speaker_id="speaker_user", # Fixed ID for user for now
+                    speaker_name=speaker_name
+                )
+                
+                if utterance:
+                    # 全クライアントにブロードキャスト
+                    await manager.broadcast(session_id, {
+                        'type': 'utterance_added',
+                        'data': utterance.model_dump()
+                    })
+                    logger.info(f"✅ User utterance added: {text[:50]}...")
+            except Exception as e:
+                logger.error(f"Error processing user_utterance: {e}")
+                await websocket.send_json({
+                    'type': 'error',
+                    'message': f'発話の保存中にエラーが発生しました: {str(e)}'
+                })
+
         elif msg_type == 'restructure_section':
             # 大見出しセクション再構成
             try:

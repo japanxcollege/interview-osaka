@@ -5,7 +5,7 @@ Phase 1: Discord統合、AI機能、要約
 """
 
 from pydantic import BaseModel
-from typing import List, Optional, Literal
+from typing import List, Optional, Literal, Dict
 from datetime import datetime
 import secrets
 
