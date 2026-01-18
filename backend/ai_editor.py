@@ -53,8 +53,15 @@ class AIEditorService:
         
         else: # Default to Gemini
             if not gemini_client.enabled:
-                raise Exception("Gemini API is not enabled. Check GEMINI_API_KEY.")
-            return await gemini_client.generate_text(system_prompt, user_prompt)
+                error_msg = "Gemini API is not enabled. Check GEMINI_API_KEY."
+                logger.error(error_msg)
+                raise Exception(error_msg)
+            
+            logger.info(f"🤖 Generating text with Gemini. System prompt len: {len(system_prompt)}, User prompt len: {len(user_prompt)}")
+            result = await gemini_client.generate_text(system_prompt, user_prompt)
+            if not result:
+                logger.warning("⚠️ Gemini returned None for edit_text")
+            return result
 
     async def generate_draft_from_transcript(
         self,

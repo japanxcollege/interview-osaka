@@ -264,6 +264,8 @@ async def process_message(
                 # AI処理 (ai_editorを使用するように変更)
                 from ai_editor import ai_editor
                 
+                logger.info(f"🚀 improve_text requested: instruction={instruction[:50]}..., selected_len={len(selected_text)}, context_len={len(context)}, history_len={len(chat_history)}")
+                
                 improved = await ai_editor.edit_text(
                     instruction=instruction,
                     selected_text=selected_text,
@@ -271,6 +273,8 @@ async def process_message(
                     model_provider="gemini", # Default to Gemini for WS for now, or get from msg
                     chat_history=chat_history
                 )
+                
+                logger.info(f"✨ improve_text result: {improved[:50] if improved else 'None'}")
 
                 if improved:
                     # 結果を送信
