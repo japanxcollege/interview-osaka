@@ -399,15 +399,16 @@ async def process_message(
             try:
                 from ai_editor import ai_editor
                 
-                context = message['data'].get('context', '')
+                session = session_manager.get_session(session_id)
+                if not session:
+                    raise ValueError(f"Session {session_id} not found")
+
+                context = message['data'].get('context', '') or session.context # Prefer msg, fallback to session
                 model_provider = message['data'].get('model_provider', 'gemini')
-                ai_mode = message['data'].get('ai_mode', 'empath') # New field
+                ai_mode = message['data'].get('ai_mode', 'empath')
                 chat_history = message['data'].get('messages', [])
                 
-                session = session_manager.get_session(session_id)
-                transcript_text = ""
-                if session:
-                    transcript_text = "\n".join([f"{u.speaker_name}: {u.text}" for u in session.transcript[-10:]]) # 直近10発話
+                transcript_text = "\n".join([f"{u.speaker_name}: {u.text}" for u in session.transcript[-10:]]) # 直近10発話
                 
                 response_text = await ai_editor.generate_interviewer_response(
                     transcript_text=transcript_text,
@@ -418,13 +419,42 @@ async def process_message(
                 )
                 
                 if response_text:
-                    await websocket.send_json({
-                        'type': 'interviewer_response',
-                        'data': {
-                            'text': response_text
-                        }
-                    })
-                    logger.info(f"✅ Interviewer response generated: {response_text[:50]}...")
+                    # Save AI response as utterance
+                    from models import Utterance # Ensure imported or use session_manager internal
+                    # Actually session_manager.add_transcription_text creates Utterance, 
+                    # but we want to specify exact text and speaker.
+                    # Use add_transcription_text is simpler but it checks duplicates.
+                    # Or construct Utterance manually and use add_utterance.
+                    
+                    # Let's use add_transcription_text which handles broadcast usually? 
+                    # No, add_transcription_text doesn't broadcast in session_manager.
+                    # But process_message usually handles broadcast?
+                    
+                    # Let's use simple add_transcription_text logic here but manually:
+                    ai_utterance = await session_manager.add_transcription_text(
+                        session_id=session_id,
+                        text=response_text,
+                        speaker_id="ai_interviewer",
+                        speaker_name="AI Interviewer"
+                    )
+
+                    if ai_utterance:
+                        # Broadcast utterance_added (standard flow)
+                        await manager.broadcast(session_id, {
+                            'type': 'utterance_added',
+                            'data': ai_utterance.model_dump()
+                        })
+
+                        # Also send interviewer_response for TTS trigger if needed (frontend uses it)
+                        await websocket.send_json({
+                            'type': 'interviewer_response',
+                            'data': {
+                                'text': response_text
+                            }
+                        })
+                        logger.info(f"✅ Interviewer response saved & sent: {response_text[:50]}...")
+                    else:
+                         logger.warning("Duplicate or empty AI response, not saved.")
                 else:
                     await websocket.send_json({
                         'type': 'error',
