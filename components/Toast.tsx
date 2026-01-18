@@ -34,6 +34,12 @@ function ToastItem({ toast, onRemove }: { toast: ToastMessage; onRemove: () => v
 
     useEffect(() => {
         const duration = toast.duration || 3000;
+
+        // durationが 無限(Infinity) または 0 の場合は自動消滅させない
+        if (duration === Infinity || duration === 0) {
+            return;
+        }
+
         const timer = setTimeout(() => {
             setIsExiting(true);
             setTimeout(onRemove, 300); // フェードアウト後に削除

@@ -9,7 +9,7 @@
 import { useEffect, useState, useRef } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import { InterviewSession, WebSocketMessage } from '@/types';
-import { WebSocketClient } from '@/lib/websocket';
+import { WebSocketClient, ConnectionState } from '@/lib/websocket';
 import ArticlePanel from '@/components/ArticlePanel';
 import TranscriptPanel from '@/components/TranscriptPanel';
 import NotesPanel from '@/components/NotesPanel';
@@ -27,7 +27,8 @@ export default function EditorPage() {
   const sessionId = params.sessionId as string;
 
   const [session, setSession] = useState<InterviewSession | null>(null);
-  const [isConnected, setIsConnected] = useState(false);
+  const [connectionState, setConnectionState] = useState<ConnectionState>('CONNECTING'); // New detailed state
+  const [isConnected, setIsConnected] = useState(false); // Legacy simplified state (keep for now or derive)
   const [isRecording, setIsRecording] = useState(false);
   const [isAIProcessing, setIsAIProcessing] = useState(false);
   const [recorderError, setRecorderError] = useState<string | null>(null);
@@ -38,13 +39,16 @@ export default function EditorPage() {
   const [aiStatus, setAiStatus] = useState<{
     article: AIStatus;
     question: AIStatus;
+    general?: AIStatus;
   }>({
     article: { target: 'article', status: 'idle', message: '' },
     question: { target: 'question', status: 'idle', message: '' },
+    general: { target: 'general', status: 'idle', message: '' }
   });
 
   // Toast Notifications
   const { toasts, addToast, removeToast } = useToast();
+  const connectionToastIdRef = useRef<string | null>(null);
 
   // Chat State
   const [chatMessages, setChatMessages] = useState<Message[]>([]);
@@ -83,6 +87,39 @@ export default function EditorPage() {
     fetchStyles();
   }, []);
 
+  const handleConnectionStateChange = (state: ConnectionState) => {
+    setConnectionState(state);
+    setIsConnected(state === 'OPEN');
+
+    // Manage Toasts based on state
+    if (state === 'RECONNECTING') {
+      if (!connectionToastIdRef.current) {
+        const id = crypto.randomUUID();
+        connectionToastIdRef.current = id;
+        addToast(
+          '⚠️ サーバーとの接続が切れました。再接続しています...',
+          'warning',
+          Infinity
+        );
+      }
+    } else if (state === 'OFFLINE') {
+      if (connectionToastIdRef.current) removeToast(connectionToastIdRef.current);
+      const id = crypto.randomUUID();
+      connectionToastIdRef.current = id;
+      addToast(
+        '❌ サーバーに接続できません。ページをリロードするか、再接続ボタンを押してください。',
+        'error',
+        Infinity
+      );
+    } else if (state === 'OPEN') {
+      if (connectionToastIdRef.current) {
+        removeToast(connectionToastIdRef.current);
+        connectionToastIdRef.current = null;
+        addToast('✅ 再接続しました', 'success', 3000);
+      }
+    }
+  };
+
   useEffect(() => {
     if (wsClient.current) return;
 
@@ -119,7 +156,7 @@ export default function EditorPage() {
         case 'initial_data':
           setSession(wsMessage.data);
           setIsRecording(wsMessage.data.status === 'recording');
-          setIsConnected(true);
+          // setIsConnected(true); // Handled by state change callback
           // Sync history if needed
           if (content === '' && wsMessage.data.article_draft?.text) {
             setContent(wsMessage.data.article_draft.text);
@@ -209,7 +246,7 @@ export default function EditorPage() {
 
     fetchSessionFromAPI().then((success) => {
       if (success) {
-        wsClient.current = new WebSocketClient(sessionId, handleMessage);
+        wsClient.current = new WebSocketClient(sessionId, handleMessage, handleConnectionStateChange);
         wsClient.current.connect();
       }
     });
@@ -269,6 +306,13 @@ export default function EditorPage() {
     }
   };
 
+  const handleManualReconnect = () => {
+    if (wsClient.current) {
+      wsClient.current.disconnect();
+      wsClient.current.connect();
+    }
+  };
+
   if (!session) return <div className="p-10">Loading...</div>;
 
   const handleSaveDraft = async () => {
@@ -322,9 +366,24 @@ export default function EditorPage() {
         <div className="flex justify-between w-full sm:w-auto items-center">
           <div>
             <h1 className="text-lg sm:text-xl font-bold truncate max-w-[200px] sm:max-w-md">{session.title}</h1>
-            <p className="text-xs sm:text-sm text-gray-500">
-              {isConnected ? '🟢 接続中' : '🔴 切断'} | {session.status}
-            </p>
+            <div className="flex items-center gap-2">
+              <p className="text-xs sm:text-sm text-gray-500">
+                {connectionState === 'OPEN' ? '🟢 接続中' :
+                  connectionState === 'CONNECTING' ? '🟡 接続中...' :
+                    connectionState === 'RECONNECTING' ? '🟠 再接続中...' :
+                      '🔴 切断'}
+                | {session.status}
+              </p>
+              {connectionState !== 'OPEN' && connectionState !== 'CONNECTING' && (
+                <button
+                  onClick={handleManualReconnect}
+                  className="text-xs bg-gray-100 hover:bg-gray-200 border border-gray-300 px-2 py-0.5 rounded transition"
+                  title="手動で再接続を試みます"
+                >
+                  🔄 再接続
+                </button>
+              )}
+            </div>
           </div>
           {/* Mobile Back Button (visible only on mobile if you want, but sticking to desktop pattern for now) */}
           <button onClick={() => router.push('/')} className="sm:hidden p-2 bg-gray-100 rounded hover:bg-gray-200 transition text-sm">Esc</button>

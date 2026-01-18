@@ -19,6 +19,7 @@ interface AssistantPanelProps {
     aiStatus?: {
         article: AIStatus;
         question: AIStatus;
+        general?: AIStatus;
     };
 }
 
@@ -37,10 +38,13 @@ export default function AssistantPanel({
 }: AssistantPanelProps) {
     const [activeTab, setActiveTab] = useState<'chat' | 'suggest'>('chat');
 
+    // Determine overall processing state for indicator
+    const isGeneralProcessing = isProcessing || aiStatus?.general?.status === 'processing';
+
     return (
         <div className="flex flex-col h-full bg-white border-l border-gray-200">
             {/* Tabs */}
-            <div className="flex border-b border-gray-200 px-2 shrink-0">
+            <div className="flex border-b border-gray-200 px-2 shrink-0 items-center">
                 <button
                     onClick={() => setActiveTab('chat')}
                     className={`flex-1 py-3 text-sm font-medium border-b-2 transition ${activeTab === 'chat' ? 'border-blue-500 text-blue-600' : 'border-transparent text-gray-500 hover:text-gray-700'}`}
@@ -53,6 +57,16 @@ export default function AssistantPanel({
                 >
                     AI提案
                 </button>
+                {/* Mini Status Indicator */}
+                {isGeneralProcessing && (
+                    <div className="absolute right-4 top-3 flex items-center gap-1.5 bg-indigo-50 px-2 py-1 rounded-full border border-indigo-100 shadow-sm z-10 pointer-events-none">
+                        <span className="relative flex h-2 w-2">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+                        </span>
+                        <span className="text-[10px] font-bold text-indigo-600 animate-pulse">Thinking...</span>
+                    </div>
+                )}
             </div>
 
             {/* Content */}
