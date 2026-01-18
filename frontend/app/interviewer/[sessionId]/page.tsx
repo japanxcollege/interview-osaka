@@ -1,10 +1,11 @@
 'use client';
 
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import { InterviewSession, WebSocketMessage } from '@/types';
 import { WebSocketClient } from '@/lib/websocket';
 import InterviewerPanel from '@/components/InterviewerPanel';
+import ReflectionPanel from '@/components/Interview/ReflectionPanel';
 
 export default function InterviewerPage() {
     const params = useParams();
@@ -16,7 +17,6 @@ export default function InterviewerPage() {
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
-        // 1. Fetch initial session data
         const fetchSession = async () => {
             try {
                 const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8005';
@@ -29,24 +29,18 @@ export default function InterviewerPage() {
                 setError('セッションの読み込みに失敗しました');
             }
         };
-
         if (sessionId) fetchSession();
     }, [sessionId]);
 
     useEffect(() => {
         if (!sessionId) return;
-
-        // 2. Initialize WebSocket
         const handleWebSocketMessage = (message: WebSocketMessage) => {
             if (message.type === 'initial_data') {
                 setSession(message.data);
             } else if (message.type === 'utterance_added') {
                 setSession(prev => {
                     if (!prev) return null;
-                    return {
-                        ...prev,
-                        transcript: [...prev.transcript, message.data]
-                    };
+                    return { ...prev, transcript: [...prev.transcript, message.data] };
                 });
             } else if (message.type === 'utterance_edited') {
                 setSession(prev => {
@@ -66,25 +60,16 @@ export default function InterviewerPage() {
         const client = new WebSocketClient(sessionId, handleWebSocketMessage);
         client.connect();
         setWsClient(client);
-
-        return () => {
-            client.disconnect();
-        };
+        return () => client.disconnect();
     }, [sessionId]);
 
     if (error) {
         return (
             <div className="flex flex-col items-center justify-center h-screen bg-gray-50 p-4">
-                <div className="bg-white p-8 rounded-xl shadow-md text-center max-w-md">
-                    <span className="text-4xl">⚠️</span>
+                <div className="bg-white p-8 rounded-xl shadow-md text-center">
                     <h2 className="text-xl font-bold mt-4 text-gray-800">エラーが発生しました</h2>
                     <p className="text-gray-500 mt-2">{error}</p>
-                    <button
-                        onClick={() => router.push('/')}
-                        className="mt-6 px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
-                    >
-                        ホームに戻る
-                    </button>
+                    <button onClick={() => router.push('/')} className="mt-6 px-6 py-2 bg-blue-600 text-white rounded-lg">ホームに戻る</button>
                 </div>
             </div>
         );
@@ -93,18 +78,19 @@ export default function InterviewerPage() {
     if (!session) {
         return (
             <div className="flex items-center justify-center h-screen bg-gray-50">
-                <div className="flex flex-col items-center gap-4">
-                    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
-                    <p className="text-gray-500 font-medium">セッションを準備中...</p>
-                </div>
+                <p className="text-gray-500 font-medium">Loading...</p>
             </div>
         );
     }
 
     return (
-        <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4 md:p-8">
-            <div className="w-full max-w-4xl h-[85vh]">
-                <InterviewerPanel session={session} wsClient={wsClient} />
+        <div className="min-h-screen bg-neutral-950 flex items-center justify-center p-4 md:p-8">
+            <div className="w-full max-w-7xl h-[90vh]">
+                {session.axes_selected && session.axes_selected.length > 0 ? (
+                    <ReflectionPanel session={session} wsClient={wsClient} />
+                ) : (
+                    <InterviewerPanel session={session} wsClient={wsClient} />
+                )}
             </div>
         </div>
     );

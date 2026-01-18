@@ -25,6 +25,20 @@ export interface ArticleDraft {
   last_updated: string; // ISO 8601
 }
 
+export interface Version {
+  version_id: string;
+  session_id: string;
+  version_number: number;
+  created_at: string;
+  snapshot: any;
+  diff_meta?: any;
+}
+
+export interface DraftContent {
+  facts_md: string;
+  feelings_md: string;
+}
+
 export type SessionStatus = 'preparing' | 'recording' | 'editing' | 'completed';
 
 export interface InterviewSession {
@@ -49,9 +63,17 @@ export interface InterviewSession {
   pending_ai_question_count?: number; // Phase 1: 質問提案用の未処理カウント
   upload_progress?: number;
   upload_error?: string | null;
+
+  // Phase 3: Interactive Wizard
   interview_style?: string;
   user_key_points?: string[];
   context?: string;
+
+  // Phase 2: Reflection (AI Interviewer)
+  axes_selected?: string[];
+  draft_content?: DraftContent;
+  ai_mode?: string;
+  versions?: Version[];
 }
 
 // WebSocketメッセージ型
