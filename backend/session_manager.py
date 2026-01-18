@@ -95,8 +95,6 @@ class SessionManager:
             last_question_transcript_index=0,
             pending_ai_article_count=0,
             pending_ai_question_count=0,
-            pending_ai_article_count=0,
-            pending_ai_question_count=0,
             context="",
             axes_selected=axes_selected,
             draft_content={"facts_md": "", "feelings_md": ""},
