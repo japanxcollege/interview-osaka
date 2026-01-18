@@ -15,7 +15,7 @@ from datetime import datetime
 from typing import Dict, Optional, List
 from pathlib import Path
 
-from models import InterviewSession, Utterance, Note, ArticleDraft, generate_session_key
+from models import InterviewSession, Utterance, Note, ArticleDraft, generate_session_key, Version
 
 logger = logging.getLogger(__name__)
 
@@ -57,7 +57,8 @@ class SessionManager:
     def create_session(
         self,
         title: str,
-        discord_channel_id: Optional[str] = None
+        discord_channel_id: Optional[str] = None,
+        axes_selected: List[str] = []
     ) -> InterviewSession:
         """
         新規セッション作成
@@ -94,7 +95,13 @@ class SessionManager:
             last_question_transcript_index=0,
             pending_ai_article_count=0,
             pending_ai_question_count=0,
-            context=""
+            pending_ai_article_count=0,
+            pending_ai_question_count=0,
+            context="",
+            axes_selected=axes_selected,
+            draft_content={"facts_md": "", "feelings_md": ""},
+            ai_mode="empath",
+            versions=[]
         )
 
         # メモリに保存
@@ -580,3 +587,72 @@ class SessionManager:
             
             self._save_session(session_id)
 
+    async def update_draft_content(
+        self,
+        session_id: str,
+        content: Dict[str, str]
+    ) -> None:
+        """ドラフト内容（事実・感情）を更新"""
+        self._ensure_lock(session_id)
+        async with self.locks[session_id]:
+            session = self.get_session(session_id)
+            if not session:
+                raise ValueError(f"Session {session_id} not found")
+
+            # Merge updates
+            if "facts_md" in content:
+                session.draft_content["facts_md"] = content["facts_md"]
+            if "feelings_md" in content:
+                session.draft_content["feelings_md"] = content["feelings_md"]
+            
+            self._save_session(session_id)
+
+    async def set_ai_mode(self, session_id: str, mode: str) -> None:
+        """AIモード設定"""
+        self._ensure_lock(session_id)
+        async with self.locks[session_id]:
+            session = self.get_session(session_id)
+            if not session:
+                raise ValueError(f"Session {session_id} not found")
+
+            session.ai_mode = mode
+            self._save_session(session_id)
+
+    async def create_version(self, session_id: str) -> Version:
+        """現在の状態をバージョンとして保存"""
+        self._ensure_lock(session_id)
+        async with self.locks[session_id]:
+            session = self.get_session(session_id)
+            if not session:
+                raise ValueError(f"Session {session_id} not found")
+
+            version_number = len(session.versions) + 1
+            now = datetime.now().isoformat()
+            
+            # Create snapshot
+            snapshot = {
+                "draft_content": session.draft_content.copy(),
+                "axes_selected": session.axes_selected.copy(),
+                "ai_mode": session.ai_mode,
+                "notes_count": len(session.notes),
+                # Add other snapshot data if needed
+            }
+
+            version = Version(
+                version_id=f"v_{now}_{version_number}",
+                session_id=session_id,
+                version_number=version_number,
+                created_at=now,
+                snapshot=snapshot
+            )
+
+            session.versions.append(version)
+            self._save_session(session_id)
+            return version
+
+    def get_versions(self, session_id: str) -> List[Version]:
+        """バージョン履歴を取得"""
+        session = self.get_session(session_id)
+        if not session:
+            return []
+        return session.versions

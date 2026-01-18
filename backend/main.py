@@ -140,6 +140,17 @@ class SettingsUpdate(BaseModel):
 class ChatMessage(BaseModel):
     role: str
     content: str
+    
+class CreateSessionV2Request(BaseModel):
+    title: str
+    axes: list[str] = ["now"]
+
+class UpdateContentRequest(BaseModel):
+    facts_md: str = None
+    feelings_md: str = None
+
+class UpdateModeRequest(BaseModel):
+    mode: str
 
 class AIEditRequest(BaseModel):
     instruction: str
@@ -358,6 +369,56 @@ async def create_session(request: CreateSessionRequest):
     )
     logger.info(f"✅ Created session: {session.session_id}")
     return session
+
+@app.post("/api/sessions/start-v2", response_model=InterviewSession)
+async def create_session_v2(request: CreateSessionV2Request):
+    """
+    セッション作成 V2 (時間軸選択対応)
+    """
+    session = session_manager.create_session(
+        title=request.title,
+        axes_selected=request.axes
+    )
+    logger.info(f"✅ Created session V2: {session.session_id} with axes {request.axes}")
+    return session
+
+@app.post("/api/sessions/{session_id}/versions")
+async def create_version(session_id: str):
+    """バージョン作成 (保存)"""
+    try:
+        version = await session_manager.create_version(session_id)
+        return version
+    except ValueError as e:
+        raise HTTPException(status_code=404, detail=str(e))
+
+@app.get("/api/sessions/{session_id}/versions")
+async def get_versions(session_id: str):
+    """バージョン履歴取得"""
+    return session_manager.get_versions(session_id)
+
+@app.put("/api/sessions/{session_id}/content")
+async def update_content(session_id: str, request: UpdateContentRequest):
+    """ドラフト内容更新"""
+    try:
+        content_update = {}
+        if request.facts_md is not None:
+            content_update["facts_md"] = request.facts_md
+        if request.feelings_md is not None:
+            content_update["feelings_md"] = request.feelings_md
+        
+        await session_manager.update_draft_content(session_id, content_update)
+        return {"status": "ok"}
+    except ValueError as e:
+        raise HTTPException(status_code=404, detail=str(e))
+
+@app.put("/api/sessions/{session_id}/mode")
+async def update_mode(session_id: str, request: UpdateModeRequest):
+    """AIモード更新"""
+    try:
+        await session_manager.set_ai_mode(session_id, request.mode)
+        return {"status": "ok"}
+    except ValueError as e:
+        raise HTTPException(status_code=404, detail=str(e))
 # --- Style Management API ---
 @app.get("/api/styles")
 async def get_styles():

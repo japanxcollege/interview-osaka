@@ -63,12 +63,35 @@ class InterviewSession(BaseModel):
     pending_ai_article_count: int = 0              # 原稿生成用の未処理カウント
     pending_ai_question_count: int = 0             # 質問提案用の未処理カウント
 
-    # Phase 3: インタラクティブウィザード
+    # Phase 2: AI Interviewer (Reflection) features
+    axes_selected: List[str] = []                  # ["past", "now", "next"]
+    draft_content: Dict[str, str] = {              # Split draft content
+        "facts_md": "",
+        "feelings_md": ""
+    }
+    ai_mode: str = "empath"                        # "empath", "friction", "rephrase"
+    versions: List["Version"] = []                 # History of snapshots
+
+    # Phase 3: Interactive Wizard
     interview_style: str = "qa"                    # "qa", "narrative", "summary"
-    user_key_points: List[str] = []                # 待機中に入力された重要ポイント
-    context: Optional[str] = ""                    # 待機中に入力された追加コンテキスト/メモ
-    upload_progress: int = 0                       # アップロード/処理進捗 (0-100)
-    upload_error: Optional[str] = None             # アップロード/処理エラーメッセージ
+    user_key_points: List[str] = []                # Waiting input points
+    context: Optional[str] = ""                    # Waiting input context
+    upload_progress: int = 0                       # Upload progress (0-100)
+    upload_error: Optional[str] = None             # Upload error message
+
+
+class Version(BaseModel):
+    """セッションのバージョン（スナップショット）"""
+    version_id: str
+    session_id: str
+    version_number: int
+    created_at: str  # ISO 8601
+    snapshot: Dict   # Full snapshot of facts_md, feelings_md, axes, etc.
+    diff_meta: Optional[Dict] = None  # Optional: Calculated diff metadata given frontend can do it too
+
+
+# Resolves the forward reference in InterviewSession
+InterviewSession.model_rebuild()
 
 
 # リクエスト/レスポンス用モデル
