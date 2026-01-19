@@ -15,6 +15,7 @@ from models import Utterance
 BASE_DIR = Path(__file__).resolve().parents[1]
 load_dotenv()
 load_dotenv(dotenv_path=BASE_DIR / ".env", override=False)
+load_dotenv(dotenv_path=BASE_DIR / "backend" / ".env", override=True) # Backend specific env wins
 logger = logging.getLogger(__name__)
 
 
