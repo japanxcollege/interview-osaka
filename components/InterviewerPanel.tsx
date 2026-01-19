@@ -69,9 +69,9 @@ export default function InterviewerPanel({ session, wsClient }: InterviewerPanel
     };
 
     const OPENING_TEMPLATES = [
-        { label: '自己紹介から', instruction: 'まずインタビュアーとして自己紹介をし、アイスブレイクとして軽く天気や最近の調子について尋ねてください。' },
-        { label: '企画趣旨の説明', instruction: 'このインタビューの企画趣旨（ライフヒストリーを聞くこと）を説明し、協力への感謝を伝えてから、最初の質問をしてください。' },
-        { label: '単刀直入に', instruction: '前置きは短めにして、早速インタビューのメインテーマ（幼少期の思い出など）について最初の質問を切り出してください。' },
+        { label: '自分の内省', instruction: 'まず、ユーザー自身の内面や価値観について深く掘り下げるような質問から始めてください。最近感じていることや、自分自身について考えていることを尋ねてみてください。' },
+        { label: '過去の整理', instruction: 'まず、ユーザーがこれまでの人生やキャリアで取り組んできたことについて尋ねてください。過去の経験や実績を整理するような対話を始めてください。' },
+        { label: '未来の展望', instruction: 'まず、ユーザーがこれから挑戦したいことや、未来のビジョンについて尋ねてください。今後の目標や夢について語ってもらうことから会話を始めてください。' },
     ];
 
     const triggerAiResponse = (instruction?: string) => {
