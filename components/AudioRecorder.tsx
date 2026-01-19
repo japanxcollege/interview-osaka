@@ -514,12 +514,21 @@ export default function AudioRecorder({
       isRecordingRef.current = true;
       setStatus('recording');
     } catch (error) {
-      reportError(
-        error instanceof Error
-          ? error.message
-          : 'マイクの初期化に失敗しました',
-        error
-      );
+      let message = 'マイクの初期化に失敗しました';
+      if (error instanceof Error) {
+        if (error.name === 'NotAllowedError' || error.name === 'PermissionDeniedError') {
+          message = 'マイクの使用が許可されていません。ブラウザの設定を確認してください。';
+        } else if (error.name === 'NotFoundError' || error.name === 'DevicesNotFoundError') {
+          message = 'マイクが見つかりません。接続を確認してください。';
+        } else if (error.name === 'NotReadableError' || error.name === 'TrackStartError') {
+          message = 'マイクにアクセスできません。他のアプリがマイクを使用している可能性があります。';
+        } else if (error.name === 'OverConstrainedError' || error.name === 'ConstraintNotSatisfiedError') {
+          message = '要求されたマイク設定に対応していません。';
+        } else {
+          message = `マイクエラー: ${error.message}`;
+        }
+      }
+      reportError(message, error);
     }
   }, [initMedia, reportError, status, waitUntilWebSocketOpen, wsClient]);
 
