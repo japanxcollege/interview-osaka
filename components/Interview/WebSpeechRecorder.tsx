@@ -33,6 +33,8 @@ export default function WebSpeechRecorder({
     const [error, setError] = useState<string | null>(null);
     const recognitionRef = useRef<SpeechRecognition | null>(null);
     const isRecordingRef = useRef(false);
+    const retryCountRef = useRef(0);
+    const MAX_RETRIES = 3;
 
     useEffect(() => {
         if (typeof window === 'undefined') return;
@@ -52,6 +54,9 @@ export default function WebSpeechRecorder({
         recognition.lang = lang;
 
         recognition.onresult = (event: any) => {
+            // Successful result resets retry count
+            retryCountRef.current = 0;
+
             let interimTranscript = '';
             let finalTranscript = '';
 
@@ -69,22 +74,26 @@ export default function WebSpeechRecorder({
 
             if (finalTranscript) {
                 onFinalResult(finalTranscript);
-                // Clear interim if final provided? Usually handled by UI clearing or overwriting.
                 if (onInterimResult) onInterimResult('');
             }
         };
 
         recognition.onerror = (event: any) => {
             if (event.error === 'network') {
-                // Network errors are common and recoverable by potential restart, 
-                // but we choose to stop to prevent spam. 
-                // Silence console.error for network to avoid checking user panic.
-                console.warn('Speech recognition network error (stopping)');
-                isRecordingRef.current = false; // Force stop auto-restart
-                onError?.('ネットワーク接続エラーが発生しました。録音を停止します。');
+                if (retryCountRef.current < MAX_RETRIES) {
+                    retryCountRef.current += 1;
+                    console.warn(`Speech network error. Retrying... (${retryCountRef.current}/${MAX_RETRIES})`);
+                    // Don't set isRecordingRef to false yet, let onend handle restart
+                    // But we might need to delay slightly to avoid thrashing?
+                    // WebSpeech API usually stops after error. 'onend' will fire.
+                } else {
+                    console.warn('Speech recognition network error (Max retries reached, stopping)');
+                    isRecordingRef.current = false;
+                    onError?.('ネットワーク接続が不安定なため、音声認識を停止しました。');
+                }
             } else if (event.error === 'not-allowed') {
                 console.error('Speech recognition error', event.error);
-                isRecordingRef.current = false; // Force stop
+                isRecordingRef.current = false;
                 onError?.('マイクの許可がありません');
             } else if (event.error === 'aborted') {
                 // Ignore
@@ -98,7 +107,13 @@ export default function WebSpeechRecorder({
             // Auto-restart if still recording
             if (isRecordingRef.current) {
                 try {
-                    recognition.start();
+                    // Slight delay for stability if we are retrying
+                    const delay = retryCountRef.current > 0 ? 1000 : 0;
+                    setTimeout(() => {
+                        if (isRecordingRef.current) {
+                            try { recognition.start(); } catch (e) { console.warn('Retry start failed', e); }
+                        }
+                    }, delay);
                 } catch (e) {
                     console.warn('Failed to restart recognition', e);
                 }
@@ -114,18 +129,15 @@ export default function WebSpeechRecorder({
 
     useEffect(() => {
         isRecordingRef.current = isRecording;
-        const recognition = recognitionRef.current;
-        if (!recognition) return;
-
         if (isRecording) {
-            try {
-                recognition.start();
-            } catch (e) {
-                // Often throws if already started
-                console.debug('Recognition start called but might be active', e);
+            // Reset retries on fresh start
+            retryCountRef.current = 0;
+            const recognition = recognitionRef.current;
+            if (recognition) {
+                try { recognition.start(); } catch (e) { console.debug('Start ignored', e); }
             }
         } else {
-            recognition.stop();
+            recognitionRef.current?.stop();
         }
     }, [isRecording]);
 
