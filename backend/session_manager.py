@@ -20,15 +20,15 @@ from models import InterviewSession, Utterance, Note, ArticleDraft, generate_ses
 logger = logging.getLogger(__name__)
 
 
+from storage import StorageBackend, FileStorageBackend
+
 class SessionManager:
-    def __init__(self, data_dir: str = "data/sessions"):
-        self.data_dir = Path(data_dir)
-        self.data_dir.mkdir(parents=True, exist_ok=True)
-
-        # メモリ上のセッションキャッシュ
+    def __init__(self, storage: Optional[StorageBackend] = None):
+        # Default to FileStorage if none provided
+        self.storage = storage or FileStorageBackend()
+        
+        # Memory Cache
         self.sessions: Dict[str, InterviewSession] = {}
-
-        # 排他制御用のロック
         self.locks: Dict[str, asyncio.Lock] = {}
 
     def _generate_session_id(self) -> str:
@@ -112,54 +112,43 @@ class SessionManager:
         return session
 
     def get_session(self, session_id: str) -> Optional[InterviewSession]:
-        """セッション取得（メモリ or ディスク）"""
+        """セッション取得（メモリ or ストレージ）"""
         # メモリにあればそれを返す
         if session_id in self.sessions:
             return self.sessions[session_id]
 
-        # ディスクから読み込み
-        session_path = self._get_session_path(session_id)
-        if not session_path.exists():
+        # ストレージから読み込み
+        data = self.storage.load_session(session_id)
+        if not data:
             return None
 
-        with open(session_path, 'r', encoding='utf-8') as f:
-            data = json.load(f)
-            session = InterviewSession(**data)
+        session = InterviewSession(**data)
 
+        # メモリにキャッシュ
+        self.sessions[session_id] = session
+        if session_id not in self.locks:
+            self.locks[session_id] = asyncio.Lock()
 
+        # Migration: Ensure drafts list is populated
+        if not session.drafts and session.article_draft:
+            if session.article_draft.draft_id == "default":
+                session.article_draft.draft_id = f"draft_{int(datetime.now().timestamp())}"
+            import copy
+            session.drafts.append(copy.deepcopy(session.article_draft))
+            self._save_session(session_id)
 
-            # メモリにキャッシュ
-            self.sessions[session_id] = session
-            if session_id not in self.locks:
-                self.locks[session_id] = asyncio.Lock()
-
-            # Migration: Ensure drafts list is populated
-            if not session.drafts and session.article_draft:
-                # Assign a default ID if missing (though model has default)
-                if session.article_draft.draft_id == "default":
-                    session.article_draft.draft_id = f"draft_{int(datetime.now().timestamp())}"
-                
-                # Copy to drafts
-                import copy
-                session.drafts.append(copy.deepcopy(session.article_draft))
-                # _save_session is called when needed, maybe not here to avoid disk I/O on every read? 
-                # But migration is one-off. Let's strictly only save if we modified it deeply? 
-                # Actually safest to not save on read unless necessary. 
-                # But if we don't save, subsequent reads might re-migrate with NEW ID.
-                # So we SHOULD save if we generated a timestamp-based ID.
-                self._save_session(session_id)
-
-            return session
+        return session
 
     def list_sessions(self) -> list[InterviewSession]:
         """全セッション一覧取得"""
         sessions = []
-
-        # ディスクから全セッションを読み込み
-        for session_file in self.data_dir.glob("session_*.json"):
-            with open(session_file, 'r', encoding='utf-8') as f:
-                data = json.load(f)
+        raw_sessions = self.storage.list_sessions()
+        
+        for data in raw_sessions:
+            try:
                 sessions.append(InterviewSession(**data))
+            except Exception as e:
+                logger.error(f"Error parsing session data: {e}")
 
         # 作成日時でソート（新しい順）
         sessions.sort(key=lambda s: s.created_at, reverse=True)
@@ -357,14 +346,12 @@ class SessionManager:
             self._save_session(session_id)
 
     def _save_session(self, session_id: str) -> None:
-        """セッションをJSONに保存"""
+        """セッションをストレージに保存"""
         session = self.sessions.get(session_id)
         if not session:
             return
 
-        session_path = self._get_session_path(session_id)
-        with open(session_path, 'w', encoding='utf-8') as f:
-            json.dump(session.model_dump(), f, ensure_ascii=False, indent=2)
+        self.storage.save_session(session_id, session.model_dump())
 
     # ========== Phase 1: 新機能 ==========
 
@@ -383,17 +370,17 @@ class SessionManager:
             if session.session_key == session_key:
                 return session
 
-        # ディスク内を検索
-        for session_file in self.data_dir.glob("session_*.json"):
-            with open(session_file, 'r', encoding='utf-8') as f:
-                data = json.load(f)
-                if data.get('session_key') == session_key:
-                    session = InterviewSession(**data)
-                    # キャッシュに追加
-                    self.sessions[session.session_id] = session
-                    if session.session_id not in self.locks:
-                        self.locks[session.session_id] = asyncio.Lock()
-                    return session
+        # ディスク/ストレージ内を検索
+        # Note: Inefficient for large datasets, but acceptable for MVP. 
+        # Ideally, StorageBackend should respond to queries.
+        raw_sessions = self.storage.list_sessions()
+        for data in raw_sessions:
+            if data.get('session_key') == session_key:
+                session = InterviewSession(**data)
+                self.sessions[session.session_id] = session
+                if session.session_id not in self.locks:
+                    self.locks[session.session_id] = asyncio.Lock()
+                return session
 
         return None
 
@@ -416,18 +403,16 @@ class SessionManager:
                 session.status == 'recording'):
                 return session
 
-        # ディスク内を検索
-        for session_file in self.data_dir.glob("session_*.json"):
-            with open(session_file, 'r', encoding='utf-8') as f:
-                data = json.load(f)
-                if (data.get('discord_channel_id') == discord_channel_id and
-                    data.get('status') == 'recording'):
-                    session = InterviewSession(**data)
-                    # キャッシュに追加
-                    self.sessions[session.session_id] = session
-                    if session.session_id not in self.locks:
-                        self.locks[session.session_id] = asyncio.Lock()
-                    return session
+        # ストレージ内を検索
+        raw_sessions = self.storage.list_sessions()
+        for data in raw_sessions:
+             if (data.get('discord_channel_id') == discord_channel_id and
+                 data.get('status') == 'recording'):
+                session = InterviewSession(**data)
+                self.sessions[session.session_id] = session
+                if session.session_id not in self.locks:
+                    self.locks[session.session_id] = asyncio.Lock()
+                return session
 
         return None
 

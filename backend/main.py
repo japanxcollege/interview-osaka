@@ -39,8 +39,27 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+from storage import FileStorageBackend, FirestoreStorageBackend
+
 # グローバル変数
-session_manager = SessionManager()
+# ストレージバックエンドの初期化
+storage_type = os.getenv("STORAGE_TYPE", "file")
+# Auto-detect Firestore if credentials are provided
+if os.getenv("FIREBASE_SERVICE_ACCOUNT_KEY"):
+    storage_type = "firestore"
+
+logger.info(f"💾 Storage Type: {storage_type}")
+
+if storage_type == "firestore":
+    try:
+        storage = FirestoreStorageBackend()
+    except Exception as e:
+        logger.error(f"Failed to init Firestore: {e}, falling back to file")
+        storage = FileStorageBackend()
+else:
+    storage = FileStorageBackend()
+
+session_manager = SessionManager(storage=storage)
 summary_task_manager = get_summary_task(session_manager)
 transcription_manager = TranscriptionManager(
     session_manager,
