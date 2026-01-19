@@ -477,6 +477,42 @@ async def process_message(
                     'message': f'AIインタビュアー処理中にエラーが発生しました: {str(e)}'
                 })
 
+        elif msg_type == 'inject_ai_response':
+            # AIのレスポンスを直接注入（テンプレートなど）
+            try:
+                text = message['data'].get('text', '')
+                if not text:
+                    return
+                
+                utterance = await session_manager.add_transcription_text(
+                    session_id=session_id,
+                    text=text,
+                    speaker_id="ai_interviewer",
+                    speaker_name="AI Interviewer"
+                )
+                
+                if utterance:
+                    # Broadcast utterance_added
+                    await manager.broadcast(session_id, {
+                        'type': 'utterance_added',
+                        'data': utterance.model_dump()
+                    })
+                    
+                    # Send interviewer_response for TTS interactions on frontend
+                    await websocket.send_json({
+                        'type': 'interviewer_response',
+                        'data': {
+                            'text': text
+                        }
+                    })
+                    logger.info(f"✅ AI response injected: {text[:50]}...")
+            except Exception as e:
+                logger.error(f"Error in inject_ai_response: {e}")
+                await websocket.send_json({
+                    'type': 'error',
+                    'message': f'AIレスポンス注入中にエラーが発生しました: {str(e)}'
+                })
+
         elif msg_type == 'user_utterance':
             # ユーザー発話（Web Speech APIなどからの直接テキスト入力）
             try:

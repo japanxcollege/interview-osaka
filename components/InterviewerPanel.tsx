@@ -69,9 +69,9 @@ export default function InterviewerPanel({ session, wsClient }: InterviewerPanel
     };
 
     const OPENING_TEMPLATES = [
-        { label: '自分の内省', instruction: 'まず、ユーザー自身の内面や価値観について深く掘り下げるような質問から始めてください。最近感じていることや、自分自身について考えていることを尋ねてみてください。' },
-        { label: '過去の整理', instruction: 'まず、ユーザーがこれまでの人生やキャリアで取り組んできたことについて尋ねてください。過去の経験や実績を整理するような対話を始めてください。' },
-        { label: '未来の展望', instruction: 'まず、ユーザーがこれから挑戦したいことや、未来のビジョンについて尋ねてください。今後の目標や夢について語ってもらうことから会話を始めてください。' },
+        { label: '自分の内省', text: 'では、まずご自身の内面についてお聞かせください。最近、ご自身について深く考えたことや、価値観の変化などはありましたか？' },
+        { label: '過去の整理', text: 'これまでの歩みを振り返ってみましょう。これまでの人生やキャリアの中で、特に印象に残っている出来事について教えていただけますか？' },
+        { label: '未来の展望', text: 'これからの未来についてお話ししましょう。今後挑戦してみたいことや、描いているビジョンについて教えてください。' },
     ];
 
     const triggerAiResponse = (instruction?: string) => {
@@ -88,8 +88,15 @@ export default function InterviewerPanel({ session, wsClient }: InterviewerPanel
             model_provider: selectedModel,
             ai_mode: session.ai_mode || 'empath',
             messages: history,
-            instruction: instruction // Pass instruction if provided
+            instruction: instruction
         });
+    };
+
+    // New function for static template injection
+    const injectAiResponse = (text: string) => {
+        if (!wsClient) return;
+        // Don't set isAiProcessing=true because it's instant
+        wsClient.send('inject_ai_response', { text });
     };
 
     const handleFinalResult = (text: string) => {
@@ -169,7 +176,7 @@ export default function InterviewerPanel({ session, wsClient }: InterviewerPanel
                             {OPENING_TEMPLATES.map((template) => (
                                 <button
                                     key={template.label}
-                                    onClick={() => triggerAiResponse(template.instruction)}
+                                    onClick={() => injectAiResponse(template.text)}
                                     className="bg-white border border-gray-200 hover:border-blue-400 hover:bg-blue-50 text-gray-700 hover:text-blue-700 px-4 py-3 rounded-xl text-sm font-medium transition-all shadow-sm flex flex-col items-center gap-1"
                                 >
                                     <span className="text-lg">✨</span>
