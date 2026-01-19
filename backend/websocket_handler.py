@@ -410,6 +410,7 @@ async def process_message(
                 context = message['data'].get('context', '') or session.context # Prefer msg, fallback to session
                 model_provider = message['data'].get('model_provider', 'gemini')
                 ai_mode = message['data'].get('ai_mode', 'empath')
+                instruction = message['data'].get('instruction', '') # New field
                 chat_history = message['data'].get('messages', [])
                 
                 transcript_text = "\n".join([f"{u.speaker_name}: {u.text}" for u in session.transcript[-10:]]) # 直近10発話
@@ -421,7 +422,8 @@ async def process_message(
                     context=context,
                     chat_history=chat_history,
                     model_provider=model_provider,
-                    ai_mode=ai_mode
+                    ai_mode=ai_mode,
+                    instruction=instruction
                 )
                 
                 logger.info(f"📝 Interviewer response: {response_text[:100] if response_text else 'None'}")

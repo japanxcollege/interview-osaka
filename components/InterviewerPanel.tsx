@@ -68,7 +68,13 @@ export default function InterviewerPanel({ session, wsClient }: InterviewerPanel
         }
     };
 
-    const triggerAiResponse = () => {
+    const OPENING_TEMPLATES = [
+        { label: '自己紹介から', instruction: 'まずインタビュアーとして自己紹介をし、アイスブレイクとして軽く天気や最近の調子について尋ねてください。' },
+        { label: '企画趣旨の説明', instruction: 'このインタビューの企画趣旨（ライフヒストリーを聞くこと）を説明し、協力への感謝を伝えてから、最初の質問をしてください。' },
+        { label: '単刀直入に', instruction: '前置きは短めにして、早速インタビューのメインテーマ（幼少期の思い出など）について最初の質問を切り出してください。' },
+    ];
+
+    const triggerAiResponse = (instruction?: string) => {
         if (!wsClient) return;
         setIsAiProcessing(true);
 
@@ -81,7 +87,8 @@ export default function InterviewerPanel({ session, wsClient }: InterviewerPanel
             context: context,
             model_provider: selectedModel,
             ai_mode: session.ai_mode || 'empath',
-            messages: history
+            messages: history,
+            instruction: instruction // Pass instruction if provided
         });
     };
 
@@ -149,20 +156,31 @@ export default function InterviewerPanel({ session, wsClient }: InterviewerPanel
                 className="flex-1 overflow-y-auto pt-20 pb-40 px-4 md:px-8 space-y-6 scroll-smooth"
             >
                 {messages.length === 0 && (
-                    <div className="flex flex-col items-center justify-center h-full text-center space-y-6 opacity-60 mt-20">
+                    <div className="flex flex-col items-center justify-center h-full text-center space-y-8 opacity-90 mt-10">
                         <div className="w-24 h-24 bg-gradient-to-tr from-blue-100 to-indigo-100 rounded-full flex items-center justify-center animate-pulse">
                             <span className="text-5xl">🎙️</span>
                         </div>
-                        <div className="max-w-xs">
-                            <p className="text-gray-900 font-medium text-lg">Ready to start?</p>
-                            <p className="text-gray-500 text-sm mt-2">Tap the microphone to begin answering, or ask AI to start the conversation.</p>
+                        <div className="max-w-md">
+                            <p className="text-gray-900 font-bold text-xl">インタビューを開始します</p>
+                            <p className="text-gray-500 text-sm mt-2">どのように会話を始めますか？</p>
                         </div>
-                        <button
-                            onClick={triggerAiResponse}
-                            className="bg-white border border-gray-200 shadow-sm text-gray-700 px-6 py-2 rounded-full text-sm font-medium hover:bg-gray-50 transition"
-                        >
-                            👋 Ask AI to start
-                        </button>
+
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 w-full max-w-2xl px-4">
+                            {OPENING_TEMPLATES.map((template) => (
+                                <button
+                                    key={template.label}
+                                    onClick={() => triggerAiResponse(template.instruction)}
+                                    className="bg-white border border-gray-200 hover:border-blue-400 hover:bg-blue-50 text-gray-700 hover:text-blue-700 px-4 py-3 rounded-xl text-sm font-medium transition-all shadow-sm flex flex-col items-center gap-1"
+                                >
+                                    <span className="text-lg">✨</span>
+                                    {template.label}
+                                </button>
+                            ))}
+                        </div>
+
+                        <div className="text-xs text-gray-400">
+                            または、マイクをタップして話し始めてください
+                        </div>
                     </div>
                 )}
 

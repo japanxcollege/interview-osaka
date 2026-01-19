@@ -119,7 +119,8 @@ Markdown形式で出力してください。
         context: Optional[str] = None,
         chat_history: list = [],
         model_provider: str = "gemini",
-        ai_mode: str = "empath"
+        ai_mode: str = "empath",
+        instruction: Optional[str] = None
     ) -> Optional[str]:
         """
         インタビューの進行役として、次の質問や反応を生成する
@@ -173,6 +174,9 @@ Markdown形式で出力してください。
         if transcript_text:
             user_content.append(f"# 現在の文字起こし（ユーザーの発言など）\n{transcript_text}\n")
             
+        if instruction:
+            user_content.append(f"# 具体的な指示（オープニングなど）\n{instruction}\n")
+
         user_content.append("次に、インタビュアーとしてどのような発言をすべきか、発言内容のみを出力してください。")
         
         user_prompt = "\n".join(user_content)
