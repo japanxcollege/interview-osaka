@@ -15,7 +15,7 @@ export default function InterviewerPanel({ session, wsClient }: InterviewerPanel
     const [isRecording, setIsRecording] = useState(false);
     const [isAiProcessing, setIsAiProcessing] = useState(false);
     const [isTtsEnabled, setIsTtsEnabled] = useState(true);
-    const [selectedModel, setSelectedModel] = useState<'gemini' | 'claude'>('gemini');
+    const [selectedModel, setSelectedModel] = useState<'gemini' | 'claude' | 'openai'>('gemini');
     const [context] = useState(session.context || '');
     const [interimText, setInterimText] = useState('');
 
@@ -153,6 +153,12 @@ export default function InterviewerPanel({ session, wsClient }: InterviewerPanel
                             className={`px-3 py-1 rounded-md transition-all ${selectedModel === 'claude' ? 'bg-white shadow text-purple-600' : 'hover:bg-gray-200'}`}
                         >
                             Claude
+                        </button>
+                        <button
+                            onClick={() => setSelectedModel('openai')}
+                            className={`px-3 py-1 rounded-md transition-all ${selectedModel === 'openai' ? 'bg-white shadow text-green-600' : 'hover:bg-gray-200'}`}
+                        >
+                            OpenAI
                         </button>
                     </div>
                     <button

@@ -3,6 +3,7 @@ import logging
 from typing import Optional
 from gemini_client import gemini_client
 from anthropic_client import anthropic_client
+from openai_client import openai_client
 from style_manager import style_manager
 
 logger = logging.getLogger(__name__)
@@ -186,6 +187,12 @@ Markdown形式で出力してください。
                 return await anthropic_client.generate_text(system_prompt, user_prompt)
             else:
                 logger.warning("Claude requested but anthropic_client is not enabled")
+        
+        if model_provider == "openai":
+            if openai_client.enabled:
+                return await openai_client.generate_text(system_prompt, user_prompt)
+            else:
+                logger.warning("OpenAI requested but openai_client is not enabled")
         
         # Default Gemini
         if gemini_client.enabled:
