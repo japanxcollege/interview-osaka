@@ -30,6 +30,34 @@ export default function InterviewerPanel({ session, wsClient }: InterviewerPanel
         setMessages(newMessages);
     }, [session.transcript]);
 
+    const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([]);
+    const [selectedVoice, setSelectedVoice] = useState<SpeechSynthesisVoice | null>(null);
+    const [speechRate, setSpeechRate] = useState(1.0);
+    const [showSettings, setShowSettings] = useState(false);
+
+    // Load available voices
+    useEffect(() => {
+        const loadVoices = () => {
+            if (typeof window === 'undefined') return;
+            const allVoices = window.speechSynthesis.getVoices();
+            // Filter for Japanese voices, or fallback to all if none found
+            const jaVoices = allVoices.filter(v => v.lang.includes('ja'));
+            setVoices(jaVoices.length > 0 ? jaVoices : allVoices);
+
+            // Set default voice if available
+            if (!selectedVoice && jaVoices.length > 0) {
+                setSelectedVoice(jaVoices[0]);
+            }
+        };
+
+        loadVoices();
+
+        // Browsers load voices asynchronously
+        if (typeof window !== 'undefined' && window.speechSynthesis.onvoiceschanged !== undefined) {
+            window.speechSynthesis.onvoiceschanged = loadVoices;
+        }
+    }, [selectedVoice]);
+
     // Auto scroll
     useEffect(() => {
         if (scrollRef.current) {
@@ -63,7 +91,10 @@ export default function InterviewerPanel({ session, wsClient }: InterviewerPanel
             window.speechSynthesis.cancel();
             const utterance = new SpeechSynthesisUtterance(text);
             utterance.lang = 'ja-JP';
-            utterance.rate = 1.0;
+            if (selectedVoice) {
+                utterance.voice = selectedVoice;
+            }
+            utterance.rate = speechRate;
             window.speechSynthesis.speak(utterance);
         }
     };
@@ -168,6 +199,59 @@ export default function InterviewerPanel({ session, wsClient }: InterviewerPanel
                     >
                         {isTtsEnabled ? '🔊' : '🔇'}
                     </button>
+
+                    {/* TTS Settings Button */}
+                    <div className="relative">
+                        <button
+                            onClick={() => setShowSettings(!showSettings)}
+                            className={`w-8 h-8 rounded-full flex items-center justify-center transition-all ${showSettings ? 'bg-gray-200' : 'hover:bg-gray-100'}`}
+                            title="TTS Settings"
+                        >
+                            ⚙️
+                        </button>
+
+                        {/* Settings Popup */}
+                        {showSettings && (
+                            <div className="absolute right-0 top-10 bg-white rounded-xl shadow-xl border border-gray-200 p-4 w-64 z-50 animate-in fade-in zoom-in-95 duration-200">
+                                <h3 className="text-sm font-bold text-gray-700 mb-3">音声設定</h3>
+
+                                <div className="space-y-4">
+                                    <div className="space-y-1">
+                                        <label className="text-xs text-gray-500">声質</label>
+                                        <select
+                                            className="w-full text-sm border border-gray-200 rounded-lg p-2 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                            value={selectedVoice?.name || ''}
+                                            onChange={(e) => {
+                                                const voice = voices.find(v => v.name === e.target.value);
+                                                if (voice) setSelectedVoice(voice);
+                                            }}
+                                        >
+                                            {voices.map(v => (
+                                                <option key={v.name} value={v.name}>{v.name}</option>
+                                            ))}
+                                            {voices.length === 0 && <option value="">No voices found</option>}
+                                        </select>
+                                    </div>
+
+                                    <div className="space-y-1">
+                                        <label className="text-xs text-gray-500 flex justify-between">
+                                            <span>速さ</span>
+                                            <span>{speechRate}x</span>
+                                        </label>
+                                        <input
+                                            type="range"
+                                            min="0.5"
+                                            max="2.0"
+                                            step="0.1"
+                                            value={speechRate}
+                                            onChange={(e) => setSpeechRate(parseFloat(e.target.value))}
+                                            className="w-full accent-blue-500 h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        )}
+                    </div>
                 </div>
             </div>
 
