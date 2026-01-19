@@ -15,7 +15,7 @@ export default function InterviewerPanel({ session, wsClient }: InterviewerPanel
     const [isRecording, setIsRecording] = useState(false);
     const [isAiProcessing, setIsAiProcessing] = useState(false);
     const [isTtsEnabled, setIsTtsEnabled] = useState(true);
-    const [selectedModel, setSelectedModel] = useState<'gemini' | 'claude' | 'openai'>('gemini');
+    const [selectedModel, setSelectedModel] = useState<'gemini' | 'claude' | 'openai'>('openai');
     const [context] = useState(session.context || '');
     const [interimText, setInterimText] = useState('');
 
