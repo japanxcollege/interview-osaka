@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { WebSocketClient } from '@/lib/websocket';
 
-type RecorderStatus = 'idle' | 'preparing' | 'recording' | 'stopped' | 'error';
+type RecorderStatus = 'idle' | 'preparing' | 'recording' | 'listening_native' | 'stopped' | 'error';
 type PermissionState = 'unknown' | 'granted' | 'denied';
 
 interface AudioRecorderProps {
@@ -13,6 +13,8 @@ interface AudioRecorderProps {
   speakerId?: string;
   speakerName?: string;
   onError?: (message: string) => void;
+  recognitionMode?: 'cloud' | 'native'; // New prop
+  onNativeResult?: (text: string) => void; // Callback for native results
 }
 
 interface StatusBadgeProps {
@@ -43,6 +45,12 @@ const StatusBadge = ({ status, permission, deviceLabel }: StatusBadgeProps) => {
           label: '録音中',
           color: 'bg-red-100 text-red-700 border-red-300',
           description: deviceLabel ? `入力: ${deviceLabel}` : 'マイク入力を取得しています'
+        };
+      case 'listening_native':
+        return {
+          label: '聞き取り中 (Native)',
+          color: 'bg-green-100 text-green-700 border-green-300',
+          description: 'ブラウザの標準音声認識を使用中'
         };
       case 'stopped':
         return {
@@ -82,7 +90,9 @@ export default function AudioRecorder({
   isRecording,
   speakerId = 'speaker_web',
   speakerName = 'Interviewer',
-  onError
+  onError,
+  recognitionMode = 'cloud',
+  onNativeResult
 }: AudioRecorderProps) {
   const [status, setStatus] = useState<RecorderStatus>('idle');
   const [permission, setPermission] = useState<PermissionState>('unknown');
@@ -96,6 +106,9 @@ export default function AudioRecorder({
   const isRecordingRef = useRef(false);
   const isUnmountedRef = useRef(false);
   const lastSentChunkRef = useRef<string | null>(null);
+
+  // Native Speech Recognition Refs
+  const recognitionRef = useRef<any>(null);
 
   const chunkIntervalMs = 300; // Check VAD status every 300ms
   const SILENCE_THRESHOLD = 0.005;
@@ -475,16 +488,112 @@ export default function AudioRecorder({
     }
   }, [appendSamples, processBufferedSamples, releaseResources]);
 
+  // --- Native Speech Recognition Logic ---
+  const initNativeRecognition = useCallback(() => {
+    if (typeof window === 'undefined') return null;
+
+    const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
+    if (!SpeechRecognition) {
+      reportError('このブラウザは音声認識APIに対応していません');
+      return null;
+    }
+
+    const recognition = new SpeechRecognition();
+    recognition.continuous = true;
+    recognition.interimResults = true;
+    recognition.lang = 'ja-JP';
+
+    recognition.onstart = () => {
+      setStatus('listening_native');
+      isRecordingRef.current = true;
+    };
+
+    recognition.onresult = (event: any) => {
+      let finalTranscript = '';
+      // let interimTranscript = '';
+
+      for (let i = event.resultIndex; i < event.results.length; ++i) {
+        if (event.results[i].isFinal) {
+          finalTranscript += event.results[i][0].transcript;
+        } else {
+          // interimTranscript += event.results[i][0].transcript;
+        }
+      }
+
+      if (finalTranscript && onNativeResult) {
+        onNativeResult(finalTranscript);
+      }
+    };
+
+    recognition.onerror = (event: any) => {
+      console.error('[AudioRecorder] Native recognition error', event.error);
+      if (event.error === 'not-allowed') {
+        setPermission('denied');
+        reportError('マイクの使用が許可されていません');
+      } else {
+        // Ignore 'no-speech' usually
+        if (event.error !== 'no-speech') {
+          reportError(`音声認識エラー: ${event.error}`);
+        }
+      }
+    };
+
+    recognition.onend = () => {
+      if (isRecordingRef.current) {
+        // If still supposed to be recording, restart
+        try {
+          recognition.start();
+        } catch (e) {
+          console.warn('Failed to restart recognition', e);
+        }
+      } else {
+        setStatus('stopped');
+      }
+    };
+
+    return recognition;
+  }, [reportError, onNativeResult]);
+
+  const startNativeRecording = useCallback(() => {
+    if (!recognitionRef.current) {
+      recognitionRef.current = initNativeRecognition();
+    }
+    try {
+      recognitionRef.current?.start();
+      setPermission('granted'); // Assume granted if it starts
+    } catch (e) {
+      console.error('Failed to start native recognition', e);
+    }
+  }, [initNativeRecognition]);
+
+  const stopNativeRecording = useCallback(() => {
+    if (recognitionRef.current) {
+      recognitionRef.current.stop();
+      recognitionRef.current = null;
+    }
+    isRecordingRef.current = false;
+    setStatus('stopped');
+  }, []);
+
+  // --- Unified Start/Stop Logic ---
+
   const startRecording = useCallback(async () => {
-    if (status === 'recording') {
+    if (status === 'recording' || status === 'listening_native') {
       return;
     }
 
+    // Native Mode
+    if (recognitionMode === 'native') {
+      startNativeRecording();
+      return;
+    }
+
+    // Cloud Mode (Existing Logic)
     if (!wsClient) {
       reportError('WebSocketクライアントが初期化されていません');
       return;
     }
-
+    // ... (rest of existing logic) ...
     if (!wsClient.isConnected()) {
       console.warn('[AudioRecorder] WebSocket not connected, attempting to connect...');
       wsClient.connect();
@@ -500,45 +609,36 @@ export default function AudioRecorder({
       if (isUnmountedRef.current) {
         return;
       }
-
-      if (audioContextRef.current && audioContextRef.current.state === 'suspended') {
-        try {
-          await audioContextRef.current.resume();
-        } catch (error) {
-          console.warn('[AudioRecorder] Failed to resume AudioContext', error);
-        }
-      }
-
+      // ...
       sampleBufferRef.current = null;
       lastSentChunkRef.current = null;
       isRecordingRef.current = true;
       setStatus('recording');
     } catch (error) {
+      // ... existing error handling ...
       let message = 'マイクの初期化に失敗しました';
       if (error instanceof Error) {
+        // ... existing code ...
         if (error.name === 'NotAllowedError' || error.name === 'PermissionDeniedError') {
           message = 'マイクの使用が許可されていません。ブラウザの設定を確認してください。';
-        } else if (error.name === 'NotFoundError' || error.name === 'DevicesNotFoundError') {
-          message = 'マイクが見つかりません。接続を確認してください。';
-        } else if (error.name === 'NotReadableError' || error.name === 'TrackStartError') {
-          message = 'マイクにアクセスできません。他のアプリがマイクを使用している可能性があります。';
-        } else if (error.name === 'OverConstrainedError' || error.name === 'ConstraintNotSatisfiedError') {
-          message = '要求されたマイク設定に対応していません。';
         } else {
           message = `マイクエラー: ${error.message}`;
         }
       }
       reportError(message, error);
     }
-  }, [initMedia, reportError, status, waitUntilWebSocketOpen, wsClient]);
+  }, [status, recognitionMode, startNativeRecording, wsClient, reportError, waitUntilWebSocketOpen, initMedia]);
 
   const stopRecording = useCallback(() => {
-    if (isRecordingRef.current) {
-      isRecordingRef.current = false;
+    isRecordingRef.current = false;
+
+    if (recognitionMode === 'native') {
+      stopNativeRecording();
+    } else {
       processBufferedSamples(true);
+      cleanupMedia();
     }
-    cleanupMedia();
-  }, [cleanupMedia, processBufferedSamples]);
+  }, [recognitionMode, stopNativeRecording, processBufferedSamples, cleanupMedia]);
 
   // 録音状態の変化を監視
   useEffect(() => {

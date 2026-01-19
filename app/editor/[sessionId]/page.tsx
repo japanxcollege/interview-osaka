@@ -356,6 +356,14 @@ export default function EditorPage() {
   // Responsive Tab State
   const [activeTab, setActiveTab] = useState<'article' | 'transcript' | 'assistant'>('transcript');
 
+  // Speech Recognition Mode
+  const [recognitionMode, setRecognitionMode] = useState<'cloud' | 'native'>('cloud');
+
+  const handleNativeResult = (text: string) => {
+    // Send native result as user utterance
+    wsClient.current?.send('user_utterance', { text });
+  };
+
   return (
     <div className="flex flex-col h-screen overflow-hidden bg-white">
       {/* Toast Notifications */}
@@ -365,14 +373,14 @@ export default function EditorPage() {
       <header className="bg-white border-b border-gray-300 px-4 py-3 sm:px-6 sm:py-4 flex flex-col sm:flex-row justify-between items-start sm:items-center shrink-0 gap-3 sm:gap-0">
         <div className="flex justify-between w-full sm:w-auto items-center">
           <div>
-            <h1 className="text-lg sm:text-xl font-bold truncate max-w-[200px] sm:max-w-md">{session.title}</h1>
+            <h1 className="text-lg sm:text-xl font-bold truncate max-w-[200px] sm:max-w-md">{session?.title || 'Loading...'}</h1>
             <div className="flex items-center gap-2">
               <p className="text-xs sm:text-sm text-gray-500">
                 {connectionState === 'OPEN' ? '🟢 接続中' :
                   connectionState === 'CONNECTING' ? '🟡 接続中...' :
                     connectionState === 'RECONNECTING' ? '🟠 再接続中...' :
                       '🔴 切断'}
-                | {session.status}
+                | {session?.status}
               </p>
               {connectionState !== 'OPEN' && connectionState !== 'CONNECTING' && (
                 <button
@@ -389,13 +397,31 @@ export default function EditorPage() {
           <button onClick={() => router.push('/')} className="sm:hidden p-2 bg-gray-100 rounded hover:bg-gray-200 transition text-sm">Esc</button>
         </div>
 
-        <div className="flex gap-2 sm:gap-3 w-full sm:w-auto justify-end">
+        <div className="flex gap-2 sm:gap-3 w-full sm:w-auto justify-end items-center">
+          {/* Recognition Mode Toggle */}
+          <div className="flex bg-gray-100 rounded-lg p-1 border border-gray-200">
+            <button
+              onClick={() => setRecognitionMode('cloud')}
+              className={`px-3 py-1 text-xs rounded-md transition ${recognitionMode === 'cloud' ? 'bg-white shadow text-blue-600 font-medium' : 'text-gray-500 hover:text-gray-700'}`}
+            >
+              Cloud
+            </button>
+            <button
+              onClick={() => setRecognitionMode('native')}
+              className={`px-3 py-1 text-xs rounded-md transition ${recognitionMode === 'native' ? 'bg-white shadow text-green-600 font-medium' : 'text-gray-500 hover:text-gray-700'}`}
+            >
+              Native
+            </button>
+          </div>
+
           <AudioRecorder
             sessionId={sessionId}
             wsClient={wsClient.current}
             isRecording={isRecording}
             speakerId="speaker_web"
             speakerName="Interviewer"
+            recognitionMode={recognitionMode}
+            onNativeResult={handleNativeResult}
             onError={(err) => {
               setRecorderError(err);
               if (err) addToast(err, 'error', 5000);

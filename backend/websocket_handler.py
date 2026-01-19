@@ -488,7 +488,7 @@ async def process_message(
                     session_id=session_id,
                     text=text,
                     speaker_id="ai_interviewer",
-                    speaker_name="AI Interviewer"
+                    speaker_name="Interviewer"
                 )
                 
                 if utterance:
