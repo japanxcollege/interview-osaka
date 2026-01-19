@@ -42,7 +42,7 @@ class GeminiClient:
             }
             
             self.model = genai.GenerativeModel(
-                'gemini-2.0-flash',
+                'gemini-flash-latest',
                 # safety_settings=self.safety_settings # Constructor might accept it or generate_content
             )
             self.enabled = True
