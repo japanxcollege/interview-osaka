@@ -79,7 +79,11 @@ export default function WebSpeechRecorder({
             if (event.error === 'not-allowed') {
                 onError?.('マイクの許可がありません');
             } else if (event.error === 'network') {
-                // Network error often happens, just retry or ignore if transient
+                onError?.('ネットワーク接続エラーが発生しました（音声認識）。録音を停止します。');
+            } else if (event.error === 'aborted') {
+                // Ignore
+            } else {
+                onError?.(`音声認識エラー: ${event.error}`);
             }
         };
 
