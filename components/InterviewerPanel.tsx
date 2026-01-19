@@ -68,7 +68,7 @@ export default function InterviewerPanel({ session, wsClient }: InterviewerPanel
         }
     }, [messages, interimText, isAiProcessing]);
 
-    // Handle AI Response
+    // AI Response Handler depends on speak
     useEffect(() => {
         if (!wsClient) return;
 
@@ -84,8 +84,9 @@ export default function InterviewerPanel({ session, wsClient }: InterviewerPanel
 
         wsClient.addListener(handleMessage);
         return () => wsClient.removeListener(handleMessage);
-    }, [wsClient, isTtsEnabled]);
+    }, [wsClient, isTtsEnabled, selectedVoice, speechRate]); // Add dependencies needed for speak (or just add speak if using callback)
 
+    // Actually, distinct useCallback is better pattern
     const speak = (text: string) => {
         if (typeof window !== 'undefined' && window.speechSynthesis) {
             window.speechSynthesis.cancel();
@@ -98,6 +99,7 @@ export default function InterviewerPanel({ session, wsClient }: InterviewerPanel
             window.speechSynthesis.speak(utterance);
         }
     };
+
 
     const OPENING_TEMPLATES = [
         { label: '自分の内省', text: 'では、まずご自身の内面についてお聞かせください。最近、ご自身について深く考えたことや、価値観の変化などはありましたか？' },

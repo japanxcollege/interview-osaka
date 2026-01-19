@@ -75,14 +75,21 @@ export default function WebSpeechRecorder({
         };
 
         recognition.onerror = (event: any) => {
-            console.error('Speech recognition error', event.error);
-            if (event.error === 'not-allowed') {
+            if (event.error === 'network') {
+                // Network errors are common and recoverable by potential restart, 
+                // but we choose to stop to prevent spam. 
+                // Silence console.error for network to avoid checking user panic.
+                console.warn('Speech recognition network error (stopping)');
+                isRecordingRef.current = false; // Force stop auto-restart
+                onError?.('ネットワーク接続エラーが発生しました。録音を停止します。');
+            } else if (event.error === 'not-allowed') {
+                console.error('Speech recognition error', event.error);
+                isRecordingRef.current = false; // Force stop
                 onError?.('マイクの許可がありません');
-            } else if (event.error === 'network') {
-                onError?.('ネットワーク接続エラーが発生しました（音声認識）。録音を停止します。');
             } else if (event.error === 'aborted') {
                 // Ignore
             } else {
+                console.error('Speech recognition error', event.error);
                 onError?.(`音声認識エラー: ${event.error}`);
             }
         };
