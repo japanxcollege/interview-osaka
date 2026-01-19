@@ -402,6 +402,12 @@ async def process_message(
             # AIインタビュアーのレスポンス生成
             try:
                 from ai_editor import ai_editor
+                from gemini_client import gemini_client # Import for debug
+                
+                print("DEBUG: WS - Request received")
+                print(f"DEBUG: WS - Gemini Enabled: {gemini_client.enabled}")
+                if hasattr(gemini_client, 'model'):
+                     print(f"DEBUG: WS - Gemini Model: {gemini_client.model.model_name}")
                 
                 session = session_manager.get_session(session_id)
                 if not session:
@@ -425,6 +431,12 @@ async def process_message(
                     ai_mode=ai_mode,
                     instruction=instruction
                 )
+
+                if response_text:
+                    print("DEBUG: WS - Response generated successfully")
+                    # ... rest of success logic (unchanged)
+                    # For safety, I will verify the next lines matches the file or I use a larger context.
+
                 
                 logger.info(f"📝 Interviewer response: {response_text[:100] if response_text else 'None'}")
                 
@@ -466,9 +478,16 @@ async def process_message(
                     else:
                          logger.warning("Duplicate or empty AI response, not saved.")
                 else:
+                    print("DEBUG: WS - Response text is None")
+                    debug_info = f"Enabled={gemini_client.enabled}"
+                    if hasattr(gemini_client, 'last_error'):
+                        debug_info += f", LastError={gemini_client.last_error}"
+                    if hasattr(gemini_client, 'model'):
+                         debug_info += f", Model={gemini_client.model.model_name}"
+
                     await websocket.send_json({
                         'type': 'error',
-                        'message': 'インタビュアーのレスポンス生成に失敗しました'
+                        'message': f'インタビュアーのレスポンス生成に失敗しました ({debug_info})'
                     })
             except Exception as e:
                 logger.error(f"Error in interviewer_generate_response: {e}")

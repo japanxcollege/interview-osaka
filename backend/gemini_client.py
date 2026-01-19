@@ -467,31 +467,27 @@ class GeminiClient:
             return None
 
     async def generate_text(self, system_prompt: str, user_prompt: str) -> Optional[str]:
-        """
-        汎用テキスト生成
-        
-        Args:
-            system_prompt: システムプロンプト（役割や指示）
-            user_prompt: ユーザー入力（対象テキストや具体的な指示）
-        """
+        # ... (docstring) ...
         if not self.enabled:
+            print("DEBUG: generate_text - Client disabled (gemini)")
             return None
 
         try:
+            print(f"DEBUG: generate_text - Start. Model: {self.model.model_name}")
             full_prompt = f"{system_prompt}\n\n---\n\n{user_prompt}"
             response = await self.model.generate_content_async(full_prompt, safety_settings=self.safety_settings)
+            
+            print(f"DEBUG: generate_text - Response received. Candidates: {len(response.candidates)}")
+            
             if response.prompt_feedback and response.prompt_feedback.block_reason:
+                print(f"DEBUG: generate_text - Blocked: {response.prompt_feedback}")
                 logger.warning(f"⚠️ Prompt blocked: {response.prompt_feedback}")
                 return None
             return response.text.strip()
-        except ValueError as e:
-            # Often blocked content raises ValueError on .text access
-            logger.warning(f"⚠️ Failed to get text from response (likely blocked): {e}")
-            if response and response.prompt_feedback:
-                 logger.warning(f"Prompt feedback: {response.prompt_feedback}")
-            return None
         except Exception as e:
+            print(f"DEBUG: generate_text - Exception: {e}")
             logger.error(f"Failed to generate text (Gemini): {e}")
+            self.last_error = str(e)
             return None
 
 
