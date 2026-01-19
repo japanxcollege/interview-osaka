@@ -24,7 +24,7 @@ export default function InterviewerPanel({ session, wsClient }: InterviewerPanel
     // Sync session transcript to messages
     useEffect(() => {
         const newMessages = session.transcript.map(u => ({
-            role: (u.speaker_name === 'Interviewer' ? 'ai' : 'user') as 'ai' | 'user',
+            role: (['Interviewer', 'AI Interviewer'].includes(u.speaker_name) ? 'ai' : 'user') as 'ai' | 'user',
             text: u.text
         }));
         setMessages(newMessages);

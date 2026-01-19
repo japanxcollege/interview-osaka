@@ -457,7 +457,7 @@ async def process_message(
                         session_id=session_id,
                         text=response_text,
                         speaker_id="ai_interviewer",
-                        speaker_name="AI Interviewer"
+                        speaker_name="Interviewer"
                     )
 
                     if ai_utterance:
