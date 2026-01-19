@@ -119,8 +119,16 @@ export default function InterviewerPanel({ session, wsClient }: InterviewerPanel
         setIsRecording(false);
     };
 
+    const [inputText, setInputText] = useState('');
+
     const toggleRecording = () => {
         setIsRecording(!isRecording);
+    };
+
+    const handleSendText = () => {
+        if (!inputText.trim()) return;
+        handleFinalResult(inputText);
+        setInputText('');
     };
 
     return (
@@ -239,47 +247,79 @@ export default function InterviewerPanel({ session, wsClient }: InterviewerPanel
             </div>
 
             {/* Controls */}
-            <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-white via-white/95 to-transparent z-20">
-                <div className="flex flex-col items-center gap-6">
-                    <WebSpeechRecorder
-                        isRecording={isRecording}
-                        onInterimResult={setInterimText}
-                        onFinalResult={handleFinalResult}
-                        onError={handleError}
-                    />
+            <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-white via-white/95 to-transparent z-20">
+                <div className="flex flex-col items-center gap-4 max-w-3xl mx-auto w-full">
+                    {/* Input Area */}
+                    <div className="w-full flex items-end gap-2 px-2">
+                        {/* Mic Button (Compact if typing, or main if not) */}
+                        <div className="relative shrink-0">
+                            <WebSpeechRecorder
+                                isRecording={isRecording}
+                                onInterimResult={setInterimText}
+                                onFinalResult={handleFinalResult}
+                                onError={handleError}
+                            />
+                            {isRecording && (
+                                <div className="absolute inset-0 bg-red-500 rounded-full animate-ping opacity-20 transform scale-150"></div>
+                            )}
+                            <button
+                                onClick={toggleRecording}
+                                className={`
+                                    relative w-12 h-12 rounded-full flex items-center justify-center text-white shadow-lg transition-all duration-300
+                                    ${isRecording
+                                        ? 'bg-red-500 ring-4 ring-red-100'
+                                        : 'bg-blue-600 hover:bg-blue-700'
+                                    }
+                                `}
+                            >
+                                {isRecording ? (
+                                    <span className="text-xl">⏹️</span>
+                                ) : (
+                                    <span className="text-xl">🎙️</span>
+                                )}
+                            </button>
+                        </div>
 
-                    <div className="relative group">
-                        {isRecording && (
-                            <div className="absolute inset-0 bg-red-500 rounded-full animate-ping opacity-20 transform scale-150"></div>
-                        )}
+                        {/* Text Input */}
+                        <div className="flex-1 bg-gray-100 rounded-2xl flex items-center p-2 border border-transparent focus-within:border-blue-300 focus-within:bg-white transition-all shadow-inner">
+                            <input
+                                type="text"
+                                value={inputText}
+                                onChange={(e) => setInputText(e.target.value)}
+                                onKeyDown={(e) => {
+                                    if (e.key === 'Enter' && !e.nativeEvent.isComposing) {
+                                        handleSendText();
+                                    }
+                                }}
+                                placeholder={isRecording ? "Listening..." : "メッセージを入力..."}
+                                className="flex-1 bg-transparent border-none focus:ring-0 px-2 py-1 text-gray-800 placeholder-gray-400 outline-none w-full"
+                                disabled={isRecording}
+                            />
+                        </div>
+
+                        {/* Send Button */}
                         <button
-                            onClick={toggleRecording}
+                            onClick={handleSendText}
+                            disabled={!inputText.trim() || isRecording}
                             className={`
-                                relative w-20 h-20 rounded-full flex items-center justify-center text-white shadow-2xl transition-all duration-300 transform hover:scale-105 active:scale-95
-                                ${isRecording
-                                    ? 'bg-gradient-to-r from-red-500 to-pink-600 ring-4 ring-red-100'
-                                    : 'bg-gradient-to-r from-blue-600 to-indigo-600 ring-4 ring-blue-50 group-hover:ring-blue-100'
+                                w-10 h-10 rounded-full flex items-center justify-center transition-all shrink-0
+                                ${inputText.trim() && !isRecording
+                                    ? 'bg-blue-600 text-white shadow-md hover:bg-blue-700 cursor-pointer'
+                                    : 'bg-gray-200 text-gray-400 cursor-not-allowed'
                                 }
                             `}
                         >
-                            {isRecording ? (
-                                <span className="text-3xl drop-shadow-md">⏹️</span>
-                            ) : (
-                                <span className="text-3xl drop-shadow-md">🎙️</span>
-                            )}
+                            <span className="text-sm font-bold">➤</span>
                         </button>
                     </div>
 
-                    <div className="text-center">
-                        <p className={`text-sm font-medium transition-colors ${isRecording ? 'text-red-500' : 'text-gray-500'}`}>
-                            {isRecording ? 'Listening... Tap to stop' : 'Tap mic to answer'}
-                        </p>
+                    <div className="text-center w-full">
                         <button
                             onClick={() => {
                                 const baseUrl = window.location.origin;
                                 window.location.href = `${baseUrl}/writer/${session.session_id}`;
                             }}
-                            className="mt-4 text-xs font-semibold text-gray-400 hover:text-blue-600 transition flex items-center justify-center gap-1 group"
+                            className="text-xs font-semibold text-gray-400 hover:text-blue-600 transition flex items-center justify-center gap-1 group mx-auto"
                         >
                             <span className="transform group-hover:-translate-x-1 transition-transform">←</span>
                             Switch to Editor Mode
