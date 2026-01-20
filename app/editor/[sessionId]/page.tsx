@@ -14,7 +14,7 @@ import ArticlePanel from '@/components/ArticlePanel';
 import TranscriptPanel from '@/components/TranscriptPanel';
 import NotesPanel from '@/components/NotesPanel';
 import AssistantPanel from '@/components/AssistantPanel'; // New combined panel
-import AudioRecorder from '@/components/AudioRecorder';
+import WebSpeechRecorder from '@/components/Interview/WebSpeechRecorder';
 import { useEditorHistory } from '@/hooks/useEditorHistory'; // New hook
 import { Message } from '@/components/AICommandPanel'; // Type definition
 import Toast from '@/components/Toast';
@@ -357,7 +357,9 @@ export default function EditorPage() {
   const [activeTab, setActiveTab] = useState<'article' | 'transcript' | 'assistant'>('transcript');
 
   // Speech Recognition Mode
-  const [recognitionMode, setRecognitionMode] = useState<'cloud' | 'native'>('cloud');
+  // const [recognitionMode, setRecognitionMode] = useState<'cloud' | 'native'>('cloud'); 
+  // REMOVED: legacy toggle
+
 
   const handleNativeResult = (text: string) => {
     // Send native result as user utterance
@@ -398,42 +400,38 @@ export default function EditorPage() {
         </div>
 
         <div className="flex gap-2 sm:gap-3 w-full sm:w-auto justify-end items-center">
-          {/* Recognition Mode Toggle */}
-          <div className="flex bg-gray-100 rounded-lg p-1 border border-gray-200">
-            <button
-              onClick={() => setRecognitionMode('cloud')}
-              className={`px-3 py-1 text-xs rounded-md transition ${recognitionMode === 'cloud' ? 'bg-white shadow text-blue-600 font-medium' : 'text-gray-500 hover:text-gray-700'}`}
-            >
-              Cloud
-            </button>
-            <button
-              onClick={() => setRecognitionMode('native')}
-              className={`px-3 py-1 text-xs rounded-md transition ${recognitionMode === 'native' ? 'bg-white shadow text-green-600 font-medium' : 'text-gray-500 hover:text-gray-700'}`}
-            >
-              Native
-            </button>
-          </div>
+          <div className="flex gap-2 sm:gap-3 w-full sm:w-auto justify-end items-center">
+            {/* Recording Indicator */}
+            <div className="relative">
+              <WebSpeechRecorder
+                isRecording={isRecording}
+                onFinalResult={handleNativeResult}
+                onError={(err) => {
+                  setRecorderError(err);
+                  if (err) addToast(err, 'error', 5000);
+                }}
+              />
+              {isRecording && (
+                <div className="absolute top-0 right-0 -mt-1 -mr-1 w-3 h-3 bg-red-500 rounded-full animate-ping"></div>
+              )}
+            </div>
 
-          <AudioRecorder
-            sessionId={sessionId}
-            wsClient={wsClient.current}
-            isRecording={isRecording}
-            speakerId="speaker_web"
-            speakerName="Interviewer"
-            recognitionMode={recognitionMode}
-            onNativeResult={handleNativeResult}
-            onError={(err) => {
-              setRecorderError(err);
-              if (err) addToast(err, 'error', 5000);
-            }}
-          />
-          <button
-            onClick={toggleRecording}
-            className={`px-3 py-2 sm:px-4 text-xs sm:text-sm rounded text-white transition shadow hover:shadow-md ${isRecording ? 'bg-red-500 hover:bg-red-600' : 'bg-green-500 hover:bg-green-600'}`}
-          >
-            {isRecording ? 'Stop' : 'Rec'}
-          </button>
-          <button onClick={() => router.push('/')} className="hidden sm:block px-4 py-2 bg-gray-200 rounded hover:bg-gray-300 transition text-sm">Back</button>
+            <button
+              onClick={toggleRecording}
+              className={`px-3 py-2 sm:px-4 text-xs sm:text-sm rounded text-white transition shadow hover:shadow-md flex items-center gap-2 ${isRecording ? 'bg-red-500 hover:bg-red-600' : 'bg-blue-600 hover:bg-blue-700'}`}
+            >
+              {isRecording ? (
+                <>
+                  <span className="animate-pulse">●</span> Stop
+                </>
+              ) : (
+                <>
+                  <span>🎙️</span> Rec
+                </>
+              )}
+            </button>
+            <button onClick={() => router.push('/')} className="hidden sm:block px-4 py-2 bg-gray-200 rounded hover:bg-gray-300 transition text-sm">Back</button>
+          </div>
         </div>
       </header>
 
