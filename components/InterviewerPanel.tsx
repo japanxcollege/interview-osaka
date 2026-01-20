@@ -4,6 +4,8 @@ import { useState, useEffect, useRef } from 'react';
 import { InterviewSession } from '@/types';
 import { WebSocketClient } from '@/lib/websocket';
 import WebSpeechRecorder from './Interview/WebSpeechRecorder';
+import Toast from './Toast';
+import { useToast } from '@/hooks/useToast';
 
 interface InterviewerPanelProps {
     session: InterviewSession;
@@ -147,8 +149,11 @@ export default function InterviewerPanel({ session, wsClient }: InterviewerPanel
         triggerAiResponse();
     };
 
+    const { toasts, addToast, removeToast } = useToast();
+
     const handleError = (msg: string) => {
-        alert(msg);
+        // alert(msg); // Blocking alert removed
+        addToast(msg, 'error', 5000);
         setIsRecording(false);
     };
 
@@ -166,6 +171,7 @@ export default function InterviewerPanel({ session, wsClient }: InterviewerPanel
 
     return (
         <div className="flex flex-col h-full bg-white/90 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/50 overflow-hidden relative">
+            <Toast toasts={toasts} removeToast={removeToast} />
             {/* Header */}
             <div className="absolute top-0 left-0 right-0 z-10 bg-white/80 backdrop-blur-md border-b border-gray-100 p-4 flex justify-between items-center h-16">
                 <div>
